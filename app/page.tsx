@@ -24,7 +24,7 @@ export default function Home() {
       <Dealers />
       <AdvertisementPolicy />
       <SkillSet />
-      {/* <Footer /> */}
+      <Footer />
     </main>
   );
 }

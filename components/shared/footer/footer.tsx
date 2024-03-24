@@ -28,7 +28,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-indigo-blue pb-6 pt-[3.313rem]">
+    <footer className="bg-indigo-blue after:bg-dark-grain-pattern relative z-10 pb-6 pt-[3.313rem] after:absolute after:inset-0 after:-z-10 after:bg-cover after:bg-no-repeat after:opacity-40 after:bg-blend-multiply after:content-['']">
       <div className="container flex justify-between gap-[111px] text-white">
         <div className="w-full max-w-[426px]">
           <Image
