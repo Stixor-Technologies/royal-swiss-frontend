@@ -45,7 +45,7 @@ const Dealers = () => {
   return (
     <div className="container">
       <div className="mx-auto flex justify-between gap-[2.5rem] lg:w-[92.78%]">
-        <h2 className="font-righteous text-indigo-blue w-full max-w-[24.125rem] text-[3.75rem] leading-[4.5rem]">
+        <h2 className="w-full max-w-[24.125rem] font-righteous text-[3.75rem] leading-[4.5rem] text-indigo-blue">
           Authorized Dealers
         </h2>
 
@@ -56,7 +56,10 @@ const Dealers = () => {
           className="mySwiper !ml-auto !mr-0 max-w-[52rem] cursor-pointer"
         >
           {dealers.map((dealerImage, index) => (
-            <SwiperSlide className="relative mr-[4.087rem] !flex !w-[6.438rem] items-center">
+            <SwiperSlide
+              key={index}
+              className="relative mr-[4.087rem] !flex !w-[6.438rem] items-center"
+            >
               <Image
                 key={index}
                 src={dealerImage.path}

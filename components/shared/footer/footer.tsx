@@ -2,32 +2,32 @@ import React from "react";
 import Image from "next/image";
 import FooterLogo from "../../../public/images/footer/logo-footer.png";
 import { footerLinks } from "@/utils/utils";
-import { Menu, SocialLinks } from "@/utils/types/types";
+import { Menu } from "@/utils/types/types";
 import Link from "next/link";
 
 const Footer = () => {
-  const socialLink: SocialLinks[] = [
-    {
-      title: "facebook",
-      path: "#",
-      iconPath: "icons/social-icons/facebook.svg",
-    },
+  // const socialLink: SocialLinks[] = [
+  //   {
+  //     title: "facebook",
+  //     path: "#",
+  //     iconPath: "icons/social-icons/facebook.svg",
+  //   },
 
-    {
-      title: "twitter",
-      path: "#",
-      iconPath: "icons/social-icons/twitter.svg",
-    },
+  //   {
+  //     title: "twitter",
+  //     path: "#",
+  //     iconPath: "icons/social-icons/twitter.svg",
+  //   },
 
-    {
-      title: "twitter",
-      path: "#",
-      iconPath: "icons/social-icons/twitter.svg",
-    },
-  ];
+  //   {
+  //     title: "twitter",
+  //     path: "#",
+  //     iconPath: "icons/social-icons/twitter.svg",
+  //   },
+  // ];
 
   return (
-    <footer className="bg-indigo-blue after:bg-dark-grain-pattern relative z-10 pb-6 pt-[3.313rem] after:absolute after:inset-0 after:-z-10 after:bg-cover after:bg-no-repeat after:opacity-40 after:bg-blend-multiply after:content-['']">
+    <footer className="relative z-10 bg-indigo-blue pb-6 pt-[3.313rem] after:absolute after:inset-0 after:-z-10 after:bg-dark-grain-pattern after:bg-cover after:bg-no-repeat after:opacity-40 after:bg-blend-multiply after:content-['']">
       <div className="container flex justify-between gap-[111px] text-white">
         <div className="w-full max-w-[426px]">
           <Image
@@ -45,7 +45,7 @@ const Footer = () => {
         </div>
 
         <div className="mt-[94px] w-full max-w-[112px]">
-          <h3 className="text-yellow-dark mb-[1.125rem] text-xl font-semibold">
+          <h3 className="mb-[1.125rem] text-xl font-semibold text-yellow-dark">
             Quick Links
           </h3>
           <ul>
