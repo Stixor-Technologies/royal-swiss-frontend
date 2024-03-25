@@ -32,7 +32,7 @@ body {
   }
 
   .footer-office-info {
-    @apply text-[0.938rem] leading-[1.688rem] text-white;
+    @apply text-[0.625rem] leading-[1.688rem] text-white sm:text-[0.938rem];
   }
 
   .footer-office-info-label {

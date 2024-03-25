@@ -1,14 +1,18 @@
+"use client";
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 import Hamburger from "./menu/hamburger";
 import Sidebar from "./menu/sidebar";
-import HeaderLogo from "../../../public/images/header-logo.png";
-import { navBarLinks } from "@/utils/utils";
-import Link from "next/link";
 import LinkButton from "../link-button/link-button";
-import { link } from "fs";
+import HeaderLogo from "../../../public/images/header-logo.png";
+import HamburgerIcon from "../../../public/icons/hamburger-icon.svg";
+import { navBarLinks } from "@/utils/utils";
+import { useMenuStore } from "@/store/menu-store";
 
 const Header = () => {
+  const isMenuOpen = useMenuStore((state) => state.isMenuOpen);
+  const setIsMenuOpen = useMenuStore((state) => state.setIsMenuOpen);
   return (
     <header className={`py-[37px]`}>
       <div className="container flex h-full items-center justify-between">
@@ -19,7 +23,7 @@ const Header = () => {
               width={188}
               height={62}
               alt="header-logo"
-              // className="w-32 max-w-[201px] lg:w-auto"
+              className="w-[7.938rem] max-w-[188px] sm:w-auto"
             />
           </Link>
         </div>
@@ -37,12 +41,30 @@ const Header = () => {
           ))}
         </ul>
 
-        <LinkButton as={"link"} href={"#"} variant="sm" text="Contact Us" />
+        <LinkButton
+          as={"link"}
+          href={"#"}
+          variant="sm"
+          text="Contact Us"
+          styles="hidden md:!inline-flex"
+        />
+
+        <button
+          onClick={() => {
+            setIsMenuOpen(!isMenuOpen);
+          }}
+        >
+          <Image
+            src={HamburgerIcon}
+            alt=""
+            className="md:hide-custom-cursor md:no-custom-cursor md:hidden"
+          />
+        </button>
 
         {/* <Hamburger /> */}
       </div>
 
-      {/* <Sidebar /> */}
+      <Sidebar />
     </header>
   );
 };

@@ -35,6 +35,12 @@ const config: Config = {
         "medium-gray": "#8B8B8B",
         "spanish-gray": "#9A9A9A",
       },
+
+      screens: {
+        midlg: "956px",
+        "min-aspect-9/16": { raw: "(min-aspect-ratio: 9/16)" },
+        "min-aspect": { raw: "(min-aspect-ratio: 1/1)" },
+      },
     },
   },
   plugins: [
@@ -42,8 +48,8 @@ const config: Config = {
       addComponents({
         ".container": {
           width: "100%",
-          // paddingLeft: "1rem",
-          // paddingRight: "1rem",
+          paddingLeft: "1rem",
+          paddingRight: "1rem",
           marginLeft: "auto",
           marginRight: "auto",
           "@screen sm": {

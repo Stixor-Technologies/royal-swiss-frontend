@@ -53,8 +53,9 @@ const Footer = () => {
   return (
     <footer className="relative z-10 bg-indigo-blue pb-6 pt-[3.313rem] after:absolute after:inset-0 after:-z-10 after:bg-dark-grain-pattern after:bg-cover after:bg-no-repeat after:opacity-40 after:bg-blend-multiply after:content-['']">
       <div className="container text-white">
-        <div className="mx-auto lg:w-[92.78%]">
-          <div className="mb-[2.243rem] flex justify-between gap-[111px] ">
+        <div className="mx-auto xl:w-[92.78%]">
+          <div className="midlg:flex-row mb-[2.243rem] flex flex-col justify-between gap-[50px] xl:gap-[111px] ">
+            {/* <div className=" midxl:grid-cols-[426px_112px_404px] mb-[2.243rem] grid  grid-cols-2 justify-between gap-[40px] xl:gap-[111px] "> */}
             {/* Left Section */}
             <div className="w-full max-w-[426px]">
               <Image
@@ -88,61 +89,65 @@ const Footer = () => {
               </div>
             </div>
 
-            {/* Mid Section */}
-            <div className="mt-[94px] w-full max-w-[112px]">
-              <h3 className="mb-[1.125rem] text-xl font-semibold text-yellow-dark">
-                Quick Links
-              </h3>
-              <ul className="space-y-[7px]">
-                {footerLinks?.map((link: Menu) => (
-                  <li key={link.id}>
-                    <Link
-                      href={link.path}
-                      className="after:transition-width relative text-[0.938rem] leading-[1.688rem] after:absolute after:-bottom-1 after:left-0 after:h-[0.081rem] after:w-0 after:bg-white after:duration-500 after:ease-in-out after:content-[''] hover:after:w-full"
-                    >
-                      {link.title}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
+            <div className="midlg:mt-[94px] midlg:justify-between flex gap-[50px] xl:gap-[156px]">
+              {/* Mid Section */}
+              <div className="w-full max-w-[112px]">
+                <h3 className="mb-[1.125rem] text-xl font-semibold text-yellow-dark">
+                  Quick Links
+                </h3>
+                <ul className="space-y-[7px]">
+                  {footerLinks?.map((link: Menu) => (
+                    <li key={link.id}>
+                      <Link
+                        href={link.path}
+                        className="after:transition-width relative text-[0.938rem] leading-[1.688rem] after:absolute after:-bottom-1 after:left-0 after:h-[0.081rem] after:w-0 after:bg-white after:duration-500 after:ease-in-out after:content-[''] hover:after:w-full"
+                      >
+                        {link.title}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
 
-            {/* Right Section */}
-            <div className="mt-[94px] w-full max-w-[404px] space-y-3 pl-[45px]">
-              <address className="footer-office-info not-italic">
-                <span className="footer-office-info-label">Office: </span>
-                House No. 253-D, Northern Bypass, Near Nigana Chowk Multan
-              </address>
+              {/* Right Section */}
+              <div className="w-full max-w-[404px] space-y-3 lg:pl-[45px]">
+                <address className="footer-office-info not-italic">
+                  <span className="footer-office-info-label">Office: </span>
+                  House No. 253-D, Northern Bypass, Near Nigana Chowk Multan
+                </address>
 
-              <p className="footer-office-info">
-                <span className="footer-office-info-label">Email: </span>
-                <Link href="mailto:info@royalswisshousing.com">
-                  info@royalswisshousing.com
-                </Link>
-              </p>
+                <p className="footer-office-info">
+                  <span className="footer-office-info-label">Email: </span>
+                  <Link href="mailto:info@royalswisshousing.com">
+                    info@royalswisshousing.com
+                  </Link>
+                </p>
 
-              <p className="footer-office-info">
-                <span className="footer-office-info-label">Phone: </span>
-                <Link href="tel:+92 61 621 6008/9">+92 61 621 6008/9</Link>
-              </p>
+                <p className="footer-office-info">
+                  <span className="footer-office-info-label">Phone: </span>
+                  <Link href="tel:+92 61 621 6008/9">+92 61 621 6008/9</Link>
+                </p>
 
-              <p className="footer-office-info">
-                <span className="footer-office-info-label">Phone" </span>
-                <Link href="tel:+92-31-111-444-32">+92-31-111-444-32</Link>
-              </p>
+                <p className="footer-office-info">
+                  <span className="footer-office-info-label">Phone" </span>
+                  <Link href="tel:+92-31-111-444-32">+92-31-111-444-32</Link>
+                </p>
+              </div>
             </div>
           </div>
 
           <div className="border-medium-gray border-t" />
-          <div className="mx-auto flex max-w-[1055px] justify-between  pt-[0.813rem]">
-            <span className="text-spanish-gray text-base leading-[1.8rem]">
+          <div className="midlg:flex-row mx-auto flex max-w-[1055px] flex-col items-center justify-between gap-2 pt-[0.813rem]  text-center">
+            <p className="midlg:order-1 text-[0.625rem] leading-[1.443rem] sm:text-[0.938rem] sm:leading-[1.688rem]">
+              Copyright &copy; {new Date().getFullYear()} | All Rights Reserved
+              by{" "}
+              <span className="text-[0.5rem] text-yellow-dark sm:text-[0.938rem]">
+                Royal Swiss Housing
+              </span>
+            </p>
+            <span className="text-spanish-gray midlg:order-0 text-[0.813rem] leading-[1.539rem] sm:text-base sm:leading-[1.8rem]">
               Open: Mon - Sat / 9:00 AM - 6:00 PM
             </span>
-
-            <p className=" text-[0.938rem] leading-[1.688rem]">
-              Copyright &copy; {new Date().getFullYear()} | All Rights Reserved
-              by <span className="text-yellow-dark">Royal Swiss Housing</span>
-            </p>
           </div>
         </div>
       </div>
