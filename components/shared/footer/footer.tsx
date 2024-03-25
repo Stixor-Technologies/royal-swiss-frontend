@@ -4,7 +4,6 @@ import FooterLogo from "../../../public/images/footer/logo-footer.png";
 import { footerLinks } from "@/utils/utils";
 import { Menu, SocialLinks } from "@/utils/types/types";
 import Link from "next/link";
-// import Facebook from "../../../public/icons/social-icons/Facebook.svg"
 
 const Footer = () => {
   const socialLink: SocialLinks[] = [

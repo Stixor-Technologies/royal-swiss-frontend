@@ -40,11 +40,6 @@ const Dealers = () => {
     { path: Mursaleen, style: "" },
     { path: RealMate, style: "" },
     { path: GulfGreen, style: "" },
-    // { path: Gulf, style: "" },
-    // { path: Route1, style: "" },
-    // { path: Mursaleen, style: "" },
-    // { path: RealMate, style: "" },
-    // { path: GulfGreen, style: "" },
   ];
 
   return (

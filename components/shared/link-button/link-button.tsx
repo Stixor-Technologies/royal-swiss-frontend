@@ -18,6 +18,7 @@ type ActionProps = BaseProps &
   );
 
 const LinkButton: FC<ActionProps> = ({ variant, styles, text, ...props }) => {
+  // TODO - need this later
   //    lg-1 styles="!max-w-[31.375rem] !h-[3.853rem] hover:!rounded-[2.75rem] before:!hover:rounded-[2.75rem] !font-semibold !text-[1.208rem] !leading-[1.462rem]"
 
   const getSizeClass = () => {
