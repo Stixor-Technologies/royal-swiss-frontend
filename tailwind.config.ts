@@ -36,8 +36,7 @@ const config: Config = {
     },
   },
   plugins: [
-    // @ts-ignore
-    function ({ addComponents }) {
+    function ({ addComponents }: any) {
       addComponents({
         ".container": {
           width: "100%",
