@@ -23,7 +23,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${righteous.variable} ${inter.className}`}>
-        {children}
+        <main>{children}</main>
       </body>
     </html>
   );

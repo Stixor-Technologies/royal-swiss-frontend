@@ -50,15 +50,13 @@ const Header = () => {
         />
 
         <button
+          type="button"
           onClick={() => {
             setIsMenuOpen(!isMenuOpen);
           }}
+          className="md:hide-custom-cursor md:no-custom-cursor md:hidden"
         >
-          <Image
-            src={HamburgerIcon}
-            alt=""
-            className="md:hide-custom-cursor md:no-custom-cursor md:hidden"
-          />
+          <Image src={HamburgerIcon} alt="" className="" />
         </button>
 
         {/* <Hamburger /> */}

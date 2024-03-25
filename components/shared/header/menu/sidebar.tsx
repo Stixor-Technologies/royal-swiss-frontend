@@ -6,6 +6,7 @@ import { navBarLinks } from "@/utils/utils";
 import Link from "next/link";
 import Image from "next/image";
 import HamburgerIcon from "../../../../public/icons/hamburger-icon.svg";
+import LinkButton from "../../link-button/link-button";
 
 const Sidebar = () => {
   const menuButtonRef = useRef<HTMLButtonElement | null>(null);
@@ -96,8 +97,8 @@ const Sidebar = () => {
     <>
       <div
         ref={sideBarMenu}
-        className="min-aspect:-mr-[25vw] min-aspect:w-[25vw] fixed right-0 top-0 z-40 -mr-[100vw] h-screen
-          w-screen overflow-y-auto will-change-auto"
+        className="fixed right-0 top-0 z-40 -mr-[100vw] h-screen w-screen overflow-y-auto
+          will-change-auto min-aspect:-mr-[25vw] min-aspect:w-[25vw]"
       >
         <div className="absolute -z-10 h-full w-full bg-white" />
         <button className="absolute right-[16px] top-[40px]">
@@ -111,32 +112,31 @@ const Sidebar = () => {
           />
         </button>
         <div
-          className="min-aspect-9/16:w-3/4 min-aspect:mx-0 min-aspect:h-3/5 min-aspect:w-full min-aspect:justify-center mx-auto flex h-full w-full flex-col 
-            justify-center overflow-y-auto p-4 pb-4 pt-[6vw]"
+          className="mx-auto flex h-full w-full flex-col justify-center overflow-y-auto p-4 pb-4 pt-[6vw] 
+            min-aspect-9/16:w-3/4 min-aspect:mx-0 min-aspect:h-3/5 min-aspect:w-full min-aspect:justify-center"
         >
-          <ul className="min-aspect:space-y-[2vw] space-y-[10vw] text-xl  md:text-left">
+          <ul className="space-y-[10vw] text-xl md:text-left  min-aspect:space-y-[2vw]">
             {navBarLinks.map((item) => (
               <li className="px-[1vw]">
                 <Link href={"#"}>
                   <p
-                    className="min-aspect:mb-[0.75vw] min-aspect:text-left min-aspect:text-[1.5vw] mb-[3vw]  
-    text-center text-[8vw] text-dark-blue"
+                    className="mb-[3vw] text-center text-[8vw] text-dark-blue  
+    min-aspect:mb-[0.75vw] min-aspect:text-left min-aspect:text-[1.5vw]"
                   >
                     {item?.title}
                   </p>
                 </Link>
               </li>
-
-              // <li key={item?.id}>
-              //   <Link
-              //     href={"#"}
-              //     className={`after:transition-width relative text-sm font-medium leading-[1.375rem] text-dark-blue after:absolute after:-bottom-1 after:left-0 after:h-[0.091rem] after:w-0 after:bg-dark-blue after:duration-300 after:ease-in-out after:content-[''] hover:after:w-full `}
-              //   >
-              //     {item?.title}
-              //   </Link>
-              // </li>
             ))}
           </ul>
+
+          <LinkButton
+            as={"link"}
+            href={"#"}
+            text="Contact Us"
+            variant="lg"
+            styles="!text-[7vw] min-aspect:!text-[1.5vw] h-[11.5vw] min-aspect:!h-[4vw] !font-normal mt-[3vw] min-aspect:mt-[0.75vw]"
+          />
         </div>
       </div>
 

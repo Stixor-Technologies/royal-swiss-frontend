@@ -6,8 +6,8 @@ import Header from "@/components/shared/header/header";
 export default function Home() {
   return (
     <main className="min-h-screen bg-[#F5F5F5]">
-      {/* <Header /> */}
-      <Footer />
+      <Header />
+      {/* <Footer /> */}
       {/* <Dealers /> */}
       {/* <AdvertisementPolicy /> */}
     </main>
