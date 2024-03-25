@@ -1,5 +1,36 @@
 import { Menu, SegmentInfo } from "./types/types";
 
+const navBarLinks: Menu[] = [
+  {
+    id: 1,
+    title: "Home",
+    path: "#",
+  },
+  {
+    id: 2,
+    title: "About",
+    path: "#",
+  },
+
+  {
+    id: 3,
+    title: "Services",
+    path: "#",
+  },
+
+  {
+    id: 4,
+    title: "Updates",
+    path: "#",
+  },
+
+  {
+    id: 5,
+    title: "Projects",
+    path: "#",
+  },
+];
+
 const footerLinks: Menu[] = [
   {
     id: 1,
@@ -48,4 +79,4 @@ const advertisementPolicies: SegmentInfo[] = [
   },
 ];
 
-export { footerLinks, advertisementPolicies };
+export { navBarLinks, advertisementPolicies, footerLinks };
