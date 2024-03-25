@@ -30,4 +30,12 @@ body {
   .text-balance {
     text-wrap: balance;
   }
+
+  .footer-office-info {
+    @apply text-[0.938rem] leading-[1.688rem] text-white;
+  }
+
+  .footer-office-info-label {
+    @apply font-semibold text-yellow-dark;
+  }
 }

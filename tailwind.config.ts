@@ -32,6 +32,8 @@ const config: Config = {
         "rich-black": "#070C29",
         gray: "#444444",
         "light-gray": "#E2E2E2",
+        "medium-gray": "#8B8B8B",
+        "spanish-gray": "#9A9A9A",
       },
     },
   },
