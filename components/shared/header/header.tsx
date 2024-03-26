@@ -31,7 +31,7 @@ const Header = () => {
           {navBarLinks?.slice(0, -1)?.map((item) => (
             <li key={item?.id}>
               <Link
-                href={"#"}
+                href={"/"}
                 className={`after:transition-width relative text-sm font-medium leading-[1.375rem] text-dark-blue after:absolute after:-bottom-1 after:left-0 after:h-[0.091rem] after:w-0 after:bg-dark-blue after:duration-300 after:ease-in-out after:content-[''] hover:after:w-full `}
               >
                 {item?.title}
@@ -42,7 +42,7 @@ const Header = () => {
 
         <LinkButton
           as={"link"}
-          href={"#"}
+          href={"/"}
           variant="sm"
           text="Contact Us"
           styles="hidden md:!inline-flex"

@@ -6,7 +6,6 @@ import { navBarLinks } from "@/utils/utils";
 import Link from "next/link";
 import Image from "next/image";
 import CloseIcon from "../../../../public/icons/close-icon.svg";
-import LinkButton from "../../link-button/link-button";
 import FooterLogo from "../../../../public/images/footer/logo-footer.png";
 import { usePathname } from "next/navigation";
 
@@ -101,19 +100,14 @@ const Sidebar = () => {
     <>
       <div
         ref={sideBarMenu}
-        className="min-aspect:-mr-[40vw] min-aspect:w-[40vw] fixed right-0 top-0 z-40 -mr-[100vw] h-screen
-          w-screen overflow-y-auto bg-indigo-blue will-change-auto"
+        className="fixed right-0 top-0 z-40 -mr-[100vw] h-screen w-screen overflow-y-auto
+          bg-indigo-blue will-change-auto min-aspect:-mr-[40vw] min-aspect:w-[40vw]"
       >
         <div className="absolute -z-10 h-full w-full bg-indigo-blue" />
 
-        {/* <div
-          className="min-aspect-9/16:w-3/4 min-aspect:mx-0 min-aspect:h-3/5 min-aspect:w-full min-aspect:justify-center mx-auto flex h-full w-full flex-col 
-            justify-center overflow-y-auto p-4 pb-4 pt-[6vw]"
-        > */}
-
         <div
-          className=" min-aspect:mx-0 min-aspect:w-full min-aspect:justify-center min-aspect:pt-[6vw]  mx-auto h-full w-full 
-            flex-col justify-center overflow-y-auto p-4 pb-4 pt-[2.313rem]"
+          className=" mx-auto h-full w-full flex-col  justify-center overflow-y-auto p-4 
+            pb-4 pt-[2.313rem] min-aspect:mx-0 min-aspect:w-full min-aspect:justify-center min-aspect:pt-[6vw]"
         >
           <div className="flex justify-between">
             <div>
@@ -138,13 +132,13 @@ const Sidebar = () => {
             </button>
           </div>
 
-          <ul className="min-aspect:space-y-[1.5vw] min-aspect:mt-[4vw] mt-[12.6vw] space-y-[5.6vw] text-xl md:text-left">
+          <ul className="mt-[12.6vw] space-y-[5.6vw] text-xl md:text-left min-aspect:mt-[4vw] min-aspect:space-y-[1.5vw]">
             {navBarLinks?.map((item) => (
-              <li>
+              <li key={item?.id}>
                 <Link href={item?.path}>
                   <p
-                    className={`min-aspect:text-[2.5vw] from-2%  
-       p-2.5 font-righteous text-[4.7vw] leading-[1.375rem] ${pathUrl === item?.path ? "bg-gradient-to-r from-[#EFCF5A] to-[#AD8F2B] text-indigo-blue" : "text-yellow"} rounded-md`}
+                    className={`from-2% p-2.5  
+       font-righteous text-[4.7vw] leading-[1.375rem] min-aspect:text-[2.5vw] ${pathUrl === item?.path ? "bg-gradient-to-r from-[#EFCF5A] to-[#AD8F2B] text-indigo-blue" : "text-yellow"} rounded-md`}
                   >
                     {item?.title}
                   </p>
