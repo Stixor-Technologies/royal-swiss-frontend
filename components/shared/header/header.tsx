@@ -2,7 +2,6 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import Hamburger from "./menu/hamburger";
 import Sidebar from "./menu/sidebar";
 import LinkButton from "../link-button/link-button";
 import HeaderLogo from "../../../public/images/header-logo.png";
@@ -58,8 +57,6 @@ const Header = () => {
         >
           <Image src={HamburgerIcon} alt="" className="" />
         </button>
-
-        {/* <Hamburger /> */}
       </div>
 
       <Sidebar />

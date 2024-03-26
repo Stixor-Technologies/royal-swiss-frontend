@@ -152,14 +152,6 @@ const Sidebar = () => {
               </li>
             ))}
           </ul>
-
-          {/* <LinkButton
-            as={"link"}
-            href={"#"}
-            text="Contact Us"
-            variant="lg"
-            styles="!text-[7vw] min-aspect:!text-[1.5vw] h-[11.5vw] min-aspect:!h-[4vw] !font-normal mt-[3vw] min-aspect:mt-[0.75vw]"
-          /> */}
         </div>
       </div>
 
@@ -172,20 +164,5 @@ const Sidebar = () => {
     </>
   );
 };
-
-{
-  /* <ul className="min-aspect:space-y-[3vw] min-aspect:text-[3vw] space-y-[7vw] px-8 text-[7vw] md:text-left">
-{navBarLinks.map((item) => (
-  <li key={item?.id}>
-    <Link
-      href={"#"}
-      className={`after:transition-width relative text-sm font-medium leading-[1.375rem] text-dark-blue after:absolute after:-bottom-1 after:left-0 after:h-[0.091rem] after:w-0 after:bg-dark-blue after:duration-300 after:ease-in-out after:content-[''] hover:after:w-full `}
-    >
-      {item?.title}
-    </Link>
-  </li>
-))}
-</ul> */
-}
 
 export default Sidebar;
