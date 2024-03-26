@@ -22,11 +22,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      {/* bg-[center_top_1rem] */}
+      {/* bg-left-top */}
       <body className={`${righteous.variable} ${inter.className}`}>
-        <main className="min-h-screen bg-milk-white bg-[url('/images/blocker.png')] bg-contain bg-left-top bg-no-repeat">
-          {children}
+        <main className="min-h-screen bg-milk-white   pt-[7.25rem] md:pt-[8.563rem]">
+          <div className="bg-[url('/images/blocker.png')] bg-contain bg-[center_top_-8vw] bg-no-repeat">
+            {children}
+          </div>
         </main>
-        {/* {children} */}
       </body>
     </html>
   );

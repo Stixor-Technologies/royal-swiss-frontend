@@ -48,8 +48,8 @@ const Contact = async () => {
   };
 
   return (
-    <div className="container ">
-      <div className="mx-auto w-full max-w-[1000px]">
+    <div className="container">
+      <div className="mx-auto w-full max-w-[1000px] pb-[104px] sm:pb-[86px]">
         <h2 className="mb-[1.608rem] text-center font-righteous text-[3.125rem] leading-[3.88rem] text-indigo-blue md:mb-12 md:text-[3.479rem] md:leading-[4.32rem]">
           Contact Us
         </h2>
