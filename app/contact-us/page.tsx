@@ -98,7 +98,7 @@ const Contact = async () => {
                 Phone Number
               </h4>
 
-              {officeInfo?.contact_numbers?.map((number) => (
+              {officeInfo?.contact_numbers?.slice(-2)?.map((number) => (
                 <Link
                   key={number?.id}
                   href={`tel:${number?.contact_number}`}
