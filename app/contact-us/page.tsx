@@ -21,29 +21,35 @@ const Contact = async () => {
     });
   };
 
-  const displayDays = ({ days }) => {
-    const dayNames = [
-      "Monday",
-      "Tuesday",
-      "Wednesday",
-      "Thursday",
-      "Friday",
-      "Saturday",
-      "Sunday",
-    ];
+  const displayDays = ({ days }: { days: any }) => {
+    const dayKeys = Object.keys(days).filter((key) => key !== "id");
 
-    let daysOpen: string = "";
+    const dayShortNames = dayKeys.map((key) => key.slice(0, 3));
+    let daysOpen = "";
+    let startIndex = null;
 
-    for (let i = 0; i < 7; i++) {
-      for (let j = i; j < 7; j++) {
-        if (days[dayNames[i]] && !days[dayNames[j]]) {
-          daysOpen += `${dayNames[i]} - ${dayNames[j - 1]}${i < 7 && ","} `;
-          i = j;
-          break;
+    for (let i = 0; i < dayShortNames.length; i++) {
+      if (days[dayKeys[i]]) {
+        if (startIndex === null) {
+          startIndex = i;
+        }
+      } else {
+        if (startIndex !== null) {
+          daysOpen += `${dayShortNames[startIndex]}`;
+          if (i !== startIndex + 1) {
+            daysOpen += ` - ${dayShortNames[i - 1]}`;
+          }
+          daysOpen += ", ";
+          startIndex = null;
         }
       }
     }
-    console.log(daysOpen);
+
+    if (startIndex !== null) {
+      daysOpen += `${dayShortNames[startIndex]} - ${dayShortNames[5]}`;
+    }
+    daysOpen = daysOpen.slice(0, -2);
+
     return daysOpen;
   };
 
@@ -55,67 +61,68 @@ const Contact = async () => {
         </h2>
         <ContactForm />
 
-        <div className="mt-10 flex flex-col items-center gap-[40px] sm:flex-row sm:gap-[1.875rem] md:mt-[84.33px]">
-          <div className="w-full sm:max-w-[521px]">
-            <MapComponent
-              location={{
-                lat: officeInfo?.latitude,
-                lng: officeInfo?.longitude,
-              }}
-              fromContact
-            />
-          </div>
-
-          <div className="space-y-[11.3px] md:space-y-[13px]">
-            {/* location */}
-            <div>
-              <h4 className="mb-[4.28px] font-righteous text-lg leading-[23.12px] text-indigo-blue md:mb-[5px] md:text-2xl md:leading-[27px]">
-                Office Location
-              </h4>
-
-              <address className="text-[13px] not-italic leading-[23.12px] text-[#444444] md:leading-[27px] ">
-                {officeInfo?.address}
-              </address>
+        {officeInfo && (
+          <div className="mt-10 flex flex-col items-center gap-[40px] sm:flex-row sm:gap-[1.875rem] md:mt-[84.33px]">
+            <div className="w-full sm:max-w-[521px]">
+              <MapComponent
+                location={{
+                  lat: officeInfo?.latitude,
+                  lng: officeInfo?.longitude,
+                }}
+                fromContact
+              />
             </div>
 
-            {/* email */}
-            <div>
-              <h4 className="mb-[4.28px] font-righteous text-lg leading-[23.12px] text-indigo-blue md:mb-[5px] md:text-2xl md:leading-[27px]">
-                Email Address
-              </h4>
+            <div className="space-y-[11.3px] md:space-y-[13px]">
+              {/* location */}
+              <div>
+                <h4 className="mb-[4.28px] font-righteous text-lg leading-[23.12px] text-indigo-blue md:mb-[5px] md:text-2xl md:leading-[27px]">
+                  Office Location
+                </h4>
 
-              <Link
-                href={`mailto:${officeInfo?.email}`}
-                className="text-[13px] leading-[23.12px] text-[#444444] md:text-[15px] md:leading-[27px]"
-              >
-                {officeInfo?.email}
-              </Link>
-            </div>
+                <address className="text-[13px] not-italic leading-[23.12px] text-[#444444] md:leading-[27px] ">
+                  {officeInfo?.address}
+                </address>
+              </div>
 
-            {/* phone number */}
-            <div>
-              <h4 className="mb-[4.28px] font-righteous text-lg leading-[23.12px] text-indigo-blue md:mb-[5px] md:text-2xl md:leading-[27px]">
-                Phone Number
-              </h4>
+              {/* email */}
+              <div>
+                <h4 className="mb-[4.28px] font-righteous text-lg leading-[23.12px] text-indigo-blue md:mb-[5px] md:text-2xl md:leading-[27px]">
+                  Email Address
+                </h4>
 
-              {officeInfo?.contact_numbers?.slice(-2)?.map((number) => (
                 <Link
-                  key={number?.id}
-                  href={`tel:${number?.contact_number}`}
-                  className="block text-[13px] leading-[23.12px] text-[#444444] md:text-[15px] md:leading-[27px]"
+                  href={`mailto:${officeInfo?.email}`}
+                  className="text-[13px] leading-[23.12px] text-[#444444] md:text-[15px] md:leading-[27px]"
                 >
-                  {number?.contact_number}
+                  {officeInfo?.email}
                 </Link>
-              ))}
-            </div>
+              </div>
 
-            <div className="font-righteous text-lg leading-[23.12px] text-indigo-blue md:mb-[5px] md:text-2xl md:leading-[27px]">
-              <span>Open: </span>
-              {`${displayDays({ days: officeInfo.days })} / ${formatTime(officeInfo?.opening)} - ${formatTime(officeInfo?.closing)} `}
+              {/* phone number */}
+              <div>
+                <h4 className="mb-[4.28px] font-righteous text-lg leading-[23.12px] text-indigo-blue md:mb-[5px] md:text-2xl md:leading-[27px]">
+                  Phone Number
+                </h4>
+
+                {officeInfo?.contact_numbers?.slice(-2)?.map((number) => (
+                  <Link
+                    key={number?.id}
+                    href={`tel:${number?.contact_number}`}
+                    className="block text-[13px] leading-[23.12px] text-[#444444] md:text-[15px] md:leading-[27px]"
+                  >
+                    {number?.contact_number}
+                  </Link>
+                ))}
+              </div>
+
+              <div className="font-righteous text-lg leading-[23.12px] text-indigo-blue md:mb-[5px] md:text-2xl md:leading-[27px]">
+                <span>Open: </span>
+                {`${displayDays({ days: officeInfo.days })} / ${formatTime(officeInfo?.opening)} - ${formatTime(officeInfo?.closing)} `}
+              </div>
             </div>
-            {/* {displayDays({ days: officeInfo.days })} */}
           </div>
-        </div>
+        )}
       </div>
     </div>
   );

@@ -2,15 +2,12 @@ import React, { FC } from "react";
 
 interface SpinnerProps {
   color?: string;
-  //   width?: string;
-  //   height?: string;
   size?: string;
 }
 
 const Spinner: FC<SpinnerProps> = ({
   color = "text-white",
-  //   width = "w-12",
-  //   height = "h-12",
+
   size = "size-12",
 }) => {
   return (
@@ -27,7 +24,7 @@ const Spinner: FC<SpinnerProps> = ({
         <circle
           className="opacity-25"
           stroke="currentColor"
-          stroke-width="4"
+          strokeWidth="4"
           cx="12"
           cy="12"
           r="10"

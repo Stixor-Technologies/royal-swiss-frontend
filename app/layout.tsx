@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Righteous } from "next/font/google";
 import "./globals.css";
+import toast, { Toaster } from "react-hot-toast";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -30,6 +31,7 @@ export default function RootLayout({
             {children}
           </div>
         </main>
+        <Toaster />
       </body>
     </html>
   );

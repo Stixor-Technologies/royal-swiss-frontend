@@ -3,7 +3,7 @@ import { Field, Form, Formik, FormikHelpers } from "formik";
 import { ContactFormSchema } from "@/utils/formik-schema";
 import React, { FC, useState } from "react";
 import LinkButton from "../shared/link-button/link-button";
-import Spinner from "../shared/spinner/spinner";
+import { toast } from "react-hot-toast";
 
 type ContactFormProps = {
   isComponent?: boolean;
@@ -11,8 +11,6 @@ type ContactFormProps = {
 
 const ContactForm: FC<ContactFormProps> = ({ isComponent }) => {
   const [loading, setLoading] = useState<boolean>(false);
-  const [showToast, setShowToast] = useState<boolean>(false);
-  const [toastMessage, setToastMessage] = useState<string>("");
 
   type FormValue = {
     name: string;
@@ -87,16 +85,17 @@ const ContactForm: FC<ContactFormProps> = ({ isComponent }) => {
       });
       const data = await res.json();
       if (data === 202) {
-        setToastMessage("Email has been sent");
-        setShowToast(true);
+        toast.success("Email has been sent", {
+          position: "top-right",
+        });
+
         setTimeout(() => {
-          setShowToast(false);
           formikHelpers.resetForm();
         }, 1000);
       } else {
-        setToastMessage(`Error: Error sending email`);
-        setShowToast(true);
-        setTimeout(() => setShowToast(false), 1000);
+        toast.error("Email has been sent", {
+          position: "top-right",
+        });
       }
     } catch (error) {
       console.error(error);
@@ -113,11 +112,11 @@ const ContactForm: FC<ContactFormProps> = ({ isComponent }) => {
     >
       {({ errors, touched }) => (
         <>
-          <div className={`${isComponent && "w-[40.94%]"}`}>
-            {/* {showToast && <Toast message={toastMessage} />} */}
-
+          <div
+            className={`${isComponent && "flex-1 lg:w-[40.94%] lg:flex-initial"}`}
+          >
             {isComponent && (
-              <h4 className="mb-[24.61px] text-center font-righteous text-4xl leading-[3.461rem] text-indigo-blue md:mb-[32px] md:text-6xl md:leading-[4.5rem]">
+              <h4 className="mb-[24.61px] text-center font-righteous text-4xl leading-[3.461rem] text-indigo-blue md:mb-[32px] md:text-5xl md:leading-[4.5rem] lg:text-6xl">
                 Get In Touch
               </h4>
             )}
@@ -127,7 +126,6 @@ const ContactForm: FC<ContactFormProps> = ({ isComponent }) => {
                 className={`gap-[0.673rem] md:gap-[1.057rem] ${isComponent ? "mb-[1.438rem] space-y-[0.673rem] md:mb-[1.875rem] md:space-y-3.5" : "mb-[1.438rem] grid grid-cols-1 sm:grid-cols-2 md:mb-8"}`}
               >
                 {formFields?.map(({ fieldType, fieldName, placeholder }) => {
-                  //   const typedFieldName = fieldName as keyof typeof fieldType;
                   if (fieldType === "textarea") {
                     return (
                       <div key={fieldName} className="sm:col-span-2">
@@ -155,11 +153,16 @@ const ContactForm: FC<ContactFormProps> = ({ isComponent }) => {
                         placeholder={placeholder}
                       />
 
-                      {touched[fieldName] && errors[fieldName] && (
-                        <p className="ml-2 mt-1.5 text-xs italic text-red-400">
-                          {errors[fieldName] as string}
-                        </p>
-                      )}
+                      {touched[fieldName as keyof typeof touched] &&
+                        errors[fieldName as keyof typeof touched] && (
+                          <p className="ml-2 mt-1.5 text-xs italic text-red-400">
+                            {
+                              errors[
+                                fieldName as keyof typeof touched
+                              ] as string
+                            }
+                          </p>
+                        )}
                     </div>
                   );
                 })}
