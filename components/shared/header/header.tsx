@@ -14,7 +14,7 @@ const Header = () => {
   const isMenuOpen = useMenuStore((state) => state.isMenuOpen);
   const setIsMenuOpen = useMenuStore((state) => state.setIsMenuOpen);
   return (
-    <header className={`py-[37px]`}>
+    <header className={`py-[2.313rem]`}>
       <div className="container flex h-full items-center justify-between">
         <div>
           <Link href={"/"}>
@@ -23,13 +23,13 @@ const Header = () => {
               width={188}
               height={62}
               alt="header-logo"
-              className="w-[7.938rem] max-w-[188px] sm:w-auto"
+              className="w-[7.938rem] max-w-[11.75rem] sm:w-auto"
             />
           </Link>
         </div>
 
         <ul className="hidden gap-5 md:flex xl:gap-10">
-          {navBarLinks.map((item) => (
+          {navBarLinks?.slice(0, -1)?.map((item) => (
             <li key={item?.id}>
               <Link
                 href={"#"}

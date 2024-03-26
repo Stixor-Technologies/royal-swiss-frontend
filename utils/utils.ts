@@ -29,6 +29,12 @@ const navBarLinks: Menu[] = [
     title: "Projects",
     path: "#",
   },
+
+  {
+    id: 6,
+    title: "Contact Us",
+    path: "/contact-us",
+  },
 ];
 
 const footerLinks: Menu[] = [
