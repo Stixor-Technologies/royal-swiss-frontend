@@ -40,8 +40,8 @@ const config: Config = {
       addComponents({
         ".container": {
           width: "100%",
-          // paddingLeft: "1rem",
-          // paddingRight: "1rem",
+          paddingLeft: "1rem",
+          paddingRight: "1rem",
           marginLeft: "auto",
           marginRight: "auto",
           "@screen sm": {

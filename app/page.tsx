@@ -1,3 +1,3 @@
 export default function Home() {
-  return <main className="min-h-screen bg-[#F5F5F5] px-10"></main>;
+  return <div className="min-h-screen px-10"></div>;
 }

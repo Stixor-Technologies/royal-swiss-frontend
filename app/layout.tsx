@@ -23,7 +23,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${righteous.variable} ${inter.className}`}>
-        {children}
+        <main className="min-h-screen bg-milk-white bg-[url('/images/blocker.png')] bg-contain bg-left-top bg-no-repeat">
+          {children}
+        </main>
+        {/* {children} */}
       </body>
     </html>
   );

@@ -12,4 +12,29 @@ type SegmentInfo = {
   description: string;
 };
 
-export type { Menu, SocialLinks, SegmentInfo };
+interface Office {
+  // attributes: {
+  location: string;
+  address: string;
+  latitude: number;
+  longitude: number;
+  email: string;
+  opening: string;
+  closing: string;
+  contact_numbers: {
+    id: number;
+    contact_number: string;
+  }[];
+  days: {
+    id: number;
+    Monday: boolean;
+    Tuesday: boolean;
+    Wednesday: boolean;
+    Thursday: boolean;
+    Friday: boolean;
+    Saturday: boolean;
+  };
+  // };
+}
+
+export type { Menu, SocialLinks, SegmentInfo, Office };
