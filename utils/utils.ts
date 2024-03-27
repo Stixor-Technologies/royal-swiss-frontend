@@ -21,7 +21,7 @@ const navBarLinks: Menu[] = [
   {
     id: 3,
     title: "Services",
-    path: "#",
+    path: "/services",
   },
 
   {
