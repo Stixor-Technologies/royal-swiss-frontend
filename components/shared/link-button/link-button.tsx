@@ -67,7 +67,7 @@ const LinkButton: FC<ActionProps> = ({ variant, styles, text, ...props }) => {
       <span className="text-white">{text}</span>
       {loading && (
         <div>
-          <Spinner size="size-4 md:size-6" />
+          <Spinner size="size-4 md:size-6" color="text-white" />
         </div>
       )}
     </button>

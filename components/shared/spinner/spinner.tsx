@@ -6,8 +6,7 @@ interface SpinnerProps {
 }
 
 const Spinner: FC<SpinnerProps> = ({
-  color = "text-white",
-
+  color = "text-indigo-blue",
   size = "size-12",
 }) => {
   return (
