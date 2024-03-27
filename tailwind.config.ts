@@ -37,6 +37,7 @@ const config: Config = {
       },
 
       screens: {
+        xs: "440px",
         midLg: "855px",
         "min-aspect-9/16": { raw: "(min-aspect-ratio: 9/16)" },
         "min-aspect": { raw: "(min-aspect-ratio: 1/1)" },
