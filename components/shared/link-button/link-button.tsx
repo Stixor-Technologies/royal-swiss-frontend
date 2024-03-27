@@ -64,7 +64,7 @@ const LinkButton: FC<ActionProps> = ({ variant, styles, text, ...props }) => {
       className={`${allClassNames} ${rest.disabled ? "disabled" : ""} flex items-center justify-center gap-3`}
       {...rest}
     >
-      <span className="">{text}</span>
+      <span className="text-white">{text}</span>
       {loading && (
         <div>
           <Spinner size="size-4 md:size-6" />

@@ -13,7 +13,6 @@ type SegmentInfo = {
 };
 
 interface Office {
-  // attributes: {
   location: string;
   address: string;
   latitude: number;
@@ -34,7 +33,19 @@ interface Office {
     Friday: boolean;
     Saturday: boolean;
   };
-  // };
 }
 
-export type { Menu, SocialLinks, SegmentInfo, Office };
+type Images = {
+  data: {
+    attributes: {
+      url: string;
+    };
+  }[];
+};
+
+interface DealersData {
+  title: string;
+  dealer_images: Images;
+}
+
+export type { Menu, SocialLinks, SegmentInfo, Office, DealersData };

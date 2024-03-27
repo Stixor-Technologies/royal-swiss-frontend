@@ -13,7 +13,7 @@ const Header = () => {
   const isMenuOpen = useMenuStore((state) => state.isMenuOpen);
   const setIsMenuOpen = useMenuStore((state) => state.setIsMenuOpen);
   return (
-    <header className={`py-[2.313rem]`}>
+    <header className={`bg-milk-white pt-[2.313rem] md:pb-0 md:pt-[2.313rem]`}>
       <div className="container flex h-full items-center justify-between">
         <div>
           <Link href={"/"}>
