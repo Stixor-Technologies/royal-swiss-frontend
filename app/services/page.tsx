@@ -8,7 +8,7 @@ import Spinner from "@/components/shared/spinner/spinner";
 
 const Services = () => {
   return (
-    <section className="min-h-screen md:pt-[18px]">
+    <section className="md:pt-[18px]">
       <div className="container">
         <PageHeader
           heading="Professional Services"
