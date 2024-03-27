@@ -62,8 +62,8 @@ const config: Config = {
           },
           "@screen lg": {
             maxWidth: "100%",
-            paddingLeft: "2.625rem",
-            paddingRight: "2.625rem",
+            paddingLeft: "2.5rem",
+            paddingRight: "2.5rem",
           },
           "@screen xl": {
             maxWidth: "100%",
