@@ -116,7 +116,7 @@ const ContactForm: FC<ContactFormProps> = ({ isComponent }) => {
             className={`${isComponent && "flex-1 lg:w-[40.94%] lg:flex-initial"}`}
           >
             {isComponent && (
-              <h4 className="mb-[24.61px] text-center font-righteous text-4xl leading-[3.461rem] text-indigo-blue md:mb-[32px] md:text-5xl md:leading-[4.5rem] lg:text-6xl">
+              <h4 className="mb-[1.538rem] text-center font-righteous text-4xl leading-[3.461rem] text-indigo-blue md:mb-8 md:text-5xl md:leading-[4.5rem] lg:text-6xl">
                 Get In Touch
               </h4>
             )}
@@ -132,7 +132,7 @@ const ContactForm: FC<ContactFormProps> = ({ isComponent }) => {
                         <Field
                           as="textarea"
                           name={fieldName}
-                          className={` w-full resize-none rounded-[0.453rem] bg-white px-[0.961rem] py-[0.769rem]  font-medium text-indigo-blue placeholder-indigo-blue  focus:outline-indigo-blue md:px-6 md:py-[1.208rem]   ${isComponent ? "h-[110px] text-[0.813rem] placeholder:text-[0.813rem] md:h-[144px] md:text-base md:placeholder:text-base" : "h-[6.922rem] text-[0.813rem] placeholder:text-[0.813rem] md:h-[10.875rem] md:text-[1.208rem] md:placeholder:text-[1.208rem]"}`}
+                          className={` w-full resize-none rounded-[0.453rem] bg-white px-[0.961rem] py-[0.769rem]  font-medium text-indigo-blue placeholder-indigo-blue  focus:outline-indigo-blue md:px-6 md:py-[1.208rem]   ${isComponent ? "h-[6.875rem] text-[0.813rem] placeholder:text-[0.813rem] md:h-[9rem] md:text-base md:placeholder:text-base" : "h-[6.922rem] text-[0.813rem] placeholder:text-[0.813rem] md:h-[10.875rem] md:text-[1.208rem] md:placeholder:text-[1.208rem]"}`}
                           placeholder={placeholder}
                           rows={5}
                         />

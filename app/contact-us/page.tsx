@@ -55,15 +55,15 @@ const Contact = async () => {
 
   return (
     <div className="container">
-      <div className="mx-auto w-full max-w-[1000px] pb-[104px] sm:pb-[86px]">
+      <div className="mx-auto w-full max-w-[62.5rem] pb-[6.5rem] sm:pb-[5.375rem]">
         <h2 className="mb-[1.608rem] text-center font-righteous text-[3.125rem] leading-[3.88rem] text-indigo-blue md:mb-12 md:text-[3.479rem] md:leading-[4.32rem]">
           Contact Us
         </h2>
         <ContactForm />
 
         {officeInfo && (
-          <div className="mt-10 flex flex-col items-center gap-[40px] sm:flex-row sm:gap-[1.875rem] md:mt-[84.33px]">
-            <div className="w-full sm:max-w-[521px]">
+          <div className="mt-10 flex flex-col items-center gap-[2.5rem] sm:flex-row sm:gap-[1.875rem] md:mt-[5.271rem]">
+            <div className="w-full sm:max-w-[32.563rem]">
               <MapComponent
                 location={{
                   lat: officeInfo?.latitude,
@@ -73,27 +73,27 @@ const Contact = async () => {
               />
             </div>
 
-            <div className="space-y-[11.3px] md:space-y-[13px]">
+            <div className="space-y-[0.706rem] md:space-y-[0.813rem]">
               {/* location */}
               <div>
-                <h4 className="mb-[4.28px] font-righteous text-lg leading-[23.12px] text-indigo-blue md:mb-[5px] md:text-2xl md:leading-[27px]">
+                <h4 className="mb-[0.268rem] font-righteous text-lg leading-[1.445rem] text-indigo-blue md:mb-[0.313rem] md:text-2xl md:leading-[1.688rem]">
                   Office Location
                 </h4>
 
-                <address className="text-[13px] not-italic leading-[23.12px] text-[#444444] md:leading-[27px] ">
+                <address className="text-[0.813rem] not-italic leading-[1.445rem] text-gray md:leading-[1.688rem] ">
                   {officeInfo?.address}
                 </address>
               </div>
 
               {/* email */}
               <div>
-                <h4 className="mb-[4.28px] font-righteous text-lg leading-[23.12px] text-indigo-blue md:mb-[5px] md:text-2xl md:leading-[27px]">
+                <h4 className="mb-[0.268rem] font-righteous text-lg leading-[1.445rem] text-indigo-blue md:mb-[0.313rem] md:text-2xl md:leading-[1.688rem]">
                   Email Address
                 </h4>
 
                 <Link
                   href={`mailto:${officeInfo?.email}`}
-                  className="text-[13px] leading-[23.12px] text-[#444444] md:text-[15px] md:leading-[27px]"
+                  className="text-[0.813rem] leading-[1.445rem] text-gray md:text-[0.938rem] md:leading-[1.688rem]"
                 >
                   {officeInfo?.email}
                 </Link>
@@ -101,7 +101,7 @@ const Contact = async () => {
 
               {/* phone number */}
               <div>
-                <h4 className="mb-[4.28px] font-righteous text-lg leading-[23.12px] text-indigo-blue md:mb-[5px] md:text-2xl md:leading-[27px]">
+                <h4 className="mb-[0.268rem] font-righteous text-lg leading-[1.445rem] text-indigo-blue md:mb-[0.313rem] md:text-2xl md:leading-[1.688rem]">
                   Phone Number
                 </h4>
 
@@ -109,14 +109,14 @@ const Contact = async () => {
                   <Link
                     key={number?.id}
                     href={`tel:${number?.contact_number}`}
-                    className="block text-[13px] leading-[23.12px] text-[#444444] md:text-[15px] md:leading-[27px]"
+                    className="block text-[0.813rem] leading-[1.445rem] text-gray md:text-[0.938rem] md:leading-[1.688rem]"
                   >
                     {number?.contact_number}
                   </Link>
                 ))}
               </div>
 
-              <div className="font-righteous text-lg leading-[23.12px] text-indigo-blue md:mb-[5px] md:text-2xl md:leading-[27px]">
+              <div className="font-righteous text-lg leading-[1.445rem] text-indigo-blue md:mb-[0.313rem] md:text-2xl md:leading-[1.688rem]">
                 <span>Open: </span>
                 {`${displayDays({ days: officeInfo.days })} / ${formatTime(officeInfo?.opening)} - ${formatTime(officeInfo?.closing)} `}
               </div>
