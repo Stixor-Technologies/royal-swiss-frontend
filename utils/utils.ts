@@ -15,7 +15,7 @@ const navBarLinks: Menu[] = [
   {
     id: 2,
     title: "About",
-    path: "#",
+    path: "/about-us",
   },
 
   {
@@ -52,7 +52,7 @@ const footerLinks: Menu[] = [
   {
     id: 2,
     title: "About Us",
-    path: "#",
+    path: "/about-us",
   },
 
   {
