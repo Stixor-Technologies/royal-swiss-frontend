@@ -1,4 +1,10 @@
-import { Menu, SegmentInfo } from "./types/types";
+import { Menu, SegmentInfo, SocialLinks } from "./types/types";
+import FacebookIcon from "../public/icons/social-icons/facebook.svg";
+import XIcon from "../public/icons/social-icons/x.svg";
+import InstagramIcon from "../public/icons/social-icons/instagram.svg";
+import LinkedinIcon from "../public/icons/social-icons/linkedIn.svg";
+import SnapChatIcon from "../public/icons/social-icons/snapchat.svg";
+import YoutubeIcon from "../public/icons/social-icons/youtube.svg";
 
 const navBarLinks: Menu[] = [
   {
@@ -62,6 +68,44 @@ const footerLinks: Menu[] = [
   },
 ];
 
+const socialLink: SocialLinks[] = [
+  {
+    title: "facebook",
+    path: "#",
+    iconPath: FacebookIcon,
+  },
+
+  {
+    title: "twitter",
+    path: "#",
+    iconPath: XIcon,
+  },
+
+  {
+    title: "instagram",
+    path: "#",
+    iconPath: InstagramIcon,
+  },
+
+  {
+    title: "linkedin",
+    path: "#",
+    iconPath: LinkedinIcon,
+  },
+
+  {
+    title: "snapchat",
+    path: "#",
+    iconPath: SnapChatIcon,
+  },
+
+  {
+    title: "youtube",
+    path: "#",
+    iconPath: YoutubeIcon,
+  },
+];
+
 const advertisementPolicies: SegmentInfo[] = [
   {
     icon: "/icons/policies-icons/policy-1.svg",
@@ -85,4 +129,4 @@ const advertisementPolicies: SegmentInfo[] = [
   },
 ];
 
-export { navBarLinks, advertisementPolicies, footerLinks };
+export { navBarLinks, advertisementPolicies, footerLinks, socialLink };
