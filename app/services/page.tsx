@@ -1,15 +1,14 @@
-import React from "react";
+import React, { Suspense } from "react";
 import PageHeader from "@/components/shared/page-header/page-header";
+import ServicesList from "@/components/services/services-list/services-list";
 import AdvertisementPolicy from "@/components/shared/advertisement-policy/advertisement-policy";
-import { getServices } from "@/utils/api-calls";
-import SegmentCard from "@/components/shared/segment-card/segment-card";
+import GetInTouch from "@/components/shared/get-in-touch/get-in-touch";
+import Dealers from "@/components/shared/dealers/dealers";
+import Spinner from "@/components/shared/spinner/spinner";
 
-const Services = async () => {
-  const resp = await getServices();
-  console.log(resp);
-
+const Services = () => {
   return (
-    <section className="min-h-screen bg-milk-white">
+    <section className="min-h-screen md:pt-[18px]">
       <div className="container">
         <PageHeader
           heading="Professional Services"
@@ -17,25 +16,22 @@ const Services = async () => {
           description="Lorem ipsum dolor sit amet consectetur. Mi sed lorem tristique dignissim fermentum volutpat sed aliquet et. Ipsum sit risus sed tellus turpis."
         />
 
-        <div className="mx-auto mb-[35.2px] mt-[79px] grid w-full gap-4 sm:grid-cols-[repeat(auto-fit,_minmax(22.625rem,_1fr))] md:mb-[44px] md:mt-[136px] md:gap-6">
-          {resp?.map(({ attributes: service }) => {
-            const segmentInfo = {
-              icon: service?.icon?.data?.attributes?.url,
-              name: service?.name,
-              description: service?.description,
-            };
-
-            return (
-              <SegmentCard
-                key={service?.name}
-                segmentInfo={segmentInfo}
-                forServices
-              />
-            );
-          })}
-        </div>
+        <Suspense
+          fallback={
+            <div className="flex min-h-[50vh]">
+              <Spinner />
+            </div>
+          }
+        >
+          {/* @ts-expect-error Server Component */}
+          <ServicesList />
+        </Suspense>
       </div>
       <AdvertisementPolicy />
+
+      {/* @ts-expect-error Server Component */}
+      <GetInTouch />
+      <Dealers />
     </section>
   );
 };

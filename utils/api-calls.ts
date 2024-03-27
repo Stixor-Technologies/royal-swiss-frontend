@@ -41,3 +41,27 @@ export const getServices = async () => {
     console.error(error);
   }
 };
+
+// export const getServices = async () => {
+//   try {
+//     // Wrap the fetch operation in a promise
+//     return new Promise((resolve, reject) => {
+//       setTimeout(async () => {
+//         try {
+//           const response = await fetch(`${BASE_URL}/api/services?populate=*`, {
+//             cache: "no-store",
+//           });
+
+//           const data = await response.json();
+//           resolve(data?.data);
+//         } catch (error) {
+//           console.error(error);
+//           reject(error);
+//         }
+//       }, 10000); // 5000 milliseconds = 5 seconds
+//     });
+//   } catch (error) {
+//     console.error(error);
+//     throw error;
+//   }
+// };
