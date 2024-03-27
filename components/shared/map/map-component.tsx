@@ -1,11 +1,6 @@
 "use client";
-import React, { FC, useEffect, useState, useRef, useMemo } from "react";
-import {
-  GoogleMap,
-  InfoWindow,
-  Marker,
-  useJsApiLoader,
-} from "@react-google-maps/api";
+import React, { FC, useEffect, useState, useRef } from "react";
+import { GoogleMap, Marker, useJsApiLoader } from "@react-google-maps/api";
 import Spinner from "../spinner/spinner";
 import { MAP_KEY } from "@/utils/constants";
 
@@ -45,18 +40,18 @@ const MapComponent: FC<IProps> = ({ location, fromContact }) => {
   useEffect(() => {
     if (isLoaded && mapRef.current) {
       const bounds = new google.maps.LatLngBounds();
-      bounds.extend(new google.maps.LatLng(location.lat, location.lng));
+      bounds.extend(new google.maps.LatLng(location?.lat, location?.lng));
 
       mapRef.current.fitBounds(bounds);
     }
-  }, [isLoaded]);
+  }, [isLoaded, location]);
 
   useEffect(() => {
     if (isLoaded && mapRef.current) {
       setMapZoom(12);
       mapRef.current.panTo(location);
     }
-  }, [isLoaded]);
+  }, [isLoaded, location]);
 
   return (
     <div

@@ -82,7 +82,6 @@ const Dealers = () => {
           {dealersData?.dealer_images?.data?.map((dealerImage, index) => {
             // {dealers?.map((dealerImage, index) => {
             console.log(dealerImage.attributes);
-            const hh = `w-[${dealerImage?.attributes?.width}px]`;
             return (
               <SwiperSlide
                 key={index}
