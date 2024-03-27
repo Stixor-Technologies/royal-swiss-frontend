@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { Inter, Righteous } from "next/font/google";
 import "./globals.css";
+import { Toaster } from "react-hot-toast";
+import Header from "@/components/shared/header/header";
+import Footer from "@/components/shared/footer/footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -23,7 +26,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${righteous.variable} ${inter.className}`}>
-        <main>{children}</main>
+        <Header />
+        <main className="min-h-screen bg-milk-white  pt-[1.995rem] md:pt-[5.348rem]">
+          <div className="bg-[url('/images/blocker.png')] bg-contain bg-[center_top_-8vw] bg-no-repeat">
+            {children}
+          </div>
+          <Footer />
+        </main>
+        <Toaster />
       </body>
     </html>
   );

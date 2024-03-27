@@ -12,4 +12,40 @@ type SegmentInfo = {
   description: string;
 };
 
-export type { Menu, SocialLinks, SegmentInfo };
+interface Office {
+  location: string;
+  address: string;
+  latitude: number;
+  longitude: number;
+  email: string;
+  opening: string;
+  closing: string;
+  contact_numbers: {
+    id: number;
+    contact_number: string;
+  }[];
+  days: {
+    id: number;
+    Monday: boolean;
+    Tuesday: boolean;
+    Wednesday: boolean;
+    Thursday: boolean;
+    Friday: boolean;
+    Saturday: boolean;
+  };
+}
+
+type Images = {
+  data: {
+    attributes: {
+      url: string;
+    };
+  }[];
+};
+
+interface DealersData {
+  title: string;
+  dealer_images: Images;
+}
+
+export type { Menu, SocialLinks, SegmentInfo, Office, DealersData };

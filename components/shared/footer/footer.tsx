@@ -10,7 +10,7 @@ const Footer = () => {
   return (
     <footer className="relative z-10 bg-indigo-blue pb-[1.25rem] pt-[1.563rem] after:absolute after:inset-0 after:-z-10 after:bg-dark-grain-pattern after:bg-cover after:bg-no-repeat after:opacity-40 after:bg-blend-multiply after:content-[''] sm:pb-6 sm:pt-[3.313rem]">
       <div className="container text-white">
-        <div className="mx-auto px-[1.688rem] md:px-0 lg:w-[92.78%]">
+        <div className="mx-auto md:px-0 lg:w-[92.78%]">
           <div className="mb-[2.979rem] flex flex-col flex-wrap gap-[1.169rem] sm:mb-[2.243rem] md:flex-row md:gap-x-[8.125rem] md:gap-y-[3.125rem] xl:gap-[6.938rem] midLg:flex-nowrap midLg:justify-between midLg:gap-[1.875rem] ">
             {/* Left Section */}
             <div className="max-w-[26.625rem] md:w-[50%] midLg:w-full">
