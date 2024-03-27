@@ -64,7 +64,6 @@ const LinkButton: FC<ActionProps> = ({ variant, styles, text, ...props }) => {
       className={`${allClassNames} ${rest.disabled ? "disabled" : ""} flex items-center justify-center gap-3`}
       {...rest}
     >
-      {/* {text} */}
       <span className="">{text}</span>
       {loading && (
         <div>
