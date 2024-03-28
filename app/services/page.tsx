@@ -23,13 +23,11 @@ const Services = () => {
             </div>
           }
         >
-          {/* @ts-expect-error Server Component */}
           <ServicesList />
         </Suspense>
       </div>
       <AdvertisementPolicy />
 
-      {/* @ts-expect-error Server Component */}
       <GetInTouch />
       <Dealers />
     </section>
