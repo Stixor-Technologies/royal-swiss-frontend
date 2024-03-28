@@ -1,7 +1,6 @@
 import React from "react";
 import PageHeader from "@/components/shared/page-header/page-header";
 import LinkButton from "@/components/shared/link-button/link-button";
-import EssentialMetrics from "@/components/about-us/essential-metrics/essential-metrics";
 import Image from "next/image";
 import About from "../../public/images/about.png";
 
@@ -37,8 +36,6 @@ const AboutUs = () => {
             <Image src={About} width={617} height={543} alt="" />
           </div>
         </div>
-
-        <EssentialMetrics />
       </div>
     </section>
   );
