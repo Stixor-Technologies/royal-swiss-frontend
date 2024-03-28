@@ -54,7 +54,7 @@ const MapComponent: FC<IProps> = ({ location, fromContact }) => {
 
   return (
     <div
-      className={`sm:pb-1/2 relative w-full flex-1 items-center ${fromContact ? "h-[22rem] sm:h-[20.688rem]" : "midLg:h-full h-[22rem] sm:h-[34.563rem]"} `}
+      className={`sm:pb-1/2 relative w-full flex-1 items-center ${fromContact ? "h-[22rem] sm:h-[20.688rem]" : "h-[22rem] sm:h-[34.563rem] midLg:h-full"} `}
     >
       {/* sm:h-[34.563rem] */}
       {isLoaded ? (

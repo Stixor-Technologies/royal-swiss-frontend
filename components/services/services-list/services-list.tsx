@@ -2,11 +2,6 @@ import SegmentCard from "@/components/shared/segment-card/segment-card";
 import { getServices } from "@/utils/api-calls";
 import React from "react";
 
-async function getComments() {
-  await new Promise((resolve) => setTimeout(resolve, 15000));
-  return Array.from({ length: 20 }, (_, index) => "Comment");
-}
-
 const ServicesList = async () => {
   const resp = await getServices();
 

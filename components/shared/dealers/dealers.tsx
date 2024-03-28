@@ -48,13 +48,13 @@ const Dealers = () => {
                 disableOnInteraction: false,
               }}
               modules={modules}
-              className="dealers-swiper xs:h-[6.875rem] !ml-auto !mr-0 h-[3.75rem] w-full cursor-pointer lg:h-auto lg:max-w-[52rem]"
+              className="dealers-swiper !ml-auto !mr-0 h-[3.75rem] w-full cursor-pointer lg:h-auto lg:max-w-[52rem] xs:h-[6.875rem]"
             >
               {dealersData?.dealer_images?.data?.map((dealerImage, index) => {
                 return (
                   <SwiperSlide
                     key={index}
-                    className={`xs:!w-full relative !flex !w-[3.4rem] !max-w-[6.438rem] items-center sm:!w-full ${index !== 0 ? "xs:mr-10 ml-0 mr-[1.6rem] sm:mr-[3.5rem] lg:!mr-0 lg:ml-[4.087rem]" : "xs:mr-10 ml-0 mr-[1.6rem] sm:mr-[3.5rem] lg:!mr-0 lg:ml-[4.087rem]"}`}
+                    className={`relative !flex !w-[3.4rem] !max-w-[6.438rem] items-center sm:!w-full xs:!w-full ${index !== 0 ? "ml-0 mr-[1.6rem] sm:mr-[3.5rem] lg:!mr-0 lg:ml-[4.087rem] xs:mr-10" : "ml-0 mr-[1.6rem] sm:mr-[3.5rem] lg:!mr-0 lg:ml-[4.087rem] xs:mr-10"}`}
                   >
                     <Image
                       key={index}
