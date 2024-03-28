@@ -15,7 +15,7 @@ const SegmentCard: FC<SegmentCardProps> = ({
   return (
     <div
       key={segmentInfo?.name}
-      className={`flex flex-col items-center border border-light-gray bg-[rgba(245,245,245,0.5)] px-[1.466rem] py-[2.438rem] lg:px-6 lg:py-10 ${forServices ? "rounded-2xl" : "rounded-[0.625rem] rounded-bl-[2.813rem] md:rounded-lg md:rounded-bl-[3.5rem]"}`}
+      className={`flex flex-col items-center border border-light-gray bg-[rgba(245,245,245,0.5)] bg-milk-white px-[1.466rem] py-[2.438rem] lg:px-6 lg:py-10 ${forServices ? "rounded-2xl" : "rounded-[0.625rem] rounded-bl-[2.813rem] md:rounded-lg md:rounded-bl-[3.5rem]"}`}
     >
       <Image
         src={`${forServices ? `${BASE_URL}${segmentInfo?.icon}` : segmentInfo?.icon}`}

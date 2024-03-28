@@ -1,9 +1,10 @@
 import SegmentCard from "@/components/shared/segment-card/segment-card";
 import { getServices } from "@/utils/api-calls";
+import { ProfessionalServices } from "@/utils/types/types";
 import React from "react";
 
 const ServicesList = async () => {
-  const resp = await getServices();
+  const resp: ProfessionalServices[] = await getServices();
 
   return (
     <>
