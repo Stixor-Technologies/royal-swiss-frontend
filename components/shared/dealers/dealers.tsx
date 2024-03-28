@@ -34,7 +34,7 @@ const Dealers = () => {
   return (
     <>
       {dealersData ? (
-        <div className="container mb-[104px] mt-[40px] md:my-[98px]">
+        <div className="container mb-[6.5rem] mt-10 md:my-[6.125rem]">
           <div className="mx-auto flex flex-col justify-between gap-6 md:flex-row md:items-center md:gap-[2.5rem] lg:w-[92.78%]">
             <h2 className="w-full text-center font-righteous text-4xl leading-[4.5rem] text-indigo-blue sm:max-w-[24.125rem] sm:text-left md:text-[3.75rem] md:leading-[4.5rem]">
               {dealersData?.title}

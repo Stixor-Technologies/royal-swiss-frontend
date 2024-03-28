@@ -6,7 +6,7 @@ const SkillSet = () => {
     <div className="container grid justify-items-center xl:grid-rows-[66px_auto_209px_auto]">
       <div className="col-start-1 row-span-3 row-start-1 w-full rounded-[0.625rem] bg-dark-grain-pattern bg-cover bg-no-repeat bg-blend-multiply md:rounded-[1.25rem] lg:rounded-[3.125rem] " />
 
-      <div className="col-start-1 row-start-2 mb-[0.872rem] mt-[14px] px-[1.031rem] text-center text-white sm:mb-7 sm:mt-7 md:mt-[40px] md:px-6 lg:mb-9 lg:px-[4.375rem] xl:mt-0">
+      <div className="col-start-1 row-start-2 mb-[0.872rem] mt-[0.875rem] px-[1.031rem] text-center text-white sm:mb-7 sm:mt-7 md:mt-10 md:px-6 lg:mb-9 lg:px-[4.375rem] xl:mt-0">
         <h2 className="mb-2 font-righteous text-[1.875rem] leading-[2.25rem] md:text-5xl md:leading-[2.75rem] lg:mb-[1.125rem] lg:text-[3.75rem] lg:leading-[4.5rem]">
           Our Skillset and Experience
         </h2>
@@ -19,7 +19,7 @@ const SkillSet = () => {
         </p>
       </div>
 
-      <div className="col-start-1 row-span-3 row-start-3 flex items-center justify-center overflow-hidden rounded-2xl md:w-[85%] md:rounded-[30px]">
+      <div className="col-start-1 row-span-3 row-start-3 flex items-center justify-center overflow-hidden rounded-2xl md:w-[85%] md:rounded-[1.875rem]">
         <Image
           src={"/images/skill-certification.png"}
           width={1128}

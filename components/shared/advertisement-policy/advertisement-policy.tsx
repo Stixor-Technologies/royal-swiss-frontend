@@ -8,10 +8,10 @@ const AdvertisementPolicy = () => {
       <div className="container md:pt-[5.188rem] ">
         <div className="mx-auto lg:w-[92.93%]">
           <div className="mx-auto max-w-[69.938rem] text-center">
-            <h2 className="mb-4 font-righteous text-[30px] leading-[39px] text-indigo-blue md:mb-[1.125rem] md:text-[3.75rem] md:leading-[4.5rem]">
+            <h2 className="mb-4 font-righteous text-[1.875rem] leading-[2.438rem] text-indigo-blue md:mb-[1.125rem] md:text-[3.75rem] md:leading-[4.5rem]">
               Advertisement Policy
             </h2>
-            <p className="text-[13px] font-light leading-[16.9px] text-gray md:text-[1.375rem] md:leading-[1.829rem]">
+            <p className="text-[0.813rem] font-light leading-[1.056rem] text-gray md:text-[1.375rem] md:leading-[1.829rem]">
               The project will be advertised in different sessions through, but
               not limited to, the following mediums: Electronic Media Digital
               Media Print Media Outdoor advertising.
