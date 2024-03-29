@@ -31,6 +31,18 @@ body {
     text-wrap: balance;
   }
 
+  .about-metric-container {
+    @apply w-full max-w-[25.188rem] px-1 py-[0.16rem] text-center md:px-2 lg:px-2 xl:px-5;
+  }
+
+  .about-metric-number {
+    @apply xs:text-[1.875rem] xs:leading-[1.643rem] text-center font-righteous text-xl !leading-tight text-indigo-blue md:mb-[0.625rem] md:!text-5xl lg:!mb-[1.438rem] lg:!text-[4.75rem] lg:!leading-[4.5rem];
+  }
+
+  .about-metric-label {
+    @apply xs:text-[0.73rem] xs:leading-[0.971rem] inline-block text-[0.625rem] font-light leading-tight text-gray md:!text-xl lg:!text-[2rem] lg:!leading-[2.66rem];
+  }
+
   .footer-office-info {
     @apply text-[0.923rem] leading-[1.638rem] text-white sm:text-[0.938rem] sm:leading-[1.688rem];
   }

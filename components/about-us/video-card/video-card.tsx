@@ -1,37 +1,46 @@
-import React from "react";
-import VidePlayer from "./video-player";
+import React, { FC, ReactNode } from "react";
 
-const VideoCard = () => {
+type VideoCardProps = {
+  title: string;
+  description: string;
+  children: ReactNode;
+  isYellow?: boolean;
+  isWhite?: boolean;
+};
+
+const VideoCard: FC<VideoCardProps> = ({
+  title,
+  description,
+  children,
+  isYellow,
+  isWhite,
+}) => {
   return (
     <>
-      <div className="flex gap-[6.688rem] rounded-[0.938rem] bg-dark-grain-pattern bg-cover bg-no-repeat px-7 py-6 bg-blend-multiply md:rounded-[2.5rem] md:p-10">
-        <div className="w-full max-w-[41.688rem]">
-          <h2 className="mb-4 font-righteous text-5xl leading-[3rem] md:text-6xl md:leading-[4.5rem]">
-            Our Products
+      <div
+        className={`flex flex-col gap-10 rounded-[0.938rem] bg-cover bg-no-repeat px-7 py-6 bg-blend-multiply md:rounded-3xl xl:flex-row xl:items-center xl:rounded-[2.5rem] xl:p-10 ${isYellow ? "bg-yellow text-indigo-blue xl:gap-[3.125rem]" : isWhite ? "justify-between bg-white text-indigo-blue" : "justify-between bg-dark-grain-pattern xl:gap-[6.688rem]"}`}
+      >
+        <div
+          className={`w-full ${!isYellow && "xl:max-w-[41.688rem]"} xl:py-5 ${isYellow && "xl:order-1"} `}
+        >
+          <h2 className="mb-4 font-righteous text-[2.5rem] leading-[3rem] md:text-6xl md:leading-[4.5rem]">
+            {title}
           </h2>
 
           <div>
-            <p className=" text-[0.813rem] font-light leading-[0.975rem] md:text-[1.375rem] md:leading-[1.829rem]">
-              The project is planned to be soft-launched with 3.5, 5, 7, 10, 20,
-              40, and 80 Marla plots (Farm House).
-            </p>
-
-            <p className="my-4 text-[0.813rem] font-light leading-[0.975rem] md:text-[1.375rem] md:leading-[1.829rem]">
-              In addition, a series of Commercial Plots, Luxury Villas, Low and
-              High-Rise Apartments, Farm Houses, Shops, Offices.
-            </p>
-
-            <p className="text-[0.813rem] font-light leading-[0.975rem] md:text-[1.375rem] md:leading-[1.829rem]">
-              And an IT Park is projected to be launched.
+            <p
+              className={`text-[0.813rem] font-light leading-[0.975rem] md:text-[1.375rem] md:leading-[1.829rem] ${(isYellow || isWhite) && "text-gray"}`}
+            >
+              {description}
             </p>
           </div>
         </div>
-        <div className="aspect-[5/3] max-w-[31.25rem]">
-          <VidePlayer />
+        <div
+          className={`aspect-[5/3] h-full w-full overflow-hidden rounded-[1rem] xl:max-w-[31.25rem] ${isYellow && "xl:order-0"}`}
+        >
+          {children}
         </div>
       </div>
-
-      {/* <VidePlayer /> */}
     </>
   );
 };
