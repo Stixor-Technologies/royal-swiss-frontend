@@ -9,7 +9,6 @@ import HamburgerIcon from "../../../public/icons/hamburger-icon.svg";
 import { navBarLinks } from "@/utils/utils";
 import { useMenuStore } from "@/store/menu-store";
 import { usePathname } from "next/navigation";
-import { after } from "node:test";
 
 const Header = () => {
   const pathUrl = usePathname();
