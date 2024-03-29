@@ -48,7 +48,8 @@ const LinkButton: FC<ActionProps> = ({ variant, styles, text, ...props }) => {
   const allClassNames = `inline-block bg-indigo-blue border-indigo-blue before:cotent-[''] before:hover:border-indigo-blue relative  border-[0.25rem] text-lg transition-all duration-700 ease-in-out before:absolute before:-inset-[0.656rem] before:border-transparent  before:transition-all before:duration-700 hover:bg-[rgba(28,48,107,0.85)]  before:hover:border-[0.25rem] ${getSizeClass()} ${styles}`;
 
   if (props.as === "link") {
-    const { ...rest } = props;
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    const { as, ...rest } = props;
     return (
       <Link
         className={`${allClassNames} inline-flex items-center justify-center`}
@@ -58,7 +59,9 @@ const LinkButton: FC<ActionProps> = ({ variant, styles, text, ...props }) => {
       </Link>
     );
   }
-  const { loading, ...rest } = props;
+
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const { as, loading, ...rest } = props;
   return (
     <button
       className={`${allClassNames} ${rest.disabled ? "disabled" : ""} flex items-center justify-center gap-3`}
@@ -67,7 +70,7 @@ const LinkButton: FC<ActionProps> = ({ variant, styles, text, ...props }) => {
       <span className="text-white">{text}</span>
       {loading && (
         <div>
-          <Spinner size="size-4 md:size-6" />
+          <Spinner size="size-4 md:size-6" color="text-white" />
         </div>
       )}
     </button>

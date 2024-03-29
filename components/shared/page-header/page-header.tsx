@@ -15,24 +15,21 @@ const PageHeader: FC<PageHeaderProps> = ({
   forAbout = false,
 }) => {
   //TODO - console added to avoid lint error, these values will be used later
-  console.log(heading, tagline, description);
   return (
     <div
-      className={`flex text-rich-black ${!forAbout ? "justify-between" : "justify-center"}`}
+      className={`flex flex-col gap-4 text-rich-black xl:flex-row ${!forAbout ? "justify-between" : "justify-center"}`}
     >
       <div className={`${forAbout && "text-center"}`}>
-        <h2 className="mb-2 font-righteous text-[3.479rem] leading-[4.32rem] text-indigo-blue">
-          Our Projects
+        <h2 className="mb-4 font-righteous text-[3.125rem] leading-[3.88rem] text-indigo-blue md:mb-2 md:text-[3.479rem] md:leading-[4.32rem]">
+          {heading}
         </h2>
-        <span className="text-lg font-medium leading-[1.35rem] opacity-30">
-          Lorem ipsum dolor sit amet consectetur. Velit eu.
+        <span className="text-[0.813rem] font-medium  leading-[0.975rem] opacity-50 md:text-lg md:leading-[1.35rem] md:opacity-30">
+          {tagline}
         </span>
       </div>
       {!forAbout && (
-        <p className="max-w-[28.688rem] font-light leading-[1.35rem]">
-          Lorem ipsum dolor sit amet consectetur. Mi sed lorem tristique
-          dignissim fermentum volutpat sed aliquet et. Ipsum sit risus sed
-          tellus turpis.
+        <p className="text-[0.813rem] font-light leading-[0.975] md:max-w-[28.688rem] md:text-lg md:leading-[1.35rem]">
+          {description}
         </p>
       )}
     </div>

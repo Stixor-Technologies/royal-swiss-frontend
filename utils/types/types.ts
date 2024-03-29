@@ -35,17 +35,42 @@ interface Office {
   };
 }
 
+// type Images = {
+//   data: {
+//     attributes: {
+//       url: string;
+//     };
+//   }[];
+// };
+
 type Images = {
-  data: {
-    attributes: {
-      url: string;
-    };
-  }[];
+  attributes: {
+    url: string;
+  };
 };
 
 interface DealersData {
   title: string;
-  dealer_images: Images;
+  dealer_images: {
+    data: Images[];
+  };
 }
 
-export type { Menu, SocialLinks, SegmentInfo, Office, DealersData };
+interface ProfessionalServices {
+  attributes: {
+    name: string;
+    description: string;
+    icon: {
+      data: Images;
+    };
+  };
+}
+
+export type {
+  Menu,
+  SocialLinks,
+  SegmentInfo,
+  Office,
+  DealersData,
+  ProfessionalServices,
+};

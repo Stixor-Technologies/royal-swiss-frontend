@@ -8,8 +8,11 @@ import HeaderLogo from "../../../public/images/header-logo.png";
 import HamburgerIcon from "../../../public/icons/hamburger-icon.svg";
 import { navBarLinks } from "@/utils/utils";
 import { useMenuStore } from "@/store/menu-store";
+import { usePathname } from "next/navigation";
 
 const Header = () => {
+  const pathUrl = usePathname();
+
   const isMenuOpen = useMenuStore((state) => state.isMenuOpen);
   const setIsMenuOpen = useMenuStore((state) => state.setIsMenuOpen);
   return (
@@ -31,8 +34,8 @@ const Header = () => {
           {navBarLinks?.slice(0, -1)?.map((item) => (
             <li key={item?.id}>
               <Link
-                href={"/"}
-                className={`after:transition-width relative text-sm font-medium leading-[1.375rem] text-dark-blue after:absolute after:-bottom-1 after:left-0 after:h-[0.091rem] after:w-0 after:bg-dark-blue after:duration-300 after:ease-in-out after:content-[''] hover:after:w-full `}
+                href={item?.path}
+                className={`after:transition-width relative text-sm font-medium leading-[1.375rem] text-dark-blue after:absolute after:-bottom-1 after:left-0 after:h-[0.091rem] after:w-0 after:bg-dark-blue after:duration-300 after:ease-in-out after:content-[''] hover:after:w-full ${pathUrl === item?.path && "after:w-full"}`}
               >
                 {item?.title}
               </Link>
@@ -42,7 +45,7 @@ const Header = () => {
 
         <LinkButton
           as={"link"}
-          href={"/"}
+          href={"/contact-us"}
           variant="sm"
           text="Contact Us"
           styles="hidden md:!inline-flex"

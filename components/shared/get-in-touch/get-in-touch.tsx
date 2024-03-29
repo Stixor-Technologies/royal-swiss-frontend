@@ -5,29 +5,29 @@ import React from "react";
 import MapComponent from "../map/map-component";
 
 const GetInTouch = async () => {
-  const { latitude, longitude }: Office = await getOfficeAddress();
-
-  console.log(latitude, longitude);
+  const resp: Office = await getOfficeAddress();
 
   return (
-    <div className="container">
-      <div className="mx-auto flex gap-[1.875rem] lg:w-[92.78%] lg:gap-[3.25rem]">
-        {/* <h2 className="mb-[1.608rem] w-[49.13%] text-center font-righteous text-[3.125rem] leading-[3.88rem] text-indigo-blue md:mb-12 md:text-[3.479rem] md:leading-[4.32rem]">
-          Contact Us
-        </h2> */}
+    <section className="bg-[url('/images/bg-assets/contact-section-mobile.png')] bg-contain bg-[center_top] bg-no-repeat pb-10 pt-[7.17rem] lg:mt-[3.75rem] lg:pb-[5.813rem] lg:pt-[9.188rem] 2xl:bg-cover xs:bg-[url('/images/bg-assets/contact-section-web.png')] xs:bg-left-top">
+      <div className="container">
+        <div className="mx-auto flex flex-col gap-10 lg:w-[92.78%] lg:gap-[3.25rem] midLg:flex-row">
+          <div className="midLg:w-[49.13%]">
+            {resp ? (
+              <MapComponent
+                location={{
+                  lat: resp?.latitude,
+                  lng: resp?.longitude,
+                }}
+              />
+            ) : (
+              <div className="h-full" />
+            )}
+          </div>
 
-        <div className="w-[49.13%]">
-          <MapComponent
-            location={{
-              lat: latitude,
-              lng: longitude,
-            }}
-          />
+          <ContactForm isComponent />
         </div>
-
-        <ContactForm isComponent />
       </div>
-    </div>
+    </section>
   );
 };
 

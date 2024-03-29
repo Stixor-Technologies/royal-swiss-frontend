@@ -18,7 +18,6 @@ const MapComponent: FC<IProps> = ({ location, fromContact }) => {
   const [mapZoom, setMapZoom] = useState<number>(10);
 
   const mapRef = useRef<google.maps.Map | null>(null);
-  //   const { isLoaded } = useMapApi();
 
   const { isLoaded } = useJsApiLoader({
     id: "google-map-script",
@@ -55,8 +54,9 @@ const MapComponent: FC<IProps> = ({ location, fromContact }) => {
 
   return (
     <div
-      className={`sm:pb-1/2 relative w-full flex-1 items-center ${fromContact ? "h-[22rem] sm:h-[20.688rem]" : "h-[22rem] sm:h-[34.563rem]"} `}
+      className={`sm:pb-1/2 relative w-full flex-1 items-center ${fromContact ? "h-[22rem] sm:h-[20.688rem]" : "h-[22rem] sm:h-[34.563rem] midLg:h-full"} `}
     >
+      {/* sm:h-[34.563rem] */}
       {isLoaded ? (
         <GoogleMap
           id="google-map"

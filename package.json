@@ -18,6 +18,9 @@
     ]
   },
   "dependencies": {
+    "@gsap/react": "^2.1.0",
+    "gsap": "file:gsap-bonus.tgz",
+    "react-player": "^2.15.1",
     "@react-google-maps/api": "^2.19.3",
     "@sendgrid/mail": "^8.1.1",
     "formik": "^2.4.5",
@@ -27,8 +30,6 @@
     "react-hot-toast": "^2.4.1",
     "yup": "^1.4.0",
     "swiper": "^11.0.7",
-    "gsap": "file:gsap-bonus.tgz",
-    "@gsap/react": "^2.1.0",
     "zustand": "^4.5.2"
   },
   "devDependencies": {
