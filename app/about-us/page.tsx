@@ -30,10 +30,7 @@ const AboutUs = () => {
   useGSAP(() => {}, { scope: aboutSection });
 
   return (
-    <section
-      ref={aboutSection}
-      className="relative z-[1] h-screen md:pt-[1.125rem]"
-    >
+    <section ref={aboutSection} className="relative z-[1] md:pt-[1.125rem]">
       <div className="container">
         <PageHeader
           heading="About Us"
