@@ -1,12 +1,34 @@
-import React from "react";
+"use client";
+import React, { useEffect, useState } from "react";
 import ContactForm from "@/components/contact-form/contact-form";
 import { getOfficeAddress } from "@/utils/api-calls";
 import { Office } from "@/utils/types/types";
 import Link from "next/link";
 import MapComponent from "@/components/shared/map/map-component";
+import { gsap } from "gsap";
+import { ScrollSmoother, ScrollTrigger } from "gsap/all";
+import { useGSAP } from "@gsap/react";
 
-const Contact = async () => {
-  const officeInfo: Office = await getOfficeAddress();
+const Contact = () => {
+  gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
+  const [officeAddress, setOfficeAddress] = useState<Office | null>(null);
+
+  useEffect(() => {
+    const fetchOfficeAddress = async () => {
+      const resp = await getOfficeAddress();
+      if (resp) {
+        setOfficeAddress(resp);
+      }
+    };
+    fetchOfficeAddress();
+  }, []);
+
+  useGSAP(() => {
+    window.scrollTo(0, 0);
+    if (window.innerWidth > 768) {
+      ScrollSmoother.create({ smooth: 2, smoothTouch: 0 });
+    }
+  }, []);
 
   const formatTime = (time: any) => {
     const date = new Date();
@@ -61,13 +83,13 @@ const Contact = async () => {
         </h2>
         <ContactForm />
 
-        {officeInfo && (
+        {officeAddress && (
           <div className="mt-10 flex flex-col items-center gap-[2.5rem] sm:flex-row sm:gap-[1.875rem] md:mt-[5.271rem]">
             <div className="w-full sm:max-w-[32.563rem]">
               <MapComponent
                 location={{
-                  lat: officeInfo?.latitude,
-                  lng: officeInfo?.longitude,
+                  lat: officeAddress?.latitude,
+                  lng: officeAddress?.longitude,
                 }}
                 fromContact
               />
@@ -81,7 +103,7 @@ const Contact = async () => {
                 </h4>
 
                 <address className="text-[0.813rem] not-italic leading-[1.445rem] text-gray md:leading-[1.688rem] ">
-                  {officeInfo?.address}
+                  {officeAddress?.address}
                 </address>
               </div>
 
@@ -92,10 +114,10 @@ const Contact = async () => {
                 </h4>
 
                 <Link
-                  href={`mailto:${officeInfo?.email}`}
+                  href={`mailto:${officeAddress?.email}`}
                   className="text-[0.813rem] leading-[1.445rem] text-gray md:text-[0.938rem] md:leading-[1.688rem]"
                 >
-                  {officeInfo?.email}
+                  {officeAddress?.email}
                 </Link>
               </div>
 
@@ -105,7 +127,7 @@ const Contact = async () => {
                   Phone Number
                 </h4>
 
-                {officeInfo?.contact_numbers?.slice(-2)?.map((number) => (
+                {officeAddress?.contact_numbers?.slice(-2)?.map((number) => (
                   <Link
                     key={number?.id}
                     href={`tel:${number?.contact_number}`}
@@ -118,7 +140,7 @@ const Contact = async () => {
 
               <div className="font-righteous text-lg leading-[1.445rem] text-indigo-blue md:mb-[0.313rem] md:text-2xl md:leading-[1.688rem]">
                 <span>Open: </span>
-                {`${displayDays({ days: officeInfo.days })} / ${formatTime(officeInfo?.opening)} - ${formatTime(officeInfo?.closing)} `}
+                {`${displayDays({ days: officeAddress.days })} / ${formatTime(officeAddress?.opening)} - ${formatTime(officeAddress?.closing)} `}
               </div>
             </div>
           </div>

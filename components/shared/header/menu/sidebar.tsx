@@ -8,9 +8,10 @@ import Image from "next/image";
 import CloseIcon from "../../../../public/icons/close-icon.svg";
 import FooterLogo from "../../../../public/images/footer/logo-footer.png";
 import { usePathname } from "next/navigation";
+import TransitionLink from "@/components/transition-link";
 
 const Sidebar = () => {
-  const menuButtonRef = useRef<HTMLButtonElement | null>(null);
+  const menuButtonRef = useRef<HTMLLIElement | null>(null);
   const sideBarMenu = useRef<HTMLDivElement | null>(null);
   const overlayRef = useRef<HTMLDivElement | null>(null);
 
@@ -89,6 +90,7 @@ const Sidebar = () => {
       }
     }
   }, [isMenuOpen]);
+
   useEffect(() => {
     document.addEventListener("click", handleDocumentClick);
     return () => {
@@ -134,15 +136,24 @@ const Sidebar = () => {
 
           <ul className="mt-[12.6vw] space-y-[5.6vw] text-xl md:text-left min-aspect:mt-[4vw] min-aspect:space-y-[1.5vw]">
             {navBarLinks?.map((item) => (
-              <li key={item?.id}>
-                <Link href={item?.path}>
+              <li key={item?.id} ref={menuButtonRef}>
+                {/* <Link href={item?.path}>
                   <p
                     className={`from-2% p-2.5  
        font-righteous text-[4.7vw] leading-[1.375rem] min-aspect:text-[2.5vw] ${pathUrl === item?.path ? "bg-gradient-to-r from-[#EFCF5A] to-[#AD8F2B] text-indigo-blue" : "text-yellow"} rounded-md`}
                   >
                     {item?.title}
                   </p>
-                </Link>
+                </Link> */}
+
+                <TransitionLink href={item?.path}>
+                  <span
+                    className={`from-2% block p-2.5 text-left
+                  font-righteous text-[4.7vw] leading-[1.375rem] min-aspect:text-[2.5vw] ${pathUrl === item?.path ? "bg-gradient-to-r from-[#EFCF5A] to-[#AD8F2B] text-indigo-blue" : "text-yellow"} rounded-md`}
+                  >
+                    {item?.title}
+                  </span>
+                </TransitionLink>
               </li>
             ))}
           </ul>
