@@ -7,14 +7,12 @@ type PageHeaderProps = {
   forAbout?: boolean;
 };
 
-// typescript-eslint/no-unused-vars
 const PageHeader: FC<PageHeaderProps> = ({
   heading,
   tagline,
   description,
   forAbout = false,
 }) => {
-  //TODO - console added to avoid lint error, these values will be used later
   return (
     <div
       className={`flex flex-col gap-4 text-rich-black xl:flex-row ${!forAbout ? "justify-between" : "justify-center"}`}
@@ -28,7 +26,7 @@ const PageHeader: FC<PageHeaderProps> = ({
         </span>
       </div>
       {!forAbout && (
-        <p className="text-[0.813rem] font-light leading-[0.975] md:max-w-[28.688rem] md:text-lg md:leading-[1.35rem]">
+        <p className="text-left text-[0.813rem] font-light leading-[0.975] md:max-w-[28.688rem] md:text-lg md:leading-[1.35rem] xl:text-right">
           {description}
         </p>
       )}
