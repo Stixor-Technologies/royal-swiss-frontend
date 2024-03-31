@@ -10,15 +10,16 @@ import { useGSAP } from "@gsap/react";
 export default function Template({ children }: { children: React.ReactNode }) {
   gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
   useEffect(() => {
+    console.log("animate");
     animatePageIn();
   }, []);
 
-  useGSAP(() => {
-    window.scrollTo(0, 0);
-    if (window.innerWidth > 768) {
-      ScrollSmoother.create({ smooth: 2, smoothTouch: 0 });
-    }
-  }, []);
+  // useGSAP(() => {
+  //   window.scrollTo(0, 0);
+  //   if (window.innerWidth > 768) {
+  //     ScrollSmoother.create({ smooth: 2, smoothTouch: 0 });
+  //   }
+  // }, []);
 
   return (
     <>

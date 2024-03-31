@@ -8,10 +8,16 @@ import MapComponent from "@/components/shared/map/map-component";
 import { gsap } from "gsap";
 import { ScrollSmoother, ScrollTrigger } from "gsap/all";
 import { useGSAP } from "@gsap/react";
+import { animatePageIn } from "@/utils/transition-animation";
 
 const Contact = () => {
   gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
   const [officeAddress, setOfficeAddress] = useState<Office | null>(null);
+
+  useEffect(() => {
+    console.log("animate");
+    animatePageIn();
+  }, []);
 
   useEffect(() => {
     const fetchOfficeAddress = async () => {

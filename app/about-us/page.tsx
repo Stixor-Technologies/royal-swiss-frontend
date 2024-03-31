@@ -1,5 +1,5 @@
 "use client";
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import PageHeader from "@/components/shared/page-header/page-header";
 import LinkButton from "@/components/shared/link-button/link-button";
 import EssentialMetrics from "@/components/about-us/essential-metrics/essential-metrics";
@@ -14,11 +14,17 @@ import Dealers from "@/components/shared/dealers/dealers";
 import { gsap } from "gsap";
 import { ScrollSmoother, ScrollTrigger } from "gsap/all";
 import { useGSAP } from "@gsap/react";
+import { animatePageIn } from "@/utils/transition-animation";
 
 const AboutUs = () => {
   gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
   const aboutSection = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    console.log("animate");
+    animatePageIn();
+  }, []);
 
   useGSAP(() => {
     window.scrollTo(0, 0);

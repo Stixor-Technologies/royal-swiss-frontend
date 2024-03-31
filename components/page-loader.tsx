@@ -24,25 +24,25 @@ const PageLoader = () => {
   //     });
   //   }, []);
 
-  useGSAP(() => {
-    const transitionElement = document.getElementById("transition-element");
+  // useGSAP(() => {
+  //   const transitionElement = document.getElementById("transition-element");
 
-    if (transitionElement) {
-      const tl = gsap.timeline();
+  //   if (transitionElement) {
+  //     const tl = gsap.timeline();
 
-      tl.to(transitionElement, {
-        duration: 0.7,
-        bottom: "0",
-        ease: "expo.inOut",
-      });
+  //     tl.to(transitionElement, {
+  //       duration: 0.7,
+  //       bottom: "0",
+  //       ease: "expo.inOut",
+  //     });
 
-      tl.to(transitionElement, {
-        top: "100%",
-        ease: "expo.inOut",
-        delay: 0.25,
-      });
-    }
-  });
+  //     tl.to(transitionElement, {
+  //       top: "100%",
+  //       ease: "expo.inOut",
+  //       delay: 0.25,
+  //     });
+  //   }
+  // });
 
   return (
     <div

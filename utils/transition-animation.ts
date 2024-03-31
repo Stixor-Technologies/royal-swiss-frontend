@@ -17,23 +17,23 @@ const animatePageIn = () => {
   }
 };
 
-// const animatePageOut = (href: string, router: AppRouterInstance) => {
-//   const animationWrapper = document.getElementById("transition-element");
+const animatePageOut = (href: string, router: AppRouterInstance) => {
+  const animationWrapper = document.getElementById("transition-element");
 
-//   if (animationWrapper) {
-//     const tl = gsap.timeline();
+  if (animationWrapper) {
+    const tl = gsap.timeline();
 
-//     tl.set(animationWrapper, {
-//       yPercent: -100,
-//     }).to(animationWrapper, {
-//       yPercent: 0,
-//       ease: "expo.inOut",
-//       onComplete: () => {
-//         router.push(href);
-//       },
-//     });
-//   }
-// };
+    tl.set(animationWrapper, {
+      yPercent: -100,
+    }).to(animationWrapper, {
+      yPercent: 0,
+      ease: "expo.inOut",
+      onComplete: () => {
+        router.push(href);
+      },
+    });
+  }
+};
 
 // const animatePageOut = (href: string, router: AppRouterInstance) => {
 //   const animationWrapper = document.getElementById("transition-element");
@@ -57,28 +57,28 @@ const animatePageIn = () => {
 //   }
 // };
 
-const animatePageOut = (href: string, router: AppRouterInstance) => {
-  const animationWrapper = document.getElementById("transition-element");
+// const animatePageOut = (href: string, router: AppRouterInstance) => {
+//   const animationWrapper = document.getElementById("transition-element");
 
-  if (animationWrapper) {
-    const tl = gsap.timeline();
+//   if (animationWrapper) {
+//     const tl = gsap.timeline();
 
-    tl.set(animationWrapper, {
-      bottom: "100%",
-      top: 0,
-    });
-    tl.to(animationWrapper, {
-      bottom: 0,
-      ease: "expo.inOut",
-      onComplete: () => {
-        router.push(href);
-      },
-    }).to(animationWrapper, {
-      delay: 0.25,
-      top: "100%",
-      ease: "expo.inOut",
-    });
-  }
-};
+//     tl.set(animationWrapper, {
+//       bottom: "100%",
+//       top: 0,
+//     });
+//     tl.to(animationWrapper, {
+//       bottom: 0,
+//       ease: "expo.inOut",
+//       onComplete: () => {
+//         router.push(href);
+//       },
+//     }).to(animationWrapper, {
+//       delay: 0.25,
+//       top: "100%",
+//       ease: "expo.inOut",
+//     });
+//   }
+// };
 
 export { animatePageIn, animatePageOut };

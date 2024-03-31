@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useEffect } from "react";
 import PageHeader from "@/components/shared/page-header/page-header";
 import ServicesList from "@/components/services/services-list/services-list";
 import AdvertisementPolicy from "@/components/shared/advertisement-policy/advertisement-policy";
@@ -8,6 +8,7 @@ import Dealers from "@/components/shared/dealers/dealers";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollSmoother, ScrollTrigger } from "gsap/all";
+import { animatePageIn } from "@/utils/transition-animation";
 
 const Services = () => {
   gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
@@ -17,6 +18,11 @@ const Services = () => {
     if (window.innerWidth > 768) {
       ScrollSmoother.create({ smooth: 2, smoothTouch: 0 });
     }
+  }, []);
+
+  useEffect(() => {
+    console.log("animate");
+    animatePageIn();
   }, []);
 
   return (
