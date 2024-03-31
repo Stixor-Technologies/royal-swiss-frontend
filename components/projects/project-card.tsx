@@ -26,7 +26,11 @@ const ProjectCard = () => {
         {imagesList?.map((url, index) => {
           return (
             <SwiperSlide key={index}>
-              <Image src={ProjectSample} alt="" />
+              <Image
+                src={ProjectSample}
+                alt=""
+                className="transition-all duration-500 ease-in-out hover:scale-110"
+              />
             </SwiperSlide>
           );
         })}

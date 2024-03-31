@@ -20,9 +20,6 @@ const Projects = () => {
               key={item}
               className={`${index % 2 !== 0 && "sm:mt-10 md:mt-14 lg:mt-[94px]"}`}
             >
-              {/* <p className="text-3xl text-black">
-                {index} {index % 2}
-              </p> */}
               <ProjectCard />
             </div>
           ))}
