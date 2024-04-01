@@ -1,12 +1,10 @@
 "use client";
-import React, { useEffect, useLayoutEffect, useRef } from "react";
+import React from "react";
 import { gsap, DrawSVGPlugin } from "gsap/all";
 import { useGSAP } from "@gsap/react";
 
 export default function Home() {
   gsap.registerPlugin(DrawSVGPlugin);
-
-  const ref = useRef<HTMLDivElement | null>(null);
 
   useGSAP(() => {
     gsap.set("#path", { visibility: "visible" });
