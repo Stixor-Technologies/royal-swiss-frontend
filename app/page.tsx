@@ -14,18 +14,6 @@ export default function Home() {
 
     const t1 = gsap.timeline();
 
-    // t1.to(".overlay", {
-    //   duration: 0.7,
-    //   bottom: "0",
-    //   ease: "expo.inOut",
-    // });
-
-    // t1.to(".overlay", {
-    //   top: "100%",
-    //   ease: "expo.inOut",
-    //   delay: 0.25,
-    // });
-
     t1.to(
       "#path",
       { duration: 1.5, drawSVG: true, ease: "power1.inOut" },
@@ -35,11 +23,6 @@ export default function Home() {
 
   return (
     <div className="relative min-h-screen">
-      {/* <div
-        id="page-loader"
-        className="overlay fixed inset-x-0 bottom-[100%] top-0 z-50 w-full rounded-b-3xl bg-indigo-blue"
-      /> */}
-
       <div className="mt-128 absolute inset-0 mb-20 hidden flex-col justify-center lg:flex">
         <svg
           className="w-full"

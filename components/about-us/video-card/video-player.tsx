@@ -20,16 +20,6 @@ const VidePlayer = () => {
       controls={true}
       width="100%"
       height="100%"
-      // playIcon={
-      //   <button
-      //     onClick={() => {
-      //       playPauseHandler();
-      //     }}
-      //   >
-      //     Play
-      //   </button>
-      // }
-      // light="https://i.stack.imgur.com/zw9Iz.png"
     />
   );
 };

@@ -1,7 +1,6 @@
 "use client";
 import React, { useRef } from "react";
 import Image from "next/image";
-import Link from "next/link";
 import Sidebar from "./menu/sidebar";
 import LinkButton from "../link-button/link-button";
 import HeaderLogo from "../../../public/images/header-logo.png";
@@ -40,12 +39,6 @@ const Header = () => {
         <ul className="hidden gap-5 md:flex xl:gap-10">
           {navBarLinks?.slice(0, -1)?.map((item) => (
             <li key={item?.id}>
-              {/* <Link
-                href={item?.path}
-                className={`after:transition-width relative text-sm font-medium leading-[1.375rem] text-dark-blue after:absolute after:-bottom-1 after:left-0 after:h-[0.091rem] after:w-0 after:bg-dark-blue after:duration-300 after:ease-in-out after:content-[''] hover:after:w-full ${pathUrl === item?.path && "after:w-full"}`}
-              >
-                {item?.title}
-              </Link> */}
               <TransitionLink href={item?.path}>
                 <span
                   className={`after:transition-width relative text-sm font-medium leading-[1.375rem] text-dark-blue after:absolute after:-bottom-1 after:left-0 after:h-[0.091rem] after:w-0 after:bg-dark-blue after:duration-300 after:ease-in-out after:content-[''] hover:after:w-full ${pathUrl === item?.path && "after:w-full"}`}
@@ -59,7 +52,6 @@ const Header = () => {
 
         <LinkButton
           as={"button"}
-          // href={"/contact-us"}
           variant="sm"
           text="Contact Us"
           styles="hidden md:!inline-flex"
