@@ -15,7 +15,7 @@ const PageHeader: FC<PageHeaderProps> = ({
 }) => {
   return (
     <div
-      className={`flex flex-col gap-4 text-rich-black xl:flex-row ${!forAbout ? "justify-between" : "justify-center"}`}
+      className={`flex flex-col items-center gap-4 text-rich-black sm:items-start lg:flex-row ${!forAbout ? "justify-between" : "justify-center"}`}
     >
       <div className={`${forAbout && "text-center"}`}>
         <h2 className="mb-4 font-righteous text-[3.125rem] leading-[3.88rem] text-indigo-blue md:mb-2 md:text-[3.479rem] md:leading-[4.32rem]">
@@ -26,7 +26,7 @@ const PageHeader: FC<PageHeaderProps> = ({
         </span>
       </div>
       {!forAbout && (
-        <p className="text-left text-[0.813rem] font-light leading-[0.975] md:max-w-[28.688rem] md:text-lg md:leading-[1.35rem] xl:text-right">
+        <p className="text-left text-[0.813rem] font-light leading-[0.975] md:text-lg md:leading-[1.35rem] lg:max-w-[28.688rem] xl:text-right">
           {description}
         </p>
       )}
