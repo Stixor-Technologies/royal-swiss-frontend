@@ -1,4 +1,4 @@
-import React from "react";
+import React, { FC } from "react";
 import Image from "next/image";
 
 // Import Swiper styles
@@ -9,45 +9,50 @@ import { Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import ProjectSample from "../../public/images/project-sample.png";
+import { RSProjects } from "@/utils/types/types";
+import { BASE_URL } from "@/utils/constants";
 
-const ProjectCard = () => {
+type ProjectProps = {
+  project: RSProjects;
+  index: number;
+};
+
+const ProjectCard: FC<ProjectProps> = ({ project, index }) => {
   const imagesList = [1, 2, 3, 4, 5, 6];
 
   return (
-    <div>
+    <div
+      className={`${index % 2 !== 0 && "self-end sm:mt-10 md:mt-14 lg:mt-[5.875rem]"}`}
+    >
       <Swiper
         grabCursor={true}
         pagination={true}
         modules={[Pagination]}
         shortSwipes={true}
         longSwipesMs={10000}
-        className="project-swiper carousel-slider mb-10 h-full w-full rounded-[2.5rem] sm:mb-[1.688rem]"
+        className="project-swiper carousel-slider mb-10 aspect-[641/445] rounded-[1.25rem] sm:mb-[1.688rem] lg:rounded-[2.5rem]"
       >
-        {imagesList?.map((url, index) => {
+        {project?.attributes?.images?.data?.map((projectImage, index) => {
+          console.log(projectImage?.attributes?.url);
           return (
             <SwiperSlide key={index}>
               <Image
-                src={ProjectSample}
+                src={`${BASE_URL}${projectImage?.attributes?.url}`}
                 alt=""
                 className="transition-all duration-500 ease-in-out hover:scale-110"
+                fill
               />
             </SwiperSlide>
           );
         })}
       </Swiper>
 
-      {/* <Image src={ProjectSample} alt="" /> */}
-
       <div>
-        <h2 className="font-righteous text-lg leading-[1.397rem] text-indigo-blue md:text-4xl md:leading-[2.794rem]">
-          Parco Qasba Gujrat
+        <h2 className="font-righteous text-lg leading-[1.397rem] text-indigo-blue midLg:text-4xl midLg:leading-[2.794rem]">
+          {project?.attributes?.title}
         </h2>
-        <p className="mt-4 text-[0.813rem] font-light leading-[1.056rem] text-rich-black md:text-lg md:leading-[1.35rem]">
-          Lorem ipsum dolor sit amet consectetur. Mi sed lorem tristique
-          dignissim fermentum volutpat sed aliquet et. Ipsum sit risus sed
-          tellus turpis. Lorem ipsum dolor sit amet consectetur. Mi sed lorem
-          tristique dignissim fermentum volutpat sed aliquet et. Ipsum sit risus
-          sed tellus turpis.
+        <p className="mt-4 text-[0.813rem] font-light leading-[1.056rem] text-rich-black midLg:text-lg midLg:leading-[1.35rem]">
+          {project?.attributes?.description}
         </p>
       </div>
     </div>
