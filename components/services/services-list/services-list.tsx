@@ -5,6 +5,7 @@ import React from "react";
 
 const ServicesList = async () => {
   const resp: ProfessionalServices[] = await getServices();
+  console.log("res", resp);
 
   return (
     <>
