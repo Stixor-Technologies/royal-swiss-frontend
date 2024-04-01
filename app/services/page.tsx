@@ -21,7 +21,6 @@ const Services = () => {
   }, []);
 
   useEffect(() => {
-    console.log("animate");
     animatePageIn();
   }, []);
 

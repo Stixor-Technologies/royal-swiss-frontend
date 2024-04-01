@@ -12,11 +12,10 @@ const ServicesList = () => {
   useEffect(() => {
     const fetchServices = async () => {
       const resp = await getServices();
-      console.log(resp);
       if (resp) {
         setServices(resp);
-        setLoading(false);
       }
+      setLoading(false);
     };
     fetchServices();
   }, []);
@@ -27,7 +26,7 @@ const ServicesList = () => {
         <div className="flex min-h-[50vh]">
           <Spinner />
         </div>
-      ) : services ? (
+      ) : services.length > 0 ? (
         <div className="mx-auto mb-[2.2rem] mt-[4.938rem] grid w-full gap-4 sm:grid-cols-[repeat(auto-fit,_minmax(22.625rem,_1fr))] md:mb-[2.75rem] md:mt-[8.5rem] md:gap-6">
           {services?.map(({ attributes: service }) => {
             const segmentInfo = {

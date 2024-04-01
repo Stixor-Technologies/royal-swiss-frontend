@@ -15,7 +15,6 @@ const Contact = () => {
   const [officeAddress, setOfficeAddress] = useState<Office | null>(null);
 
   useEffect(() => {
-    console.log("animate");
     animatePageIn();
   }, []);
 

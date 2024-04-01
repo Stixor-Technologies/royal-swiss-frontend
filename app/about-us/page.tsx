@@ -22,7 +22,6 @@ const AboutUs = () => {
   const aboutSection = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
-    console.log("animate");
     animatePageIn();
   }, []);
 
