@@ -29,7 +29,7 @@ const Team = () => {
   return (
     <>
       {team?.length > 0 ? (
-        <section className="container relative">
+        <section className="container relative mt-10 md:mt-56">
           <div className="grid sm:grid-cols-[minmax(200px,_900px)_1fr] lg:gap-x-14">
             <div className="text-center sm:w-[80%] sm:text-left lg:w-full">
               <h2 className="mb-2 font-righteous text-4xl leading-[2.7rem] text-indigo-blue lg:text-[3.5rem] lg:leading-[4.5rem]">
@@ -153,7 +153,7 @@ const Team = () => {
               </button>
             </div>
 
-            <div className="col-span-2 mt-3 h-[312px] md:mt-10 lg:h-[599px]">
+            <div className="col-span-2 mt-3 h-[19.5rem] md:mt-10 lg:h-[37.438rem]">
               <div className="absolute left-0 list-none overflow-visible">
                 <Swiper
                   slidesPerView={"auto"}
@@ -169,7 +169,7 @@ const Team = () => {
                     return (
                       <SwiperSlide
                         key={index}
-                        className={`relative max-w-[232px] lg:max-w-[434px]`}
+                        className={`relative max-w-[14.5rem] lg:max-w-[27.125rem]`}
                       >
                         <Image
                           key={index}
