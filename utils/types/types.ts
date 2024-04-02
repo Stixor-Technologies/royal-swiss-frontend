@@ -66,6 +66,18 @@ interface ProfessionalServices {
   };
 }
 
+interface TeamMembers {
+  id: number;
+  attributes: {
+    member_name: string;
+    member_designation: string;
+    member_company: string;
+    member_image: {
+      data: Images;
+    };
+  };
+}
+
 export type {
   Menu,
   SocialLinks,
@@ -73,4 +85,5 @@ export type {
   Office,
   DealersData,
   ProfessionalServices,
+  TeamMembers,
 };
