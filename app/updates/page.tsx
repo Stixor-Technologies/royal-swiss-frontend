@@ -28,23 +28,23 @@ const Updates = () => {
           tagline="Lorem ipsum dolor sit amet consectetur. Velit eu."
           description="Lorem ipsum dolor sit amet consectetur. Mi sed lorem tristique dignissim fermentum volutpat sed aliquet et. Ipsum sit risus sed tellus turpis."
         />
-        {/* 
-        <div className="mt-10 grid grid-cols-1 gap-10 sm:grid-cols-2 sm:gap-8 md:mt-[4.688rem] lg:gap-x-[3.563rem] lg:gap-y-20">
-          {events?.map((event, index) => <EventCard key={index} />)}
-        </div> */}
 
         {loading ? (
           <div className="flex min-h-[50vh]">
             <Spinner />
           </div>
+        ) : events?.length > 0 ? (
+          <div className="mb-[6.5rem] mt-10 grid grid-cols-1 gap-10 sm:grid-cols-2 sm:gap-8 md:mb-[6.75rem] md:mt-[4.688rem] lg:gap-x-[3.563rem] lg:gap-y-20">
+            {events?.map((event, index) => (
+              <EventCard key={index} event={event} />
+            ))}
+          </div>
         ) : (
-          events?.length > 0 && (
-            <div className="mb-[6.5rem] mt-10 grid grid-cols-1 gap-10 sm:grid-cols-2 sm:gap-8 md:mb-[6.75rem] md:mt-[4.688rem] lg:gap-x-[3.563rem] lg:gap-y-20">
-              {events?.map((event, index) => (
-                <EventCard key={index} event={event} />
-              ))}
-            </div>
-          )
+          <div className="flex min-h-[60vh] items-center justify-center">
+            <h6 className="font-righteous text-3xl tracking-wider text-dark-blue">
+              No Events Found
+            </h6>
+          </div>
         )}
       </div>
     </section>
