@@ -1,4 +1,4 @@
-import React from "react";
+import React, { FC, useState } from "react";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper/modules";
@@ -7,9 +7,25 @@ import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
 import EventsSample from "../../public/images/events-sample.png";
 import LocationMarker from "../../public/icons/location-marker.svg";
+import { Events } from "@/utils/types/types";
+import { BASE_URL } from "@/utils/constants";
+import { format } from "date-fns";
 
-const EventCard = () => {
-  const imagesList = [1, 2, 3, 4, 5, 6];
+type EventProps = {
+  event: Events;
+};
+
+const EventCard: FC<EventProps> = ({ event }) => {
+  const [showFullDescription, setShowFullDescription] = useState(false);
+
+  let truncatedDescription = event?.attributes?.description?.slice(0, 100);
+  if (event?.attributes?.description.length > 100) {
+    truncatedDescription += "....";
+  }
+
+  const toggleDescription = () => {
+    setShowFullDescription(!showFullDescription);
+  };
 
   return (
     <div className="my-container flex flex-1 flex-col overflow-hidden rounded-lg">
@@ -22,21 +38,27 @@ const EventCard = () => {
             modules={[Pagination]}
             shortSwipes={true}
             longSwipesMs={10000}
-            className="event-swiper h-full w-full"
+            className="event-swiper aspect-[644/320] "
           >
-            {imagesList?.map((imageData, index) => (
-              <SwiperSlide key={index} className="h-full w-full">
-                <Image src={EventsSample} alt="" />
+            {event?.attributes?.event_images?.data?.map((eventImage, index) => (
+              <SwiperSlide key={index}>
+                <Image
+                  src={`${BASE_URL}${eventImage?.attributes?.url}`}
+                  alt=""
+                  className="transition-all duration-500 ease-in-out hover:scale-110"
+                  fill
+                />
               </SwiperSlide>
             ))}
           </Swiper>
         </div>
 
-        <div className="mt-10 flex justify-between md:mt-[2.125rem]">
-          <h2 className="line-clamp-1 max-w-full font-righteous text-2xl leading-[1.863rem] text-indigo-blue md:max-w-[70%] md:text-[2rem] md:leading-[2.5rem]">
-            Celebrating Success
+        <div className="mt-10 flex flex-wrap items-center justify-between gap-x-8 gap-y-2 md:mt-[2.125rem]">
+          {/* <h2 className="line-clamp-1 max-w-full font-righteous text-2xl leading-[1.863rem] text-indigo-blue md:max-w-[60%] md:text-[2rem] md:leading-[2.5rem]"> */}
+          <h2 className=" max-w-full font-righteous text-2xl leading-[1.863rem] text-indigo-blue md:text-[2rem] md:leading-[2.5rem]">
+            {event?.attributes?.title}
           </h2>
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-1.5">
             <Image
               src={LocationMarker}
               alt="Location Bar"
@@ -46,40 +68,51 @@ const EventCard = () => {
             />
 
             <span className="line-clamp-1 text-[0.813rem] leading-[1.398rem] text-indigo-blue md:text-xl md:leading-[1.398rem]">
-              Islamabad
+              {event?.attributes?.location}
             </span>
           </div>
         </div>
 
-        <h3 className="my-4 text-sm font-semibold leading-[1.094rem] text-[#969696] md:text-lg md:leading-[1.406rem]">
+        <h3 className="my-4 text-sm font-semibold leading-[1.094rem] text-[#969696] underline decoration-slate-900 underline-offset-[0.375rem] md:text-lg md:leading-[1.406rem]">
           Hosted by{" "}
           <span className="font-normal text-[#333333]">
-            ROYAL SWISS HOUSING
+            {event?.attributes?.host}
           </span>
         </h3>
 
         <div className="flex flex-col md:gap-2">
-          <p className="custom-scrollbar line-clamp-2 h-auto overflow-hidden text-[0.813rem] leading-[1.006rem] text-[#333333] md:text-lg md:leading-[1.406rem]">
-            Lorem ipsum dolor sit amet consectetur. Nunc pellentesque nulla
-            blandit in amet semper vitae sem tellus. At ultrices pellentesque
-            velit.
+          <p className="overflow-hidden text-[0.813rem] leading-[1.006rem] text-[#333333] md:text-lg md:leading-[1.406rem]">
+            {showFullDescription
+              ? event?.attributes?.description
+              : truncatedDescription}
+            {!showFullDescription && (
+              <button
+                className="flex gap-1 text-[0.813rem] leading-[1.006rem] text-indigo-blue md:text-base md:leading-[1.25rem]"
+                onClick={toggleDescription}
+              >
+                <span className="cursor-pointer">{`Read More >`}</span>
+              </button>
+            )}
+
+            {showFullDescription && (
+              <button
+                className="flex gap-1 text-[0.813rem] leading-[1.006rem] text-indigo-blue md:text-base md:leading-[1.25rem]"
+                onClick={toggleDescription}
+              >
+                View Less
+              </button>
+            )}
           </p>
-
-          <button
-            className="flex gap-1 text-[0.813rem] leading-[1.006rem] text-indigo-blue md:text-base md:leading-[1.25rem]"
-            onClick={() => {
-              //   readMoreClick(dataItem);
-            }}
-          >
-            <span className="cursor-pointer">{`Read More >`}</span>
-          </button>
         </div>
 
-        <div className="mt-4 flex justify-between underline decoration-slate-900">
-          <div className="text-[0.813rem] font-semibold leading-[1.006rem] text-[#333333] md:text-lg md:leading-[1.406rem]">
-            Date: <span className="font-normal">16-03-2021</span>
-          </div>
-        </div>
+        <h3 className="mb-[2px] mt-4">
+          <span className="text-[0.813rem] font-semibold leading-[1.006rem] text-[#333333] underline decoration-slate-900 underline-offset-4 md:text-lg md:leading-[1.406rem]">
+            Date:{" "}
+            <span className="font-normal">
+              {`${format(new Date(event?.attributes?.date), "dd-MM-yyyy")}`}
+            </span>
+          </span>
+        </h3>
       </div>
     </div>
   );

@@ -66,6 +66,20 @@ interface ProfessionalServices {
   };
 }
 
+interface Events {
+  id: number;
+  attributes: {
+    title: string;
+    description: string;
+    location: string;
+    date: string;
+    host: string;
+    event_images: {
+      data: Images[];
+    };
+  };
+}
+
 export type {
   Menu,
   SocialLinks,
@@ -73,4 +87,5 @@ export type {
   Office,
   DealersData,
   ProfessionalServices,
+  Events,
 };
