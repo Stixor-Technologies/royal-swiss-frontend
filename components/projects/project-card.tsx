@@ -13,6 +13,11 @@ type ProjectProps = {
 };
 
 const ProjectCard: FC<ProjectProps> = ({ project, index }) => {
+  const projectImages = [
+    project?.attributes?.thumbnail_image?.data,
+    ...project?.attributes?.images?.data,
+  ];
+
   return (
     <div
       className={`${index % 2 !== 0 && "self-end sm:mt-10 md:mt-14 lg:mt-[5.875rem]"}`}
@@ -25,7 +30,7 @@ const ProjectCard: FC<ProjectProps> = ({ project, index }) => {
         longSwipesMs={10000}
         className="project-swiper carousel-slider mb-10 aspect-[641/445] rounded-[1.25rem] sm:mb-[1.688rem] lg:rounded-[2.5rem]"
       >
-        {project?.attributes?.images?.data?.map((projectImage, index) => {
+        {projectImages?.map((projectImage, index) => {
           return (
             <SwiperSlide key={index}>
               <Image

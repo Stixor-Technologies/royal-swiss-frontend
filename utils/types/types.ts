@@ -64,6 +64,9 @@ interface RSProjects {
     title: string;
     description: string;
     city: string;
+    thumbnail_image: {
+      data: Images;
+    };
     images: {
       data: Images[];
     };
