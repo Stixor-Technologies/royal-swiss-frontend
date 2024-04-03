@@ -66,6 +66,10 @@ interface ProfessionalServices {
   };
 }
 
+interface HomePageGallery {
+  data: Images;
+}
+
 export type {
   Menu,
   SocialLinks,
@@ -73,4 +77,6 @@ export type {
   Office,
   DealersData,
   ProfessionalServices,
+  HomePageGallery,
+  Images,
 };

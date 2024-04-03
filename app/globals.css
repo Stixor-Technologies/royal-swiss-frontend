@@ -36,11 +36,11 @@ body {
   }
 
   .about-metric-number {
-    @apply xs:text-[1.875rem] xs:leading-[1.643rem] text-center font-righteous text-xl !leading-tight text-indigo-blue md:mb-[0.625rem] md:!text-5xl lg:!mb-[1.438rem] lg:!text-[4.75rem] lg:!leading-[4.5rem];
+    @apply text-center font-righteous text-xl !leading-tight text-indigo-blue md:mb-[0.625rem] md:!text-5xl lg:!mb-[1.438rem] lg:!text-[4.75rem] lg:!leading-[4.5rem] xs:text-[1.875rem] xs:leading-[1.643rem];
   }
 
   .about-metric-label {
-    @apply xs:text-[0.73rem] xs:leading-[0.971rem] inline-block text-[0.625rem] font-light leading-tight text-gray md:!text-xl lg:!text-[2rem] lg:!leading-[2.66rem];
+    @apply inline-block text-[0.625rem] font-light leading-tight text-gray md:!text-xl lg:!text-[2rem] lg:!leading-[2.66rem] xs:text-[0.73rem] xs:leading-[0.971rem];
   }
 
   .footer-office-info {
@@ -50,4 +50,12 @@ body {
   .footer-office-info-label {
     @apply font-semibold text-yellow-dark;
   }
+}
+
+.thumb-swiper .swiper-slide {
+  opacity: 0.3;
+}
+
+.thumb-swiper .swiper-slide-thumb-active {
+  opacity: 1;
 }
