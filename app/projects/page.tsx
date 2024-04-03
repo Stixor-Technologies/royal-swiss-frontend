@@ -8,10 +8,27 @@ import { getProjects } from "@/utils/api-calls";
 import { RSProjects } from "@/utils/types/types";
 import GetInTouch from "@/components/shared/get-in-touch/get-in-touch";
 import Dealers from "@/components/shared/dealers/dealers";
+import { animatePageIn } from "@/utils/transition-animation";
+import { gsap } from "gsap";
+import { useGSAP } from "@gsap/react";
+import { ScrollSmoother, ScrollTrigger } from "gsap/all";
 
 const Projects = () => {
+  gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
+
   const [projects, setProject] = useState<RSProjects[] | []>([]);
   const [loading, setLoading] = useState<boolean>(true);
+
+  useEffect(() => {
+    animatePageIn();
+  }, []);
+
+  useGSAP(() => {
+    window.scrollTo(0, 0);
+    if (window.innerWidth > 768) {
+      ScrollSmoother.create({ smooth: 2, smoothTouch: 0 });
+    }
+  }, []);
 
   useEffect(() => {
     const fetchProjects = async () => {
