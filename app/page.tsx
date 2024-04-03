@@ -19,8 +19,7 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="relative min-h-screen">
-      <div className=" h-[800px] w-full bg-slate-300" />
+    <div className="relative">
       <Gallery galleryImages={galleryImages} />
     </div>
   );
