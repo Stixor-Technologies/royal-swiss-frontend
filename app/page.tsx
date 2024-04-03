@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import HomePageProjects from "@/components/home-page/projects/projects";
 
