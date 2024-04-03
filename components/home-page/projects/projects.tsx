@@ -39,7 +39,6 @@ const HomePageProjects: FC<ProjectsProps> = ({ projects }) => {
         trigger: projectsSection.current,
         start: "top 80%",
         animation: tl,
-        markers: true,
       });
     },
     { scope: projectsSection, dependencies: [projects] },
