@@ -1,6 +1,6 @@
 import { BASE_URL } from "./constants";
 
-export const getOfficeAddress = async () => {
+const getOfficeAddress = async () => {
   try {
     const response = await fetch(`${BASE_URL}/api/office?populate=*`, {
       cache: "no-store",
@@ -13,7 +13,7 @@ export const getOfficeAddress = async () => {
   }
 };
 
-export const getAuthorizedDealers = async () => {
+const getAuthorizedDealers = async () => {
   try {
     const response = await fetch(
       `${BASE_URL}/api/authorized-dealer?populate=*`,
@@ -29,11 +29,14 @@ export const getAuthorizedDealers = async () => {
   }
 };
 
-export const getServices = async () => {
+const getServices = async () => {
   try {
-    const response = await fetch(`${BASE_URL}/api/services?populate=*`, {
-      cache: "no-store",
-    });
+    const response = await fetch(
+      `${BASE_URL}/api/services?populate=*&sort[1]=id`,
+      {
+        cache: "no-store",
+      },
+    );
 
     const data = await response.json();
     return data?.data;
@@ -41,3 +44,21 @@ export const getServices = async () => {
     console.error(error);
   }
 };
+
+const getProjects = async () => {
+  try {
+    const response = await fetch(
+      `${BASE_URL}/api/projects?populate=*&sort[1]=id`,
+      {
+        cache: "no-store",
+      },
+    );
+
+    const data = await response.json();
+    return data?.data;
+  } catch (error) {
+    console.error(error);
+  }
+};
+
+export { getOfficeAddress, getAuthorizedDealers, getServices, getProjects };

@@ -1,10 +1,15 @@
 "use client";
-import React from "react";
+import React, { useEffect } from "react";
 import { gsap, DrawSVGPlugin } from "gsap/all";
 import { useGSAP } from "@gsap/react";
+import { animatePageIn } from "@/utils/transition-animation";
 
 export default function Home() {
   gsap.registerPlugin(DrawSVGPlugin);
+
+  useEffect(() => {
+    animatePageIn();
+  }, []);
 
   useGSAP(() => {
     gsap.set("#path", { visibility: "visible" });
