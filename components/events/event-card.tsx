@@ -5,7 +5,6 @@ import { Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
-import EventsSample from "../../public/images/events-sample.png";
 import LocationMarker from "../../public/icons/location-marker.svg";
 import { Events } from "@/utils/types/types";
 import { BASE_URL } from "@/utils/constants";
