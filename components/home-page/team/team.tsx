@@ -13,7 +13,6 @@ import { BASE_URL } from "@/utils/constants";
 const Team = () => {
   const swiperRef = useRef<SwiperClass | null>(null);
   const [team, setTeam] = useState<TeamMembers[] | []>([]);
-  const [loading, setLoading] = useState<boolean>(true);
 
   useEffect(() => {
     const fetchTeam = async () => {
@@ -21,7 +20,6 @@ const Team = () => {
       if (resp) {
         setTeam(resp);
       }
-      setLoading(false);
     };
     fetchTeam();
   }, []);
