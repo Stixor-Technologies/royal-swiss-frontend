@@ -58,6 +58,17 @@ interface ProfessionalServices {
   };
 }
 
+interface TeamMembers {
+  id: number;
+  attributes: {
+    member_name: string;
+    member_designation: string;
+    member_company: string;
+    member_image: {
+      data: Images;
+    };
+  };
+}
 interface RSProjects {
   id: number;
   attributes: {
@@ -94,6 +105,7 @@ export type {
   Office,
   DealersData,
   ProfessionalServices,
+  TeamMembers,
   RSProjects,
   Events,
 };

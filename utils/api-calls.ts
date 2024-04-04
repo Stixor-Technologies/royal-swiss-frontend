@@ -74,10 +74,24 @@ const getEvents = async () => {
   }
 };
 
+const getTeam = async () => {
+  try {
+    const response = await fetch(`${BASE_URL}/api/teams?populate=*`, {
+      cache: "no-store",
+    });
+
+    const data = await response.json();
+    return data?.data;
+  } catch (error) {
+    console.error(error);
+  }
+};
+
 export {
   getOfficeAddress,
   getAuthorizedDealers,
   getServices,
   getProjects,
   getEvents,
+  getTeam,
 };
