@@ -73,6 +73,20 @@ interface RSProjects {
   };
 }
 
+interface Events {
+  id: number;
+  attributes: {
+    title: string;
+    description: string;
+    location: string;
+    date: string;
+    host: string;
+    event_images: {
+      data: Images[];
+    };
+  };
+}
+
 export type {
   Menu,
   SocialLinks,
@@ -81,4 +95,5 @@ export type {
   DealersData,
   ProfessionalServices,
   RSProjects,
+  Events,
 };

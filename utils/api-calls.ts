@@ -61,4 +61,23 @@ const getProjects = async () => {
   }
 };
 
-export { getOfficeAddress, getAuthorizedDealers, getServices, getProjects };
+const getEvents = async () => {
+  try {
+    const response = await fetch(`${BASE_URL}/api/events?populate=*`, {
+      cache: "no-store",
+    });
+
+    const data = await response.json();
+    return data?.data;
+  } catch (error) {
+    console.error(error);
+  }
+};
+
+export {
+  getOfficeAddress,
+  getAuthorizedDealers,
+  getServices,
+  getProjects,
+  getEvents,
+};
