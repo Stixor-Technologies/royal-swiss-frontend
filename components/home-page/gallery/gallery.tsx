@@ -1,7 +1,6 @@
 "use client";
-import React, { FC, useEffect, useRef, useState } from "react";
-import { getGallery } from "@/utils/api-calls";
-import { HomePageGallery, Images } from "@/utils/types/types";
+import React, { FC, useRef, useState } from "react";
+import { Images } from "@/utils/types/types";
 import Image from "next/image";
 import { Swiper, SwiperSlide, SwiperClass } from "swiper/react";
 import "swiper/css";
