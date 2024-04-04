@@ -1,4 +1,5 @@
-import React from "react";
+"use client";
+import React, { useEffect, useRef } from "react";
 import PageHeader from "@/components/shared/page-header/page-header";
 import LinkButton from "@/components/shared/link-button/link-button";
 import EssentialMetrics from "@/components/about-us/essential-metrics/essential-metrics";
@@ -10,10 +11,31 @@ import AdvertisementPolicy from "@/components/shared/advertisement-policy/advert
 import SkillSet from "@/components/shared/skill-set/skill-set";
 import GetInTouch from "@/components/shared/get-in-touch/get-in-touch";
 import Dealers from "@/components/shared/dealers/dealers";
+import { gsap } from "gsap";
+import { ScrollSmoother, ScrollTrigger } from "gsap/all";
+import { useGSAP } from "@gsap/react";
+import { animatePageIn } from "@/utils/transition-animation";
 
 const AboutUs = () => {
+  gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
+
+  const aboutSection = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    animatePageIn();
+  }, []);
+
+  useGSAP(() => {
+    window.scrollTo(0, 0);
+    if (window.innerWidth > 768) {
+      ScrollSmoother.create({ smooth: 2, smoothTouch: 0 });
+    }
+  });
+
+  useGSAP(() => {}, { scope: aboutSection });
+
   return (
-    <section className=" md:pt-[1.125rem]">
+    <section ref={aboutSection} className="relative z-[1] md:pt-[1.125rem]">
       <div className="container">
         <PageHeader
           heading="About Us"

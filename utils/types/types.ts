@@ -35,14 +35,6 @@ interface Office {
   };
 }
 
-// type Images = {
-//   data: {
-//     attributes: {
-//       url: string;
-//     };
-//   }[];
-// };
-
 type Images = {
   attributes: {
     url: string;
@@ -79,6 +71,20 @@ interface Events {
     };
   };
 }
+interface RSProjects {
+  id: number;
+  attributes: {
+    title: string;
+    description: string;
+    city: string;
+    thumbnail_image: {
+      data: Images;
+    };
+    images: {
+      data: Images[];
+    };
+  };
+}
 
 export type {
   Menu,
@@ -87,5 +93,6 @@ export type {
   Office,
   DealersData,
   ProfessionalServices,
+  RSProjects,
   Events,
 };
