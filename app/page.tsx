@@ -1,15 +1,32 @@
 "use client";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { gsap, DrawSVGPlugin } from "gsap/all";
 import { useGSAP } from "@gsap/react";
 import { animatePageIn } from "@/utils/transition-animation";
 import AssociateGroup from "@/components/home-page/associate-group/associate-group";
+import { AssociatesGroup } from "@/utils/types/types";
+import { getAssociatesGroup } from "@/utils/api-calls";
 
 export default function Home() {
   gsap.registerPlugin(DrawSVGPlugin);
 
+  const [associatesGroup, setAssociatesGroup] = useState<
+    AssociatesGroup[] | []
+  >([]);
+
   useEffect(() => {
     animatePageIn();
+  }, []);
+
+  const fetchAssociatesGroup = async () => {
+    const resp = await getAssociatesGroup();
+    if (resp) {
+      setAssociatesGroup(resp);
+    }
+  };
+
+  useEffect(() => {
+    fetchAssociatesGroup();
   }, []);
 
   // useGSAP(() => {
@@ -45,7 +62,7 @@ export default function Home() {
         </svg>
       </div> */}
 
-      <AssociateGroup />
+      <AssociateGroup assocGroups={associatesGroup} />
     </div>
   );
 }

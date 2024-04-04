@@ -66,6 +66,16 @@ interface ProfessionalServices {
   };
 }
 
+interface AssociatesGroup {
+  id: number;
+  attributes: {
+    title: string;
+    icon: {
+      data: Images;
+    };
+  };
+}
+
 export type {
   Menu,
   SocialLinks,
@@ -73,4 +83,5 @@ export type {
   Office,
   DealersData,
   ProfessionalServices,
+  AssociatesGroup,
 };

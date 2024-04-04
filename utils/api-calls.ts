@@ -41,3 +41,19 @@ export const getServices = async () => {
     console.error(error);
   }
 };
+
+export const getAssociatesGroup = async () => {
+  try {
+    const response = await fetch(
+      `${BASE_URL}/api/assoc-group-medias?populate=*&sort[1]=id`,
+      {
+        cache: "no-store",
+      },
+    );
+
+    const data = await response.json();
+    return data?.data;
+  } catch (error) {
+    console.error(error);
+  }
+};
