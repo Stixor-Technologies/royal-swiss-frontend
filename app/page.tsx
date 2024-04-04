@@ -1,27 +1,33 @@
 "use client";
-import React from "react";
+import React, { useEffect } from "react";
 import { gsap, DrawSVGPlugin } from "gsap/all";
 import { useGSAP } from "@gsap/react";
+import { animatePageIn } from "@/utils/transition-animation";
+import AssociateGroup from "@/components/home-page/associate-group/associate-group";
 
 export default function Home() {
   gsap.registerPlugin(DrawSVGPlugin);
 
-  useGSAP(() => {
-    gsap.set("#path", { visibility: "visible" });
-    gsap.set("#path", { drawSVG: "0" });
+  useEffect(() => {
+    animatePageIn();
+  }, []);
 
-    const t1 = gsap.timeline();
+  // useGSAP(() => {
+  //   gsap.set("#path", { visibility: "visible" });
+  //   gsap.set("#path", { drawSVG: "0" });
 
-    t1.to(
-      "#path",
-      { duration: 1.5, drawSVG: true, ease: "power1.inOut" },
-      "+=0.5",
-    );
-  });
+  //   const t1 = gsap.timeline();
+
+  //   t1.to(
+  //     "#path",
+  //     { duration: 1.5, drawSVG: true, ease: "power1.inOut" },
+  //     "+=0.5",
+  //   );
+  // });
 
   return (
     <div className="relative min-h-screen">
-      <div className="mt-128 absolute inset-0 mb-20 hidden flex-col justify-center lg:flex">
+      {/* <div className="mt-128 absolute inset-0 mb-20 hidden flex-col justify-center lg:flex">
         <svg
           className="w-full"
           height="700"
@@ -37,7 +43,9 @@ export default function Home() {
             stroke-width="110px"
           />
         </svg>
-      </div>
+      </div> */}
+
+      <AssociateGroup />
     </div>
   );
 }
