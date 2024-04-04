@@ -1,5 +1,5 @@
-import { getTeam } from "@/utils/api-calls";
 import React, { useEffect, useRef, useState } from "react";
+import { getTeam } from "@/utils/api-calls";
 import { TeamMembers } from "@/utils/types/types";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
