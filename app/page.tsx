@@ -1,6 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import Gallery from "@/components/home-page/gallery/gallery";
+import Team from "@/components/home-page/team/team";
 import { getGallery } from "@/utils/api-calls";
 import { Images } from "@/utils/types/types";
 
@@ -21,6 +22,7 @@ export default function Home() {
   return (
     <div className="relative">
       <Gallery galleryImages={galleryImages} />
+      <Team />
     </div>
   );
 }

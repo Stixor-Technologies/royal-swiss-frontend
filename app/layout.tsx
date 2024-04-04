@@ -4,6 +4,7 @@ import "./globals.css";
 import { Toaster } from "react-hot-toast";
 import Header from "@/components/shared/header/header";
 import Footer from "@/components/shared/footer/footer";
+import PageLoader from "@/components/page-loader";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -27,12 +28,17 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${righteous.variable} ${inter.className}`}>
         <Header />
-        <main className="min-h-screen bg-milk-white  pt-[1.995rem] md:pt-[5.348rem]">
-          <div className="bg-[url('/images/blocker.png')] bg-contain bg-[center_top_-8vw] bg-no-repeat">
-            {children}
+        <PageLoader />
+        <div id="smooth-wrapper">
+          <div id="smooth-content">
+            <main className="min-h-screen bg-milk-white pt-[7.625rem]  md:pt-[11.562rem]">
+              <div className="bg-[url('/images/blocker.png')] bg-contain bg-[center_top_-8vw] bg-no-repeat">
+                {children}
+              </div>
+              <Footer />
+            </main>
           </div>
-          <Footer />
-        </main>
+        </div>
         <Toaster />
       </body>
     </html>
