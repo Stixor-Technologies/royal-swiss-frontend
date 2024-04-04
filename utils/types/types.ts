@@ -58,19 +58,6 @@ interface ProfessionalServices {
   };
 }
 
-interface Events {
-  id: number;
-  attributes: {
-    title: string;
-    description: string;
-    location: string;
-    date: string;
-    host: string;
-    event_images: {
-      data: Images[];
-    };
-  };
-}
 interface RSProjects {
   id: number;
   attributes: {
@@ -81,6 +68,20 @@ interface RSProjects {
       data: Images;
     };
     images: {
+      data: Images[];
+    };
+  };
+}
+
+interface Events {
+  id: number;
+  attributes: {
+    title: string;
+    description: string;
+    location: string;
+    date: string;
+    host: string;
+    event_images: {
       data: Images[];
     };
   };
