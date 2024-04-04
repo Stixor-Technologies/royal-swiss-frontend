@@ -5,10 +5,15 @@ import EventCard from "@/components/events/event-card";
 import { getEvents } from "@/utils/api-calls";
 import { Events } from "@/utils/types/types";
 import Spinner from "@/components/shared/spinner/spinner";
+import { animatePageIn } from "@/utils/transition-animation";
 
 const Updates = () => {
   const [events, setEvents] = useState<Events[] | []>([]);
   const [loading, setLoading] = useState<boolean>(true);
+
+  useEffect(() => {
+    animatePageIn();
+  }, []);
 
   useEffect(() => {
     const fetchEvents = async () => {
