@@ -1,7 +1,6 @@
 import React, { FC, useRef } from "react";
 import Image from "next/image";
 import { AssociatesGroup } from "@/utils/types/types";
-
 import { Swiper, SwiperClass, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
@@ -17,8 +16,8 @@ const AssociateGroup: FC<AssociateGroupProp> = ({ assocGroups }) => {
   const swiperRef = useRef<SwiperClass | null>(null);
   return (
     <section className="pt-48">
-      <div className="container grid grid-rows-[0px_auto_16.7vw_auto] justify-items-center overflow-hidden xl:grid-rows-[62px_auto_270px_auto]">
-        <div className=" col-start-1 row-span-3 row-start-1 w-full rounded-[0.938rem] bg-dark-grain-pattern bg-cover bg-no-repeat bg-blend-multiply md:rounded-[1.25rem] lg:rounded-[2.5rem] " />
+      <div className="container grid grid-rows-[0px_auto_16.7vw_auto] justify-items-center xl:grid-rows-[62px_auto_270px_auto]">
+        <div className="col-start-1 row-span-3 row-start-1 w-full rounded-[0.938rem] bg-dark-grain-pattern bg-cover bg-no-repeat bg-blend-multiply md:rounded-[1.25rem] lg:rounded-[2.5rem]" />
 
         <div className="col-start-1 row-start-2 mb-[2.03rem] mt-[0.875rem] px-[1.438rem] text-white md:mt-8 md:px-6 lg:mb-[3.875rem] lg:px-[4rem] xl:mt-0">
           <h2 className="mb-2 font-righteous text-lg leading-[1.35rem] text-yellow md:mb-[1.125rem] md:text-4xl md:leading-[2.7rem]">
@@ -35,7 +34,7 @@ const AssociateGroup: FC<AssociateGroupProp> = ({ assocGroups }) => {
         </div>
 
         {/* lg:w-[86.1%]  */}
-        <div className="relative col-start-1 row-span-3 row-start-3 -mr-[8.6%] w-full items-center justify-center justify-self-end overflow-hidden rounded-2xl bg-yellow pl-4 md:rounded-[1.875rem] md:pl-9 lg:w-[89.8%] lg:pl-12 xl:pl-[4.438rem]">
+        <div className="relative col-start-1 row-span-3 row-start-3 -mr-[8.6%] w-full items-center justify-center justify-self-end overflow-hidden rounded-[0.938rem] bg-yellow pl-4 md:rounded-[1.25rem] md:pl-9 lg:w-[89.8%] lg:rounded-[2.5rem] lg:pl-12 xl:pl-[4.438rem]">
           <div className="mb-[1.767rem] mt-[1.813rem] flex items-start justify-between gap-8 pr-[8.6%] md:my-14  xl:mb-[4.061rem] xl:mt-[4.25rem]">
             <h3 className="font-righteous text-lg leading-[1.35rem] text-indigo-blue md:text-4xl md:leading-[2.7rem]">
               The Associate and Group
@@ -181,6 +180,15 @@ const AssociateGroup: FC<AssociateGroupProp> = ({ assocGroups }) => {
               );
             })}
           </Swiper>
+        </div>
+        <div className="-mr-[8.6%] justify-self-end rounded-b-[0.938rem] bg-dark-grain-pattern bg-cover bg-no-repeat pb-[1.313rem] pl-4 pr-[8.6%] pt-[1.097rem] bg-blend-multiply md:rounded-b-[1.25rem] md:py-6 md:pl-7 lg:-mt-10 lg:rounded-b-[2.5rem] lg:pb-[2.938rem] lg:pl-10 lg:pt-[6.125rem]">
+          <Image
+            src={"/images/hrl-logo.png"}
+            width={260}
+            height={114}
+            alt="hrl-logo"
+            className="max-w-[9.813rem] lg:w-full lg:max-w-[16.25rem]"
+          />
         </div>
       </div>
     </section>
