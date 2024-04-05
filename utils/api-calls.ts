@@ -87,6 +87,19 @@ const getTeam = async () => {
   }
 };
 
+const getGallery = async () => {
+  try {
+    const response = await fetch(`${BASE_URL}/api/gallery?populate=*`, {
+      cache: "no-store",
+    });
+
+    const data = await response.json();
+    return data?.data;
+  } catch (error) {
+    console.error(error);
+  }
+};
+
 export {
   getOfficeAddress,
   getAuthorizedDealers,
@@ -94,4 +107,5 @@ export {
   getProjects,
   getEvents,
   getTeam,
+  getGallery,
 };

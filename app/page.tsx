@@ -1,10 +1,27 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
+import Gallery from "@/components/home-page/gallery/gallery";
 import Team from "@/components/home-page/team/team";
+import { getGallery } from "@/utils/api-calls";
+import { Images } from "@/utils/types/types";
 
 export default function Home() {
+  const [galleryImages, setGalleryImages] = useState<Images[] | []>([]);
+
+  const fetchGallery = async () => {
+    const resp = await getGallery();
+    if (resp) {
+      setGalleryImages(resp?.attributes?.gallery_images?.data);
+    }
+  };
+
+  useEffect(() => {
+    fetchGallery();
+  }, []);
+
   return (
-    <div className="relative min-h-screen">
+    <div className="relative">
+      <Gallery galleryImages={galleryImages} />
       <Team />
     </div>
   );
