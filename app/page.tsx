@@ -4,6 +4,7 @@ import { gsap, DrawSVGPlugin } from "gsap/all";
 import { useGSAP } from "@gsap/react";
 import { animatePageIn } from "@/utils/transition-animation";
 import AssociateGroup from "@/components/home-page/associate-group/associate-group";
+import HeroVideo from "@/components/home-page/hero-video/hero-video";
 import { AssociatesGroup } from "@/utils/types/types";
 import { getAssociatesGroup } from "@/utils/api-calls";
 
@@ -62,7 +63,9 @@ export default function Home() {
         </svg>
       </div> */}
 
-      <AssociateGroup assocGroups={associatesGroup} />
+      {/* <div className="h-[700px] bg-slate-500" /> */}
+      {/* <AssociateGroup assocGroups={associatesGroup} /> */}
+      <HeroVideo />
     </div>
   );
 }
