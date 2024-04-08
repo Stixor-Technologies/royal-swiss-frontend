@@ -19,7 +19,7 @@ import { animatePageIn } from "@/utils/transition-animation";
 const AboutUs = () => {
   gsap.registerPlugin(ScrollTrigger, ScrollSmoother, DrawSVGPlugin);
 
-  const aboutSection = useRef<HTMLDivElement | null>(null);
+  const aboutSection = useRef<HTMLElement | null>(null);
 
   useEffect(() => {
     animatePageIn();
