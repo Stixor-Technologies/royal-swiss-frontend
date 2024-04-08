@@ -11,7 +11,6 @@ const animatePageIn = () => {
       yPercent: 0,
     }).to(transitionElement, {
       yPercent: 100,
-      duration: 0.7,
       ease: "expo.inOut",
     });
   }
