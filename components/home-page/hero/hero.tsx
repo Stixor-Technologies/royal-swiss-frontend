@@ -109,7 +109,7 @@ const HeroSection: FC<HeroSectionProps> = ({ bannerImages }) => {
           "[data-link-button]",
           {
             opacity: 0,
-            yPercent: 100,
+            yPercent: 50,
 
             duration: 0.8,
           },
