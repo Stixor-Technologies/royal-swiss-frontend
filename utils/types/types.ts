@@ -35,14 +35,6 @@ interface Office {
   };
 }
 
-// type Images = {
-//   data: {
-//     attributes: {
-//       url: string;
-//     };
-//   }[];
-// };
-
 type Images = {
   attributes: {
     url: string;
@@ -66,6 +58,17 @@ interface ProfessionalServices {
   };
 }
 
+interface TeamMembers {
+  id: number;
+  attributes: {
+    member_name: string;
+    member_designation: string;
+    member_company: string;
+    member_image: {
+      data: Images;
+    };
+  };
+}
 interface RSProjects {
   id: number;
   attributes: {
@@ -81,6 +84,24 @@ interface RSProjects {
   };
 }
 
+interface Events {
+  id: number;
+  attributes: {
+    title: string;
+    description: string;
+    location: string;
+    date: string;
+    host: string;
+    event_images: {
+      data: Images[];
+    };
+  };
+}
+
+interface HomePageGallery {
+  data: Images;
+}
+
 export type {
   Menu,
   SocialLinks,
@@ -89,4 +110,8 @@ export type {
   DealersData,
   ProfessionalServices,
   RSProjects,
+  HomePageGallery,
+  Images,
+  TeamMembers,
+  Events,
 };

@@ -5,8 +5,6 @@ import { ProfessionalServices } from "@/utils/types/types";
 import React, { useEffect, useState } from "react";
 
 const ServicesList = () => {
-  // const resp: ProfessionalServices[] = await getServices();
-
   const [services, setServices] = useState<ProfessionalServices[] | []>([]);
   const [loading, setLoading] = useState<boolean>(true);
   useEffect(() => {
