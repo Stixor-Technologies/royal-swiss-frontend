@@ -4,12 +4,14 @@ import { animatePageIn } from "@/utils/transition-animation";
 import HeroSection from "@/components/home-page/hero/hero";
 import AssociateGroup from "@/components/home-page/associate-group/associate-group";
 import HeroVideo from "@/components/home-page/hero-video/hero-video";
+import Gallery from "@/components/home-page/gallery/gallery";
 import { AssociatesGroup, Images } from "@/utils/types/types";
 import {
   getAssociatesGroup,
   getBannerImages,
   getGallery,
 } from "@/utils/api-calls";
+import Team from "@/components/home-page/team/team";
 
 export default function Home() {
   const [bannerImages, setBannerImages] = useState<[]>([]);
@@ -59,6 +61,8 @@ export default function Home() {
       <HeroSection bannerImages={bannerImages} />
       <AssociateGroup assocGroups={associatesGroup} />
       <HeroVideo />
+      <Gallery galleryImages={galleryImages} />
+      <Team />
     </div>
   );
 }

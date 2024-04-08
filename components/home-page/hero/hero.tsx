@@ -44,7 +44,7 @@ const HeroSection: FC<HeroSectionProps> = ({ bannerImages }) => {
       });
 
       const splitP = new SplitText("[data-hero-p]", {
-        linesClass: "child-parent",
+        linesClass: "split-child",
       });
 
       const parentP = new SplitText("[data-hero-p]", {
@@ -140,7 +140,7 @@ const HeroSection: FC<HeroSectionProps> = ({ bannerImages }) => {
           </svg>
         </div>
 
-        <div className="lg:w-[49.2%]">
+        <div className="lg:w-[46.2%]">
           <h1
             data-hero-heading
             className="overflow-hidden font-righteous text-4xl leading-[2.794rem] text-indigo-blue md:leading-[6.848rem] lg:text-[5.514rem]"
@@ -169,7 +169,7 @@ const HeroSection: FC<HeroSectionProps> = ({ bannerImages }) => {
 
         <div
           ref={imagesContainer}
-          className=" relative origin-bottom-left scale-x-[0.8] scale-y-0 overflow-hidden rounded-[1.25rem] lg:w-[50.8%] lg:rounded-[2.5rem]"
+          className=" relative origin-bottom-left scale-x-[0.8] scale-y-0 overflow-hidden rounded-[1.25rem] lg:w-[53.8%] lg:rounded-[2.5rem]"
         >
           <Swiper
             grabCursor={true}
