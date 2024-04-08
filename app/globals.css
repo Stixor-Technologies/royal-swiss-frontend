@@ -59,3 +59,11 @@ body {
     overflow: hidden;
   }
 }
+
+.thumb-swiper .swiper-slide {
+  opacity: 0.3;
+}
+
+.thumb-swiper .swiper-slide-thumb-active {
+  opacity: 1;
+}

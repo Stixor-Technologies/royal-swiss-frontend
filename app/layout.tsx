@@ -31,7 +31,7 @@ export default function RootLayout({
         <PageLoader />
         <div id="smooth-wrapper">
           <div id="smooth-content">
-            <main className="min-h-screen overflow-x-hidden  bg-milk-white md:pt-[11.562rem]">
+            <main className="min-h-screen overflow-x-hidden bg-milk-white pt-[7.625rem]  md:pt-[11.562rem]">
               <div className="bg-[url('/images/blocker.png')] bg-contain bg-[center_top_-8vw] bg-no-repeat">
                 {children}
               </div>

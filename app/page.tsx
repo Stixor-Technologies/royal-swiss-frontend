@@ -4,26 +4,24 @@ import { animatePageIn } from "@/utils/transition-animation";
 import HeroSection from "@/components/home-page/hero/hero";
 import AssociateGroup from "@/components/home-page/associate-group/associate-group";
 import HeroVideo from "@/components/home-page/hero-video/hero-video";
-import { AssociatesGroup } from "@/utils/types/types";
-import { getAssociatesGroup, getBannerImages } from "@/utils/api-calls";
+import { AssociatesGroup, Images } from "@/utils/types/types";
+import {
+  getAssociatesGroup,
+  getBannerImages,
+  getGallery,
+} from "@/utils/api-calls";
 
 export default function Home() {
+  const [bannerImages, setBannerImages] = useState<[]>([]);
   const [associatesGroup, setAssociatesGroup] = useState<
     AssociatesGroup[] | []
   >([]);
 
-  const [bannerImages, setBannerImages] = useState<[]>([]);
+  const [galleryImages, setGalleryImages] = useState<Images[] | []>([]);
 
   useEffect(() => {
     animatePageIn();
   }, []);
-
-  const fetchAssociatesGroup = async () => {
-    const resp = await getAssociatesGroup();
-    if (resp) {
-      setAssociatesGroup(resp);
-    }
-  };
 
   const fetchBannerImages = async () => {
     const resp = await getBannerImages();
@@ -32,9 +30,28 @@ export default function Home() {
     }
   };
 
+  const fetchAssociatesGroup = async () => {
+    const resp = await getAssociatesGroup();
+    if (resp) {
+      setAssociatesGroup(resp);
+    }
+  };
+
+  const fetchGallery = async () => {
+    const resp = await getGallery();
+    if (resp) {
+      setGalleryImages(resp?.attributes?.gallery_images?.data);
+    }
+  };
+
+  useEffect(() => {
+    fetchGallery();
+  }, []);
+
   useEffect(() => {
     fetchBannerImages();
     fetchAssociatesGroup();
+    fetchGallery();
   }, []);
 
   return (
