@@ -21,7 +21,7 @@ const Header = () => {
   return (
     <header
       ref={header}
-      className={`fixed z-50 w-full bg-milk-white py-[2.313rem]`}
+      className={`fixed z-40 w-full bg-milk-white py-[2.313rem]`}
     >
       <div className="container flex h-full items-center justify-between">
         <div>
