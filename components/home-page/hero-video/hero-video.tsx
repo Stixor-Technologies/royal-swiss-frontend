@@ -4,17 +4,33 @@ import LinkButton from "@/components/shared/link-button/link-button";
 import PlayIcon from "../../../public/icons/play-icon.svg";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
-import { ScrollTrigger } from "gsap/all";
+import { DrawSVGPlugin, ScrollTrigger } from "gsap/all";
 import VidePlayer from "@/components/about-us/video-card/video-player";
 
 const HeroVideo = () => {
-  gsap.registerPlugin(ScrollTrigger);
+  gsap.registerPlugin(ScrollTrigger, DrawSVGPlugin);
 
+  const heroVideoContainer = useRef<HTMLElement | null>(null);
   const thumbnailContainer = useRef<HTMLDivElement | null>(null);
   const thumbnailContainerSmall = useRef<HTMLDivElement | null>(null);
   const [showVideo, setShowVideo] = useState<boolean>(false);
 
-  const { contextSafe } = useGSAP();
+  const { contextSafe } = useGSAP(
+    () => {
+      gsap.set("#path", { visibility: "visible" });
+      gsap.set("#path", { drawSVG: "0" });
+      ScrollTrigger.create({
+        trigger: heroVideoContainer.current,
+        start: "top 40%",
+        animation: gsap.to("#path", {
+          duration: 2,
+          drawSVG: true,
+          ease: "power2.inOut",
+        }),
+      });
+    },
+    { scope: heroVideoContainer },
+  );
 
   const playVideo = contextSafe(() => {
     const breakPoint = 1024;
@@ -81,6 +97,7 @@ const HeroVideo = () => {
       })
         .to(thumbnailContainer.current, {
           width: "47%",
+          paddingRight: "1.875rem",
           duration: 0.7,
         })
         .to(
@@ -117,8 +134,27 @@ const HeroVideo = () => {
   });
 
   return (
-    <section className="">
-      <div className="container">
+    <section ref={heroVideoContainer} className="-mt-28">
+      <div className="container relative z-10 pb-[4.5rem] pt-[9.688rem]">
+        <div className="absolute -inset-10 -right-80 -z-[10] hidden flex-col justify-center lg:flex">
+          <svg
+            height="895"
+            viewBox="0 0 1900 695"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            className="w-full"
+          >
+            <path
+              id="path"
+              opacity="0.5"
+              d="M3 32.1028C3 32.1028 251.929 -41.1926 407.824 67.8463C653.479 239.659 564.251 599.493 782.482 674.182C983.155 742.854 1184.99 518.024 1397.4 525.542C1548.66 530.894 1648.6 615.987 1648.6 615.987"
+              stroke="#EADDA8"
+              stroke-width="145px"
+              stroke-miterlimit="10"
+            />
+          </svg>
+        </div>
+
         <div className="relative mx-auto flex max-w-[40rem] flex-col gap-10 lg:max-w-none">
           <div
             className={`${!showVideo && "pointer-events-none"} relative z-10 aspect-[400/406] overflow-hidden lg:!aspect-[2/0.963] xs:aspect-[3/2]`}
@@ -243,20 +279,6 @@ const HeroVideo = () => {
                 text="Get Quote Now"
                 variant="rounded"
               />
-
-              {/* <div className="col-span-full col-start-2 flex flex-col gap-8 lg:gap-16 xl:gap-32">
-                <h2 className="heading-84-font">
-                  Royal Swiss Housing The Icon
-                </h2>
-              </div>
-              <div className="col-span-5 col-start-3 flex flex-col gap-16 lg:col-span-4 lg:col-start-3 lg:gap-32 xl:gap-64 2xl:col-span-3 2xl:col-start-3">
-                <div className="prose">
-                  <p>
-                    It brings to light our vision to transform Multan’s living
-                    standards to the best in the world.
-                  </p>
-                </div>
-              </div> */}
             </div>
           </div>
         </div>
