@@ -57,3 +57,19 @@ export const getAssociatesGroup = async () => {
     console.error(error);
   }
 };
+
+export const getBannerImages = async () => {
+  try {
+    const response = await fetch(
+      `${BASE_URL}/api/home-banner-images?populate=*`,
+      {
+        cache: "no-store",
+      },
+    );
+
+    const data = await response.json();
+    return data?.data?.attributes;
+  } catch (error) {
+    console.error(error);
+  }
+};
