@@ -49,7 +49,7 @@ const AssociateGroup: FC<AssociateGroupProp> = ({ assocGroups }) => {
   );
 
   return (
-    <section ref={groupSection} className="mt-48">
+    <section ref={groupSection} className=" lg:mb-4 lg:mt-[11.438rem]">
       <div className="container grid grid-rows-[0px_auto_16.7vw_auto] justify-items-center xl:grid-rows-[62px_auto_270px_auto]">
         <div className="col-start-1 row-span-3 row-start-1 w-full rounded-[0.938rem] bg-dark-grain-pattern bg-cover bg-no-repeat bg-blend-multiply md:rounded-[1.25rem] lg:rounded-[2.5rem]" />
 
