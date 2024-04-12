@@ -24,7 +24,7 @@ const Header = () => {
       className={`fixed z-40 w-full bg-milk-white py-[2.313rem]`}
     >
       <div className="container flex h-full items-center justify-between">
-        <div>
+        <div className="flex">
           <TransitionLink href={"/"}>
             <Image
               src={HeaderLogo}
