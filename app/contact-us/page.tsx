@@ -83,7 +83,7 @@ const Contact = () => {
   return (
     <div className="container">
       <div className="mx-auto w-full max-w-[62.5rem] pb-[6.5rem] sm:pb-[5.375rem]">
-        <h2 className="mb-[1.608rem] text-center font-righteous text-[3.125rem] leading-[3.88rem] text-indigo-blue md:mb-12 md:text-[3.479rem] md:leading-[4.32rem]">
+        <h2 className="mb-[2.67rem] text-center font-righteous  text-4xl leading-[2.794rem] text-indigo-blue md:mb-12 md:text-[3.479rem] md:leading-[4.32rem]">
           Contact Us
         </h2>
         <ContactForm />
