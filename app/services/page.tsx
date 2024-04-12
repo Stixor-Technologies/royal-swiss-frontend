@@ -54,7 +54,7 @@ const Services = () => {
 
   return (
     <section ref={serviceSection} className="relative z-[1] md:pt-[1.125rem]">
-      <div className="absolute -top-16 left-0 right-0 -z-10 mx-auto hidden w-full max-w-[120rem] flex-col justify-center overflow-hidden  lg:top-4 xl:top-2.5 2xl:!top-20 xs:block">
+      <div className="absolute -top-28 left-0 right-0 -z-10 mx-auto hidden w-full max-w-[120rem] flex-col justify-center overflow-hidden  lg:top-4 xl:top-2.5 2xl:!top-20 xs:block">
         <svg
           height={590}
           viewBox="0 0 1530 317"
@@ -71,7 +71,7 @@ const Services = () => {
         </svg>
       </div>
 
-      <div className="absolute left-0 right-0 top-44 -z-10 block overflow-hidden xs:hidden">
+      <div className="absolute left-0 right-0 top-24 -z-10 block overflow-hidden xs:hidden">
         <svg
           width="430"
           height="150"
