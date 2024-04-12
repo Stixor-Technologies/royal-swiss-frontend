@@ -5,6 +5,7 @@ import LinkButton from "@/components/shared/link-button/link-button";
 import EssentialMetrics from "@/components/about-us/essential-metrics/essential-metrics";
 import Image from "next/image";
 import About from "../../public/images/about.png";
+import AboutSmall from "../../public/images/about-small.png";
 import VideoCard from "@/components/about-us/video-card/video-card";
 import VideoPlayer from "@/components/about-us/video-card/video-player";
 import AdvertisementPolicy from "@/components/shared/advertisement-policy/advertisement-policy";
@@ -77,7 +78,7 @@ const AboutUs = () => {
         </svg>
       </div>
 
-      <div className="absolute left-0 right-0 top-36 -z-10 block overflow-hidden xs:hidden">
+      <div className="absolute left-0 right-0 top-32 -z-10 block overflow-hidden xs:hidden">
         <svg
           width="430"
           height="150"
@@ -103,7 +104,16 @@ const AboutUs = () => {
         />
 
         <div className="mt-10 flex flex-col items-center gap-10 md:gap-14 lg:mt-[6.438rem] lg:flex-row">
-          <div className=" w-full max-w-[42.688rem] lg:order-1">
+          <div className="w-full max-w-[38.563rem] overflow-hidden rounded-2xl lg:rounded-none">
+            <Image
+              src={window?.innerWidth >= 1024 ? About : AboutSmall}
+              width={617}
+              height={543}
+              alt=""
+            />
+          </div>
+
+          <div className="w-full max-w-[42.688rem]">
             <h2
               className="font-righteous text-[3.125rem] leading-[3.88rem] text-indigo-blue lg:text-4xl xl:max-w-[36rem] xl:text-6xl
             xl:leading-[4.5rem]"
@@ -119,9 +129,6 @@ const AboutUs = () => {
             </p>
 
             <LinkButton as={"button"} text="Get a Quote" variant="corner" />
-          </div>
-          <div className="lg:order-0 w-full max-w-[38.563rem]">
-            <Image src={About} width={617} height={543} alt="" />
           </div>
         </div>
 
