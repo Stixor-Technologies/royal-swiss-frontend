@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import PageHeader from "@/components/shared/page-header/page-header";
 import LinkButton from "@/components/shared/link-button/link-button";
 import EssentialMetrics from "@/components/about-us/essential-metrics/essential-metrics";
@@ -21,6 +21,7 @@ const AboutUs = () => {
   gsap.registerPlugin(ScrollTrigger, ScrollSmoother, DrawSVGPlugin);
 
   const aboutSection = useRef<HTMLElement | null>(null);
+  const [windowSize, setWindowSize] = useState<number>(0);
 
   useEffect(() => {
     animatePageIn();
@@ -58,6 +59,17 @@ const AboutUs = () => {
     },
     { scope: aboutSection },
   );
+
+  useEffect(() => {
+    const handleWindowResize = () => {
+      setWindowSize(window.innerWidth);
+    };
+    handleWindowResize();
+    window.addEventListener("resize", handleWindowResize);
+    return () => {
+      window.removeEventListener("resize", handleWindowResize);
+    };
+  }, []);
 
   return (
     <section ref={aboutSection} className="relative z-[1] md:pt-[1.125rem]">
@@ -106,7 +118,7 @@ const AboutUs = () => {
         <div className="mt-10 flex flex-col items-center gap-10 md:gap-14 lg:mt-[6.438rem] lg:flex-row">
           <div className="w-full max-w-[38.563rem] overflow-hidden rounded-2xl lg:rounded-none">
             <Image
-              src={window?.innerWidth >= 1024 ? About : AboutSmall}
+              src={windowSize >= 1024 ? About : AboutSmall}
               width={617}
               height={543}
               alt=""
