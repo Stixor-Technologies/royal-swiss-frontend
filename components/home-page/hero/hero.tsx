@@ -1,8 +1,8 @@
-import React, { FC, useEffect, useRef } from "react";
+import React, { FC, useRef } from "react";
 import Image from "next/image";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
-import { DrawSVGPlugin, ScrollTrigger, SplitText } from "gsap/all";
+import { DrawSVGPlugin, SplitText } from "gsap/all";
 import LinkButton from "@/components/shared/link-button/link-button";
 import { BASE_URL } from "@/utils/constants";
 import "swiper/css";
@@ -38,6 +38,7 @@ const HeroSection: FC<HeroSectionProps> = ({ bannerImages }) => {
               linesClass: "split-child",
             });
 
+            // eslint-disable-next-line @typescript-eslint/no-unused-vars
             const parentHeading = new SplitText("[data-hero-heading]", {
               linesClass: "split-parent",
             });
@@ -46,15 +47,16 @@ const HeroSection: FC<HeroSectionProps> = ({ bannerImages }) => {
               linesClass: "split-child",
             });
 
+            // eslint-disable-next-line @typescript-eslint/no-unused-vars
             const parentTagLine = new SplitText("[data-hero-tagline]", {
               linesClass: "split-parent",
             });
 
             const splitP = new SplitText("[data-hero-p]", {
-              // type: "words",
               linesClass: "split-child",
             });
 
+            // eslint-disable-next-line @typescript-eslint/no-unused-vars
             const parentP = new SplitText("[data-hero-p]", {
               linesClass: "split-parent",
             });
