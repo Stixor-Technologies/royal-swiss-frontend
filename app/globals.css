@@ -51,15 +51,7 @@ body {
     @apply font-semibold text-yellow-dark;
   }
 
-  .split-child {
-    display: inline-block !important;
-  }
-
   .split-parent {
-    overflow: hidden;
-  }
-
-  .word {
     overflow: hidden;
   }
 }

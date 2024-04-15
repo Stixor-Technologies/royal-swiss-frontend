@@ -28,7 +28,7 @@ const Gallery: FC<GalleryProps> = ({ galleryImages }) => {
     () => {
       const tl = gsap.timeline();
 
-      tl.to("[data-gallery-heading", {
+      tl.to("[data-gallery-heading]", {
         opacity: 1,
         transform: "translateY(0%)",
       })

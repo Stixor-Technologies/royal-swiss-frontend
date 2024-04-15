@@ -17,7 +17,9 @@ const PageHeader: FC<PageHeaderProps> = ({
     <div
       className={`flex flex-col items-center gap-3 text-rich-black sm:flex-row sm:items-start sm:gap-11 ${!forAbout ? "justify-between" : "justify-center"}`}
     >
-      <div className="flex-1 text-center sm:text-left">
+      <div
+        className={`flex-1 text-center ${forAbout ? "sm:text-center" : "sm:text-left"}`}
+      >
         <h2 className="mb-3 font-righteous text-4xl leading-[2.794rem] text-indigo-blue md:mb-2 md:text-[3.479rem] md:leading-[4.32rem]">
           {heading}
         </h2>

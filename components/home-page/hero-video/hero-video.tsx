@@ -134,27 +134,27 @@ const HeroVideo = () => {
   });
 
   return (
-    <section ref={heroVideoContainer} className="-mt-28">
-      <div className="container relative z-10 pb-[4.5rem] pt-[9.688rem]">
-        <div className="absolute -inset-10 -right-80 -z-[10] hidden flex-col justify-center lg:flex">
-          <svg
-            height="895"
-            viewBox="0 0 1900 695"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            className="w-full"
-          >
-            <path
-              id="path"
-              opacity="0.5"
-              d="M3 32.1028C3 32.1028 251.929 -41.1926 407.824 67.8463C653.479 239.659 564.251 599.493 782.482 674.182C983.155 742.854 1184.99 518.024 1397.4 525.542C1548.66 530.894 1648.6 615.987 1648.6 615.987"
-              stroke="#EADDA8"
-              stroke-width="145px"
-              stroke-miterlimit="10"
-            />
-          </svg>
-        </div>
+    <section ref={heroVideoContainer} className="relative z-10  -mt-28">
+      <div className="absolute -inset-10 -right-80 -z-[10] hidden flex-col justify-center lg:flex">
+        <svg
+          height="1095"
+          viewBox="0 0 1900 695"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          className="w-full"
+        >
+          <path
+            id="path"
+            opacity="0.5"
+            d="M3 32.1028C3 32.1028 251.929 -41.1926 407.824 67.8463C653.479 239.659 564.251 599.493 782.482 674.182C983.155 742.854 1184.99 518.024 1397.4 525.542C1548.66 530.894 1648.6 615.987 1648.6 615.987"
+            stroke="#EADDA8"
+            stroke-width="145px"
+            stroke-miterlimit="10"
+          />
+        </svg>
+      </div>
 
+      <div className="container relative z-10 pb-[4.5rem] pt-[9.688rem]">
         <div className="relative mx-auto flex max-w-[40rem] flex-col gap-10 lg:max-w-none">
           <div
             className={`${!showVideo && "pointer-events-none"} relative z-10 aspect-[400/406] overflow-hidden lg:!aspect-[2/0.963] xs:aspect-[3/2]`}
