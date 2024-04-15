@@ -68,7 +68,7 @@ const HomePageProjects: FC<ProjectsProps> = ({ projects }) => {
           </div>
 
           <div className="md:[3.875rem] relative mt-10">
-            <div className="relative w-full lg:ml-[-7%]">
+            <div className="relative w-full lg:-ml-[7%] 2xl:-ml-[18%]">
               <Swiper
                 grabCursor={true}
                 loop={true}
