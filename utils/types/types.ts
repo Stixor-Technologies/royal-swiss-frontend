@@ -119,10 +119,10 @@ export type {
   Office,
   DealersData,
   ProfessionalServices,
+  RSProjects,
   HomePageGallery,
   Images,
   TeamMembers,
-  RSProjects,
   Events,
   AssociatesGroup,
 };
