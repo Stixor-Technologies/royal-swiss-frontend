@@ -1,5 +1,5 @@
 "use client";
-import React, { useRef } from "react";
+import React, { useCallback, useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Sidebar from "./menu/sidebar";
 import LinkButton from "../link-button/link-button";
@@ -18,10 +18,44 @@ const Header = () => {
   const setIsMenuOpen = useMenuStore((state) => state.setIsMenuOpen);
   const header = useRef<HTMLElement | null>(null);
 
+  const [data, setData] = useState({
+    x: 0,
+    y: 0,
+    lastX: 0,
+    lastY: 0,
+  });
+
+  const [navClassList, setNavClassList] = useState<string[]>([]);
+
+  const handleScroll = useCallback(() => {
+    setData((last) => {
+      return {
+        x: window.scrollX,
+        y: window.scrollY,
+        lastX: last.x,
+        lastY: last.y,
+      };
+    });
+  }, [data]);
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [handleScroll]);
+
+  useEffect(() => {
+    const _classList = [];
+
+    if (data.y > 150 && data.y - data.lastY > 0)
+      _classList.push("-translate-y-full");
+    setNavClassList(_classList);
+  }, [data.y, data.lastY]);
+
   return (
     <header
       ref={header}
-      className={`fixed z-40 w-full bg-milk-white py-[2.313rem]`}
+      className={`fixed z-40 w-full bg-milk-white py-[2.313rem] duration-500 ${navClassList.join(" ")}`}
     >
       <div className="container flex h-full items-center justify-between">
         <div className="flex">
