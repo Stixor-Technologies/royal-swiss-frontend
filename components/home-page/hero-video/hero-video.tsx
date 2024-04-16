@@ -78,6 +78,14 @@ const HeroVideo = () => {
     }
   });
 
+  const scrollToSection = contextSafe((targetSection: string) => {
+    gsap.to(window, {
+      duration: 4,
+      scrollTo: targetSection,
+      ease: "power2",
+    });
+  });
+
   const closeVideoPlayer = contextSafe(() => {
     setShowVideo(false);
 
@@ -281,6 +289,9 @@ const HeroVideo = () => {
                 as={"button"}
                 text="Get Quote Now"
                 variant="rounded"
+                onClick={() => {
+                  scrollToSection("#get-in-touch");
+                }}
               />
             </div>
           </div>

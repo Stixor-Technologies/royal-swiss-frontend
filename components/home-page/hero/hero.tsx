@@ -2,7 +2,7 @@ import React, { FC, useRef } from "react";
 import Image from "next/image";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
-import { DrawSVGPlugin, SplitText } from "gsap/all";
+import { DrawSVGPlugin, SplitText, ScrollToPlugin } from "gsap/all";
 import LinkButton from "@/components/shared/link-button/link-button";
 import { BASE_URL } from "@/utils/constants";
 import "swiper/css";
@@ -17,11 +17,11 @@ type HeroSectionProps = {
 };
 
 const HeroSection: FC<HeroSectionProps> = ({ bannerImages, isLoading }) => {
-  gsap.registerPlugin(SplitText, DrawSVGPlugin);
+  gsap.registerPlugin(SplitText, DrawSVGPlugin, ScrollToPlugin);
   const heroSection = useRef<HTMLElement | null>(null);
   const imagesContainer = useRef<HTMLDivElement | null>(null);
 
-  useGSAP(
+  const { contextSafe } = useGSAP(
     () => {
       const mm = gsap.matchMedia();
       const breakPoint = 1024;
@@ -205,7 +205,13 @@ const HeroSection: FC<HeroSectionProps> = ({ bannerImages, isLoading }) => {
     { scope: heroSection, dependencies: [bannerImages] },
   );
 
-  console.log(isLoading);
+  const scrollToSection = contextSafe((targetSection: string) => {
+    gsap.to(window, {
+      duration: 4,
+      scrollTo: targetSection,
+      ease: "power2",
+    });
+  });
 
   return (
     <>
@@ -264,6 +270,9 @@ const HeroSection: FC<HeroSectionProps> = ({ bannerImages, isLoading }) => {
                     as={"button"}
                     text="Get Quote Now"
                     variant="rounded"
+                    onClick={() => {
+                      scrollToSection("#get-in-touch");
+                    }}
                   />
                 </div>
               </div>

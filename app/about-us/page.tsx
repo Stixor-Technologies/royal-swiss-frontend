@@ -34,7 +34,7 @@ const AboutUs = () => {
     }
   });
 
-  useGSAP(
+  const { contextSafe } = useGSAP(
     () => {
       const mm = gsap.matchMedia();
       mm.add(
@@ -59,6 +59,14 @@ const AboutUs = () => {
     },
     { scope: aboutSection },
   );
+
+  const scrollToSection = contextSafe((targetSection: string) => {
+    gsap.to(window, {
+      duration: 4,
+      scrollTo: targetSection,
+      ease: "power2",
+    });
+  });
 
   useEffect(() => {
     const handleWindowResize = () => {
@@ -140,7 +148,14 @@ const AboutUs = () => {
               together in harmony with each other
             </p>
 
-            <LinkButton as={"button"} text="Get a Quote" variant="corner" />
+            <LinkButton
+              as={"button"}
+              text="Get a Quote"
+              variant="corner"
+              onClick={() => {
+                scrollToSection("#get-in-touch");
+              }}
+            />
           </div>
         </div>
 
