@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useRef } from "react";
+import React, { useRef } from "react";
 import PageHeader from "@/components/shared/page-header/page-header";
 import ServicesList from "@/components/services/services-list/services-list";
 import AdvertisementPolicy from "@/components/shared/advertisement-policy/advertisement-policy";
@@ -8,7 +8,6 @@ import Dealers from "@/components/shared/dealers/dealers";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollSmoother, ScrollTrigger, DrawSVGPlugin } from "gsap/all";
-import { animatePageIn } from "@/utils/transition-animation";
 
 const Services = () => {
   gsap.registerPlugin(ScrollTrigger, ScrollSmoother, DrawSVGPlugin);
