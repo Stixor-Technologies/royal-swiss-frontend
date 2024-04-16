@@ -21,20 +21,30 @@ import {
 import Team from "@/components/home-page/team/team";
 import HomePageProjects from "@/components/home-page/projects/projects";
 import HomePageServices from "@/components/home-page/services/services";
+import { gsap } from "gsap";
+import { useGSAP } from "@gsap/react";
+import { ScrollSmoother } from "gsap/all";
 
 export default function Home() {
+  gsap.registerPlugin(ScrollSmoother);
+
   const [bannerImages, setBannerImages] = useState<[]>([]);
   const [associatesGroup, setAssociatesGroup] = useState<
     AssociatesGroup[] | []
   >([]);
-
   const [galleryImages, setGalleryImages] = useState<Images[] | []>([]);
   const [services, setServices] = useState<ProfessionalServices[] | []>([]);
-
   const [projects, setProjects] = useState<RSProjects[] | []>([]);
 
   useEffect(() => {
     animatePageIn();
+  }, []);
+
+  useGSAP(() => {
+    window.scrollTo(0, 0);
+    if (window.innerWidth > 768) {
+      ScrollSmoother.create({ smooth: 2, smoothTouch: 0 });
+    }
   }, []);
 
   const fetchBannerImages = async () => {
