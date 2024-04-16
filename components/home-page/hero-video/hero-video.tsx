@@ -21,7 +21,7 @@ const HeroVideo = () => {
       gsap.set("#path", { drawSVG: "0" });
       ScrollTrigger.create({
         trigger: heroVideoContainer.current,
-        start: "top 40%",
+        start: "top 35%",
         animation: gsap.to("#path", {
           duration: 2,
           drawSVG: true,

@@ -9,12 +9,14 @@ import "swiper/css";
 import "swiper/css/pagination";
 import { Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
+import Spinner from "@/components/shared/spinner/spinner";
 
 type HeroSectionProps = {
   bannerImages: any[];
+  isLoading: boolean;
 };
 
-const HeroSection: FC<HeroSectionProps> = ({ bannerImages }) => {
+const HeroSection: FC<HeroSectionProps> = ({ bannerImages, isLoading }) => {
   gsap.registerPlugin(SplitText, DrawSVGPlugin);
   const heroSection = useRef<HTMLElement | null>(null);
   const imagesContainer = useRef<HTMLDivElement | null>(null);
@@ -203,9 +205,17 @@ const HeroSection: FC<HeroSectionProps> = ({ bannerImages }) => {
     { scope: heroSection, dependencies: [bannerImages] },
   );
 
+  console.log(isLoading);
+
   return (
     <>
-      {bannerImages?.length > 0 ? (
+      {isLoading ? (
+        <>
+          <div className="flex min-h-[70vh]">
+            <Spinner />
+          </div>
+        </>
+      ) : bannerImages?.length > 0 ? (
         <section ref={heroSection} className="relative z-10">
           <div className="container mt-8 ">
             <div className="absolute inset-0 -z-[10] mx-auto hidden max-w-[120rem] flex-col justify-center lg:flex">

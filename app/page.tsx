@@ -41,6 +41,7 @@ export default function Home() {
   const [services, setServices] = useState<ProfessionalServices[] | []>([]);
   const [projects, setProjects] = useState<RSProjects[] | []>([]);
   const [team, setTeam] = useState<TeamMembers[] | []>([]);
+  const [loadingHero, setLoading] = useState<boolean>(true);
 
   useEffect(() => {
     animatePageIn();
@@ -58,6 +59,7 @@ export default function Home() {
     if (resp) {
       setBannerImages(resp?.banner_images?.data);
     }
+    setLoading(false);
   };
 
   const fetchAssociatesGroup = async () => {
@@ -106,7 +108,7 @@ export default function Home() {
 
   return (
     <div className=" min-h-screen">
-      <HeroSection bannerImages={bannerImages} />
+      <HeroSection isLoading={loadingHero} bannerImages={bannerImages} />
       <AssociateGroup assocGroups={associatesGroup} />
       <HeroVideo />
       <HomePageProjects projects={projects} />
