@@ -37,6 +37,23 @@ const AboutUs = () => {
   const { contextSafe } = useGSAP(
     () => {
       const mm = gsap.matchMedia();
+
+      const videoCard: HTMLDivElement[] = gsap.utils.toArray(".video-card");
+      videoCard.forEach((box, index) => {
+        if (index >= 1) {
+          console.log("first");
+          gsap.from(box, {
+            y: 60,
+            scrollTrigger: {
+              trigger: box,
+              start: "top 90%",
+              end: "+=350",
+              scrub: true,
+            },
+          });
+        }
+      });
+
       mm.add(
         {
           isDesktop: "(min-width: 1024px)",
@@ -44,6 +61,7 @@ const AboutUs = () => {
         (context) => {
           if (context.conditions) {
             const { isDesktop } = context.conditions;
+
             if (isDesktop) {
               const tl = gsap.timeline({ delay: 0.1 });
 
