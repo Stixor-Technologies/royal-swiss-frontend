@@ -7,9 +7,10 @@ import LinkButton from "@/components/shared/link-button/link-button";
 import { BASE_URL } from "@/utils/constants";
 import "swiper/css";
 import "swiper/css/pagination";
-import { Pagination } from "swiper/modules";
+import { Pagination, EffectFade, Autoplay } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import Spinner from "@/components/shared/spinner/spinner";
+import "swiper/css/effect-fade";
 
 type HeroSectionProps = {
   bannerImages: any[];
@@ -282,9 +283,14 @@ const HeroSection: FC<HeroSectionProps> = ({ bannerImages, isLoading }) => {
                 className=" relative origin-bottom-left scale-x-[0.8] scale-y-0 overflow-hidden rounded-[1.25rem] lg:w-[53.8%] lg:rounded-[2.5rem]"
               >
                 <Swiper
-                  grabCursor={true}
                   loop={true}
-                  modules={[Pagination]}
+                  effect={"fade"}
+                  modules={[Pagination, EffectFade, Autoplay]}
+                  speed={1000}
+                  autoplay={{
+                    delay: 2500,
+                    disableOnInteraction: false,
+                  }}
                   shortSwipes={true}
                   longSwipesMs={10000}
                   className="banner-swiper carousel-slider aspect-[690/514] h-full "
