@@ -16,6 +16,7 @@ const HomePageServices: FC<ServicesProps> = ({ services }) => {
   const root = useRef<HTMLDivElement | null>(null);
   const itemRef = useRef<HTMLDivElement[]>([]);
   const [service, setService] = useState<string | null>(null);
+  const [windowSize, setWindowSize] = useState<number>(0);
 
   gsap.registerPlugin(ScrollTrigger);
 
@@ -146,6 +147,17 @@ const HomePageServices: FC<ServicesProps> = ({ services }) => {
     }
   }, [services]);
 
+  useEffect(() => {
+    const handleWindowResize = () => {
+      setWindowSize(window.innerWidth);
+    };
+    handleWindowResize();
+    window.addEventListener("resize", handleWindowResize);
+    return () => {
+      window.removeEventListener("resize", handleWindowResize);
+    };
+  }, []);
+
   return (
     <>
       {services?.length > 0 ? (
@@ -258,27 +270,46 @@ const HomePageServices: FC<ServicesProps> = ({ services }) => {
                     </div>
 
                     <Link
-                      href={"#"}
+                      href={"/services"}
                       key={index}
-                      className="detail-link flex translate-y-5 items-center justify-between rounded-full border-[1px] border-white opacity-0 md:gap-4 md:px-[1.875rem] md:py-2"
+                      className="detail-link flex translate-y-5 items-center justify-between gap-2 rounded-full border-[1px] border-white px-[0.559rem] py-[0.149rem] opacity-0 sm:px-4 md:py-0.5 lg:gap-4 lg:px-[1.875rem] lg:py-2"
                     >
-                      <p className="text-white md:text-[1.606rem] md:leading-[1.927rem]">
-                        Detail
-                      </p>
+                      {windowSize >= 640 ? (
+                        <>
+                          <p className="text-white md:text-lg lg:text-[1.606rem] lg:leading-[1.927rem]">
+                            Detail
+                          </p>
 
-                      <svg
-                        width="23"
-                        height="23"
-                        viewBox="0 0 23 23"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                        className=" size-[1.188rem]"
-                      >
-                        <path
-                          d="M0.925198 19.9252C0.331601 20.5188 0.331601 21.4812 0.925198 22.0748C1.51879 22.6684 2.48121 22.6684 3.0748 22.0748L0.925198 19.9252ZM22.52 2C22.52 1.16053 21.8395 0.48 21 0.48H7.32C6.48053 0.48 5.8 1.16053 5.8 2C5.8 2.83947 6.48053 3.52 7.32 3.52H19.48V15.68C19.48 16.5195 20.1605 17.2 21 17.2C21.8395 17.2 22.52 16.5195 22.52 15.68V2ZM3.0748 22.0748L22.0748 3.0748L19.9252 0.925198L0.925198 19.9252L3.0748 22.0748Z"
-                          fill="#EADDA8"
-                        />
-                      </svg>
+                          <svg
+                            width="23"
+                            height="23"
+                            viewBox="0 0 23 23"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                            className=" size-3 md:size-3.5 lg:size-[1.188rem]"
+                          >
+                            <path
+                              d="M0.925198 19.9252C0.331601 20.5188 0.331601 21.4812 0.925198 22.0748C1.51879 22.6684 2.48121 22.6684 3.0748 22.0748L0.925198 19.9252ZM22.52 2C22.52 1.16053 21.8395 0.48 21 0.48H7.32C6.48053 0.48 5.8 1.16053 5.8 2C5.8 2.83947 6.48053 3.52 7.32 3.52H19.48V15.68C19.48 16.5195 20.1605 17.2 21 17.2C21.8395 17.2 22.52 16.5195 22.52 15.68V2ZM3.0748 22.0748L22.0748 3.0748L19.9252 0.925198L0.925198 19.9252L3.0748 22.0748Z"
+                              fill="#EADDA8"
+                            />
+                          </svg>
+                        </>
+                      ) : (
+                        <>
+                          <svg
+                            width="11"
+                            height="9"
+                            viewBox="0 0 11 9"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M10.5435 4.85355C10.7388 4.65829 10.7388 4.34171 10.5435 4.14645L7.36151 0.964466C7.16625 0.769204 6.84967 0.769204 6.65441 0.964466C6.45915 1.15973 6.45915 1.47631 6.65441 1.67157L9.48283 4.5L6.65441 7.32843C6.45915 7.52369 6.45915 7.84027 6.65441 8.03553C6.84967 8.2308 7.16625 8.2308 7.36151 8.03553L10.5435 4.85355ZM0.189941 5H10.1899V4H0.189941V5Z"
+                              fill="white"
+                            />
+                          </svg>
+                        </>
+                      )}
                     </Link>
                   </div>
                 );
