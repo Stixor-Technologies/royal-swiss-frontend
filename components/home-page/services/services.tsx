@@ -22,11 +22,6 @@ const HomePageServices: FC<ServicesProps> = ({ services }) => {
 
   useGSAP(
     () => {
-      const body = document.querySelector("body");
-      const projectContainer: HTMLDivElement | null = document.querySelector(
-        ".services-container",
-      );
-
       ScrollTrigger.create({
         trigger: root.current,
         start: "top top",
