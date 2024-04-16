@@ -55,6 +55,9 @@ interface ProfessionalServices {
     icon: {
       data: Images;
     };
+    backgroundImage: {
+      data: Images;
+    };
   };
 }
 
