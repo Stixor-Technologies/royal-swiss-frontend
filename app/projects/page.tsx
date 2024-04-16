@@ -20,10 +20,6 @@ const Projects = () => {
   const [projects, setProject] = useState<RSProjects[] | []>([]);
   const [loading, setLoading] = useState<boolean>(true);
 
-  useEffect(() => {
-    animatePageIn();
-  }, []);
-
   useGSAP(() => {
     window.scrollTo(0, 0);
     if (window.innerWidth > 768) {
@@ -42,7 +38,7 @@ const Projects = () => {
           if (context.conditions) {
             const { isDesktop } = context.conditions;
             if (isDesktop) {
-              const tl = gsap.timeline({ delay: 0.1 });
+              const tl = gsap.timeline({ delay: 1 });
 
               tl.fromTo(
                 "#path",
@@ -64,6 +60,7 @@ const Projects = () => {
         setProject(resp);
       }
       setLoading(false);
+      animatePageIn();
     };
     fetchProjects();
   }, []);

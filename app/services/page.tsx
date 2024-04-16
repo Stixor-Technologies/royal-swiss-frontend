@@ -22,10 +22,6 @@ const Services = () => {
     }
   }, []);
 
-  useEffect(() => {
-    animatePageIn();
-  }, []);
-
   useGSAP(
     () => {
       const mm = gsap.matchMedia();
@@ -37,7 +33,7 @@ const Services = () => {
           if (context.conditions) {
             const { isDesktop } = context.conditions;
             if (isDesktop) {
-              const tl = gsap.timeline({ delay: 0.1 });
+              const tl = gsap.timeline({ delay: 1 });
 
               tl.fromTo(
                 "#path",

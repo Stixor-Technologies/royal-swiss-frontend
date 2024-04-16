@@ -65,7 +65,7 @@ const HeroSection: FC<HeroSectionProps> = ({ bannerImages, isLoading }) => {
             });
 
             if (isDesktop) {
-              const tl = gsap.timeline({ delay: 0.1 });
+              const tl = gsap.timeline({ delay: 1 });
 
               tl.to("#path", {
                 duration: 2,

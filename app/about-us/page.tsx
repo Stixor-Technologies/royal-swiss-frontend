@@ -41,7 +41,6 @@ const AboutUs = () => {
       const videoCard: HTMLDivElement[] = gsap.utils.toArray(".video-card");
       videoCard.forEach((box, index) => {
         if (index >= 1) {
-          console.log("first");
           gsap.from(box, {
             y: 60,
             scrollTrigger: {
@@ -63,7 +62,7 @@ const AboutUs = () => {
             const { isDesktop } = context.conditions;
 
             if (isDesktop) {
-              const tl = gsap.timeline({ delay: 0.1 });
+              const tl = gsap.timeline({ delay: 1 });
 
               tl.fromTo(
                 "#path",

@@ -114,7 +114,6 @@ const HomePageServices: FC<ServicesProps> = ({ services }) => {
                     });
                   },
                   onLeave: () => {
-                    console.log("onLe");
                     gsap.to(document.querySelector(".custom-bg-element"), {
                       opacity: 0,
                     });

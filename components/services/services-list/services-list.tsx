@@ -1,6 +1,7 @@
 import SegmentCard from "@/components/shared/segment-card/segment-card";
 import Spinner from "@/components/shared/spinner/spinner";
 import { getServices } from "@/utils/api-calls";
+import { animatePageIn } from "@/utils/transition-animation";
 import { ProfessionalServices } from "@/utils/types/types";
 import React, { useEffect, useState } from "react";
 
@@ -14,6 +15,7 @@ const ServicesList = () => {
         setServices(resp);
       }
       setLoading(false);
+      animatePageIn();
     };
     fetchServices();
   }, []);

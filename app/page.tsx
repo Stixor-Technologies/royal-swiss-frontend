@@ -43,10 +43,6 @@ export default function Home() {
   const [team, setTeam] = useState<TeamMembers[] | []>([]);
   const [loadingHero, setLoading] = useState<boolean>(true);
 
-  useEffect(() => {
-    animatePageIn();
-  }, []);
-
   useGSAP(() => {
     window.scrollTo(0, 0);
     if (window.innerWidth > 768) {
@@ -60,6 +56,7 @@ export default function Home() {
       setBannerImages(resp?.banner_images?.data);
     }
     setLoading(false);
+    animatePageIn();
   };
 
   const fetchAssociatesGroup = async () => {

@@ -25,16 +25,13 @@ const Updates = () => {
   }, []);
 
   useEffect(() => {
-    animatePageIn();
-  }, []);
-
-  useEffect(() => {
     const fetchEvents = async () => {
       const resp = await getEvents();
       if (resp) {
         setEvents(resp);
       }
       setLoading(false);
+      animatePageIn();
     };
     fetchEvents();
   }, []);
@@ -50,7 +47,7 @@ const Updates = () => {
           if (context.conditions) {
             const { isDesktop } = context.conditions;
             if (isDesktop) {
-              const tl = gsap.timeline({ delay: 0.1 });
+              const tl = gsap.timeline({ delay: 1 });
 
               tl.fromTo(
                 "#path",
