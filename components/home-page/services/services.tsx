@@ -163,7 +163,7 @@ const HomePageServices: FC<ServicesProps> = ({ services }) => {
       {services?.length > 0 ? (
         <section
           ref={homeServicesSection}
-          className="mt-[145px] bg-dark-grain-pattern bg-cover bg-no-repeat bg-blend-multiply"
+          className="mt-10 bg-dark-grain-pattern bg-cover bg-no-repeat bg-blend-multiply lg:mt-[11.375rem]"
         >
           {/* Sticky background */}
           <div className="pointer-events-none">

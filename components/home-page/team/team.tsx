@@ -1,5 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
-import { getTeam } from "@/utils/api-calls";
+import React, { FC, useRef } from "react";
 import { TeamMembers } from "@/utils/types/types";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -10,19 +9,12 @@ import "swiper/css/navigation";
 import { FreeMode } from "swiper/modules";
 import { BASE_URL } from "@/utils/constants";
 
-const Team = () => {
-  const swiperRef = useRef<SwiperClass | null>(null);
-  const [team, setTeam] = useState<TeamMembers[] | []>([]);
+type TeamProps = {
+  team: TeamMembers[];
+};
 
-  useEffect(() => {
-    const fetchTeam = async () => {
-      const resp = await getTeam();
-      if (resp) {
-        setTeam(resp);
-      }
-    };
-    fetchTeam();
-  }, []);
+const Team: FC<TeamProps> = ({ team }) => {
+  const swiperRef = useRef<SwiperClass | null>(null);
 
   return (
     <>

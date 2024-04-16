@@ -134,7 +134,10 @@ const HeroVideo = () => {
   });
 
   return (
-    <section ref={heroVideoContainer} className="relative z-10  -mt-28">
+    <section
+      ref={heroVideoContainer}
+      className="relative z-10 mt-[4.438rem]  lg:-mt-28"
+    >
       <div className="absolute -inset-10 -right-80 -z-[10] hidden flex-col justify-center lg:flex">
         <svg
           height="1095"
@@ -154,7 +157,7 @@ const HeroVideo = () => {
         </svg>
       </div>
 
-      <div className="container relative z-10 pb-[4.5rem] pt-[9.688rem]">
+      <div className="container relative z-10 lg:pb-[4.5rem] lg:pt-[9.688rem]">
         <div className="relative mx-auto flex max-w-[40rem] flex-col gap-10 lg:max-w-none">
           <div
             className={`${!showVideo && "pointer-events-none"} relative z-10 aspect-[400/406] overflow-hidden lg:!aspect-[2/0.963] xs:aspect-[3/2]`}

@@ -47,7 +47,10 @@ const HomePageProjects: FC<ProjectsProps> = ({ projects }) => {
   return (
     <>
       {projects?.length > 0 ? (
-        <section ref={projectsSection} className="container mt-[145px]">
+        <section
+          ref={projectsSection}
+          className="container mt-10 lg:mt-[9.063rem]"
+        >
           <div className="text-center md:text-left">
             <h2
               data-project-heading
