@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import Image from "next/image";
 import FooterLogo from "../../../public/images/footer/logo-footer.png";
@@ -5,8 +6,12 @@ import { footerLinks } from "@/utils/utils";
 import { Menu } from "@/utils/types/types";
 import { socialLink } from "@/utils/utils";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
+import TransitionLink from "@/components/transition-link";
 
 const Footer = () => {
+  const router = useRouter();
+
   return (
     <footer className="relative z-10 bg-indigo-blue pb-[1.25rem] pt-[1.563rem] after:absolute after:inset-0 after:-z-10 after:bg-dark-grain-pattern after:bg-cover after:bg-no-repeat after:opacity-40 after:bg-blend-multiply after:content-[''] sm:pb-6 sm:pt-[3.313rem]">
       <div className="container text-white">
@@ -53,12 +58,11 @@ const Footer = () => {
               <ul className="space-y-1.5 sm:space-y-[0.438rem]">
                 {footerLinks?.map((link: Menu) => (
                   <li key={link.id}>
-                    <Link
-                      href={link.path}
-                      className="after:transition-width relative text-[0.813rem] leading-[1.443rem] after:absolute after:-bottom-1 after:left-0 after:h-[0.081rem] after:w-0 after:bg-white after:duration-500 after:ease-in-out after:content-[''] hover:after:w-full sm:text-[0.938rem] sm:leading-[1.688rem]"
-                    >
-                      {link.title}
-                    </Link>
+                    <TransitionLink href={link?.path}>
+                      <span className="after:transition-width relative block text-left text-[0.813rem] leading-[1.443rem] after:absolute after:-bottom-1 after:left-0 after:h-[0.081rem] after:w-0 after:bg-white after:duration-500 after:ease-in-out after:content-[''] hover:after:w-full sm:text-[0.938rem] sm:leading-[1.688rem]">
+                        {link?.title}
+                      </span>
+                    </TransitionLink>
                   </li>
                 ))}
               </ul>
