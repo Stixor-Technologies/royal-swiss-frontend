@@ -15,10 +15,6 @@ interface IProps {
 }
 
 const MapComponent: FC<IProps> = ({ location, fromContact }) => {
-  const [mapZoom, setMapZoom] = useState<number>(10);
-
-  const mapRef = useRef<google.maps.Map | null>(null);
-
   const { isLoaded } = useJsApiLoader({
     id: "google-map-script",
     googleMapsApiKey: MAP_KEY!,
@@ -36,24 +32,6 @@ const MapComponent: FC<IProps> = ({ location, fromContact }) => {
     maxZoom: 40,
   };
 
-  // useEffect(() => {
-  //   if (isLoaded && mapRef.current) {
-  //     console.log("loaded");
-  //     const bounds = new google.maps.LatLngBounds();
-  //     bounds.extend(new google.maps.LatLng(location?.lat, location?.lng));
-
-  //     mapRef.current.fitBounds(bounds);
-  //   }
-  // }, [isLoaded, location]);
-
-  // useEffect(() => {
-  //   if (isLoaded && mapRef.current) {
-  //     console.log("first");
-  //     setMapZoom(12);
-  //     mapRef.current.panTo(location);
-  //   }
-  // }, [isLoaded, location]);
-
   return (
     <div
       className={`sm:pb-1/2 relative w-full flex-1 items-center ${fromContact ? "h-[22rem] sm:h-[20.688rem]" : "h-[22rem] sm:h-[34.563rem] midLg:h-full"} `}
@@ -64,9 +42,6 @@ const MapComponent: FC<IProps> = ({ location, fromContact }) => {
           zoom={12}
           center={location}
           options={mapOptions}
-          // onLoad={(map) => {
-          //   mapRef.current = map;
-          // }}
           mapContainerClassName="absolute top-0 left-0 h-full w-full rounded-2xl"
         >
           <Marker position={location} />
