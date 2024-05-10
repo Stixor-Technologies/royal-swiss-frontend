@@ -100,6 +100,38 @@ const getGallery = async () => {
   }
 };
 
+const getAssociatesGroup = async () => {
+  try {
+    const response = await fetch(
+      `${BASE_URL}/api/assoc-group-medias?populate=*&sort[1]=id`,
+      {
+        cache: "no-store",
+      },
+    );
+
+    const data = await response.json();
+    return data?.data;
+  } catch (error) {
+    console.error(error);
+  }
+};
+
+const getBannerImages = async () => {
+  try {
+    const response = await fetch(
+      `${BASE_URL}/api/home-banner-images?populate=*`,
+      {
+        cache: "no-store",
+      },
+    );
+
+    const data = await response.json();
+    return data?.data?.attributes;
+  } catch (error) {
+    console.error(error);
+  }
+};
+
 export {
   getOfficeAddress,
   getAuthorizedDealers,
@@ -107,5 +139,7 @@ export {
   getProjects,
   getEvents,
   getTeam,
+  getBannerImages,
+  getAssociatesGroup,
   getGallery,
 };

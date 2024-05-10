@@ -55,6 +55,9 @@ interface ProfessionalServices {
     icon: {
       data: Images;
     };
+    backgroundImage: {
+      data: Images;
+    };
   };
 }
 
@@ -102,6 +105,16 @@ interface HomePageGallery {
   data: Images;
 }
 
+interface AssociatesGroup {
+  id: number;
+  attributes: {
+    title: string;
+    icon: {
+      data: Images;
+    };
+  };
+}
+
 export type {
   Menu,
   SocialLinks,
@@ -114,4 +127,5 @@ export type {
   Images,
   TeamMembers,
   Events,
+  AssociatesGroup,
 };
