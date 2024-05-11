@@ -7,9 +7,14 @@ import { useMenuStore } from "@/store/menu-store";
 type TransitionLinkProps = {
   href: string;
   children: ReactNode;
+  className?: string;
 };
 
-const TransitionLink: FC<TransitionLinkProps> = ({ href, children }) => {
+const TransitionLink: FC<TransitionLinkProps> = ({
+  href,
+  children,
+  className,
+}) => {
   const setIsMenuOpen = useMenuStore((state) => state.setIsMenuOpen);
 
   const router = useRouter();
@@ -25,7 +30,7 @@ const TransitionLink: FC<TransitionLinkProps> = ({ href, children }) => {
   return (
     <button
       data-href={href}
-      className="w-full"
+      className={`w-full ${className}`}
       role="link"
       onClick={handleClick}
     >
