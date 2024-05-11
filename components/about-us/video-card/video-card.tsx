@@ -17,7 +17,7 @@ const VideoCard: FC<VideoCardProps> = ({
 }) => {
   return (
     <div
-      className={`flex flex-col gap-10 rounded-[0.938rem] bg-cover bg-no-repeat px-7 pb-[2.125rem] pt-6 bg-blend-multiply md:rounded-3xl xl:flex-row xl:items-center xl:rounded-[2.5rem] xl:p-10 ${isYellow ? "bg-yellow text-indigo-blue xl:gap-[3.125rem]" : isWhite ? "justify-between bg-white text-indigo-blue" : "justify-between bg-dark-grain-pattern xl:gap-[6.688rem]"}`}
+      className={`video-card flex flex-col gap-10 rounded-[0.938rem] bg-cover bg-no-repeat px-7 pb-[2.125rem] pt-6 bg-blend-multiply md:rounded-3xl xl:flex-row xl:items-center xl:rounded-[2.5rem] xl:p-10 ${isYellow ? "bg-yellow text-indigo-blue xl:gap-[3.125rem]" : isWhite ? "justify-between bg-white text-indigo-blue" : "justify-between bg-dark-grain-pattern xl:gap-[6.688rem]"}`}
     >
       <div
         className={`w-full ${!isYellow && "xl:max-w-[41.688rem]"} xl:py-5 ${isYellow && "xl:order-1"} `}

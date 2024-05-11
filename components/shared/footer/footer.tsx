@@ -62,7 +62,7 @@ const Footer = async () => {
     <footer className="relative z-10 bg-indigo-blue pb-[1.25rem] pt-[1.563rem] after:absolute after:inset-0 after:-z-10 after:bg-dark-grain-pattern after:bg-cover after:bg-no-repeat after:opacity-40 after:bg-blend-multiply after:content-[''] sm:pb-6 sm:pt-[3.313rem]">
       <div className="container text-white">
         <div className="mx-auto md:px-0 lg:w-[92.78%]">
-          <div className="mb-[2.979rem] flex flex-col flex-wrap gap-[1.169rem] sm:mb-[2.243rem] md:flex-row md:gap-x-[8.125rem] md:gap-y-[3.125rem] xl:gap-[6.938rem] midLg:flex-nowrap midLg:justify-between midLg:gap-[1.875rem] ">
+          <div className="mb-[2.163rem] flex flex-col flex-wrap gap-[1.169rem] sm:mb-[2.243rem] md:flex-row md:gap-x-[8.125rem] md:gap-y-[3.125rem] xl:gap-[6.938rem] midLg:flex-nowrap midLg:justify-between midLg:gap-[1.875rem] ">
             {/* Left Section */}
             <div className="max-w-[26.625rem] md:w-[50%] midLg:w-full">
               <Image
@@ -97,11 +97,11 @@ const Footer = async () => {
             </div>
 
             {/* Mid Section */}
-            <div className="md:order-0 order-1 mt-[0.493rem] w-full max-w-[7rem] md:mt-[2.5rem] midLg:mt-[5.875rem]">
+            <div className="md:order-0 order-1 w-full md:max-w-[7rem] md:self-end midLg:mt-[5.875rem] midLg:self-auto">
               <h3 className="mb-[0.962rem] text-lg font-semibold text-yellow-dark sm:mb-[1.125rem] sm:text-xl">
                 Quick Links
               </h3>
-              <ul className="space-y-1.5 sm:space-y-[0.438rem]">
+              <ul className="flex flex-wrap gap-6 md:block md:space-y-[0.438rem]">
                 {footerLinks?.map((link: Menu) => (
                   <li key={link.id}>
                     <TransitionLink href={link?.path}>
@@ -160,7 +160,7 @@ const Footer = async () => {
             )}
           </div>
 
-          <div className="mb-[1.528rem] mt-[2.544rem] flex flex-wrap items-center justify-center gap-[0.962rem] sm:justify-start sm:gap-[1.125rem] midLg:hidden">
+          <div className="mb-[1.528rem] mt-[2.163rem] flex flex-wrap items-center justify-center gap-[0.962rem] sm:justify-start sm:gap-[1.125rem] midLg:hidden">
             {socialLink.map((link) => (
               <Link
                 key={link?.title}

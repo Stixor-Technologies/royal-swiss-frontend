@@ -214,12 +214,11 @@ const HeroVideo = () => {
             >
               <div className="relative h-full w-full overflow-hidden rounded-[0.938rem] md:rounded-[1.25rem]">
                 <Image
-                  src={"/images/video-thumbnail.png"}
+                  src={"/images/sample-image.png"}
                   width="500"
                   height="281"
                   alt=""
                   sizes="100vw"
-                  priority
                   className="aspect-[2/1] h-full w-full origin-center object-cover duration-500 group-hover:scale-105"
                 />
                 <div
@@ -248,12 +247,11 @@ const HeroVideo = () => {
           >
             <div className="relative h-full w-full overflow-hidden rounded-[2.5rem]">
               <Image
-                src={"/images/video-thumbnail.png"}
+                src={"/images/sample-image.png"}
                 width="500"
                 height="281"
                 alt=""
                 sizes="100vw"
-                priority
                 className="aspect-[2/1] h-full w-full origin-center object-cover duration-500 group-hover:scale-105"
               />
 

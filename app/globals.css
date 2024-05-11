@@ -50,6 +50,10 @@ body {
   .footer-office-info-label {
     @apply font-semibold text-yellow-dark;
   }
+
+  .split-parent {
+    overflow: hidden;
+  }
 }
 
 .thumb-swiper .swiper-slide {

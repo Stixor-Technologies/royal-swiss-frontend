@@ -4,7 +4,7 @@ import SegmentCard from "../segment-card/segment-card";
 
 const AdvertisementPolicy = () => {
   return (
-    <div className="bg-[url('/images/policy-bg-mobile.png')] bg-contain bg-left-top bg-no-repeat sm:bg-[url('/images/policy-bg-web.png')]">
+    <div className="bg-[url('/images/bg-assets/policy-bg-mobile.png')] bg-contain bg-left-top bg-no-repeat sm:bg-[url('/images/bg-assets/policy-bg-web.png')]">
       <div className="container md:pt-[5.188rem] ">
         <div className="mx-auto lg:w-[92.93%]">
           <div className="mx-auto max-w-[69.938rem] text-center">

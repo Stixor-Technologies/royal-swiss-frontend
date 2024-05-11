@@ -28,7 +28,7 @@ const Gallery: FC<GalleryProps> = ({ galleryImages }) => {
     () => {
       const tl = gsap.timeline();
 
-      tl.to("[data-gallery-heading", {
+      tl.to("[data-gallery-heading]", {
         opacity: 1,
         transform: "translateY(0%)",
       })
@@ -63,7 +63,7 @@ const Gallery: FC<GalleryProps> = ({ galleryImages }) => {
       {galleryImages?.length > 0 ? (
         <section
           ref={gallerySection}
-          className="container mt-10 md:mt-[6.875rem]"
+          className="gallerySection container mt-10 md:mt-[6.875rem]"
         >
           <div className="mx-auto w-full max-w-[70.313rem] text-center">
             <h2

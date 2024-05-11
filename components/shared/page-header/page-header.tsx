@@ -15,18 +15,20 @@ const PageHeader: FC<PageHeaderProps> = ({
 }) => {
   return (
     <div
-      className={`flex flex-col items-center gap-4 text-rich-black sm:items-start lg:flex-row ${!forAbout ? "justify-between" : "justify-center"}`}
+      className={`flex flex-col items-center gap-3 text-rich-black sm:flex-row sm:items-start sm:gap-11 ${!forAbout ? "justify-between" : "justify-center"}`}
     >
-      <div className={`${forAbout && "text-center"}`}>
-        <h2 className="mb-4 font-righteous text-[3.125rem] leading-[3.88rem] text-indigo-blue md:mb-2 md:text-[3.479rem] md:leading-[4.32rem]">
+      <div
+        className={`flex-1 text-center ${forAbout ? "sm:text-center" : "sm:text-left"}`}
+      >
+        <h2 className="mb-3 font-righteous text-4xl leading-[2.794rem] text-indigo-blue md:mb-2 md:text-[3.479rem] md:leading-[4.32rem]">
           {heading}
         </h2>
-        <span className="text-[0.813rem] font-medium  leading-[0.975rem] opacity-50 md:text-lg md:leading-[1.35rem] md:opacity-30">
+        <span className="block text-[0.813rem] font-medium leading-[0.975rem] opacity-50 md:text-lg md:leading-[1.35rem] md:opacity-30">
           {tagline}
         </span>
       </div>
       {!forAbout && (
-        <p className="text-left text-[0.813rem] font-light leading-[0.975] md:text-lg md:leading-[1.35rem] lg:max-w-[28.688rem] xl:text-right">
+        <p className="flex-1  text-center text-[0.813rem] font-light leading-[1.097rem] sm:text-left md:text-lg md:leading-[1.35rem] lg:max-w-[28.688rem] lg:text-right">
           {description}
         </p>
       )}

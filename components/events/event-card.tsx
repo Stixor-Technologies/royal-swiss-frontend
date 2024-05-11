@@ -37,10 +37,10 @@ const EventCard: FC<EventProps> = ({ event }) => {
             modules={[Pagination]}
             shortSwipes={true}
             longSwipesMs={10000}
-            className="event-swiper aspect-[644/320] "
+            className="event-swiper aspect-[646/320] "
           >
             {event?.attributes?.event_images?.data?.map((eventImage, index) => (
-              <SwiperSlide key={index}>
+              <SwiperSlide key={index} className="w-full">
                 <Image
                   src={`${BASE_URL}${eventImage?.attributes?.url}`}
                   alt=""
@@ -52,7 +52,7 @@ const EventCard: FC<EventProps> = ({ event }) => {
           </Swiper>
         </div>
 
-        <div className="mt-10 flex flex-wrap items-center justify-between gap-x-8 gap-y-2 md:mt-[2.125rem]">
+        <div className="mt-10 flex flex-wrap items-center justify-between gap-x-8 gap-y-2 sm:mt-[2.125rem]">
           {/* <h2 className="line-clamp-1 max-w-full font-righteous text-2xl leading-[1.863rem] text-indigo-blue md:max-w-[60%] md:text-[2rem] md:leading-[2.5rem]"> */}
           <h2 className=" max-w-full font-righteous text-2xl leading-[1.863rem] text-indigo-blue md:text-[2rem] md:leading-[2.5rem]">
             {event?.attributes?.title}
@@ -86,7 +86,7 @@ const EventCard: FC<EventProps> = ({ event }) => {
               : truncatedDescription}
             {!showFullDescription && (
               <button
-                className="flex gap-1 text-[0.813rem] leading-[1.006rem] text-indigo-blue md:text-base md:leading-[1.25rem]"
+                className="mt-2 flex gap-1 text-[0.813rem] leading-[1.006rem] text-indigo-blue md:text-base md:leading-[1.25rem]"
                 onClick={toggleDescription}
               >
                 <span className="cursor-pointer">{`Read More >`}</span>

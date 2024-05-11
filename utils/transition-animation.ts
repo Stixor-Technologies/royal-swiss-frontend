@@ -4,21 +4,51 @@ import { AppRouterInstance } from "next/dist/shared/lib/app-router-context.share
 const animatePageIn = () => {
   const transitionElement = document.getElementById("transition-element");
 
+  const loaderLogo = document.getElementById("loader-logo");
+
+  gsap.killTweensOf(loaderLogo);
+
+  gsap.to(loaderLogo, {
+    duration: 0.3,
+    scale: 1.1,
+    ease: "power1.inOut",
+  });
+
+  gsap.to(loaderLogo, {
+    duration: 0.4,
+    scale: 0,
+    opacity: 1,
+    ease: "power1.inOut",
+    filter: "drop-shadow(0px 0px 20px #EADDA8)",
+    delay: 0.4,
+  });
+
   if (transitionElement) {
-    const tl = gsap.timeline();
+    const tl = gsap.timeline({ delay: 0.9 });
 
     tl.set(transitionElement, {
       yPercent: 0,
     }).to(transitionElement, {
       yPercent: 100,
-      duration: 0.7,
-      ease: "expo.inOut",
+      // ease: "expo.inOut",
+      onComplete: () => {
+        gsap.set(loaderLogo, { scale: 1 });
+      },
     });
   }
 };
 
 const animatePageOut = (href: string, router: AppRouterInstance) => {
   const animationWrapper = document.getElementById("transition-element");
+  const loaderLogo = document.getElementById("loader-logo");
+
+  gsap.to(loaderLogo, {
+    duration: 1,
+    yoyo: true,
+    repeat: -1,
+    scale: 0.9,
+    ease: "power1.inOut",
+  });
 
   if (animationWrapper) {
     const tl = gsap.timeline();
