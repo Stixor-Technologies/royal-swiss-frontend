@@ -27,7 +27,7 @@ const ServicesList = () => {
           <Spinner />
         </div>
       ) : services.length > 0 ? (
-        <div className="mx-auto mb-[2.2rem] mt-[3.875rem] grid w-full gap-4 sm:grid-cols-[repeat(auto-fit,_minmax(22.625rem,_1fr))] md:mb-[2.75rem] md:mt-[8.5rem] md:gap-6">
+        <div className="mx-auto mb-[2.2rem] mt-[3.875rem] grid w-full gap-4 sm:grid-cols-[repeat(auto-fill,_minmax(22.625rem,_1fr))] md:mb-[2.75rem] md:mt-[8.5rem] md:gap-6">
           {services?.map(({ attributes: service }) => {
             const segmentInfo = {
               icon: service?.icon?.data?.attributes?.url,
