@@ -7,18 +7,15 @@ import { socialLink } from "@/utils/utils";
 import Link from "next/link";
 import TransitionLink from "@/components/transition-link";
 import { getOfficeAddress } from "@/utils/api-calls";
-import { add } from "date-fns";
 
 const Footer = async () => {
   const officeAddress: Office = await getOfficeAddress();
-  console.log(officeAddress);
 
-  const formatTime = (time: any) => {
+  const formatTime = (time: string) => {
     const date = new Date();
     const [hours, minutes] = time?.split(":");
-
-    date.setHours(hours);
-    date.setMinutes(minutes);
+    date.setHours(Number(hours));
+    date.setMinutes(Number(minutes));
     return date.toLocaleString("en-US", {
       hour: "numeric",
       minute: "numeric",
@@ -79,7 +76,7 @@ const Footer = async () => {
               </p>
 
               <div className="mt-[2.544rem] hidden gap-[1.125rem] midLg:flex">
-                {socialLink.map((link) => (
+                {socialLink?.map((link) => (
                   <Link
                     key={link?.title}
                     href={link?.path}
@@ -119,43 +116,26 @@ const Footer = async () => {
               <div className="order-0 w-full max-w-[25.25rem] space-y-3 md:order-1 lg:pl-[0.625rem] xl:pl-[2.813rem] midLg:mt-[5.875rem]">
                 <address className="footer-office-info not-italic">
                   <span className="footer-office-info-label">Office: </span>
-                  {/* House No. 253-D, Northern Bypass, Near Nigana Chowk Multan */}
                   {officeAddress?.address}
                 </address>
 
                 <p className="footer-office-info">
                   <span className="footer-office-info-label">Email: </span>
                   <Link href="mailto:info@royalswisshousing.com">
-                    {/* info@royalswisshousing.com */}
                     {officeAddress?.email}
                   </Link>
                 </p>
 
-                {officeAddress?.contact_numbers?.slice(-2)?.map((number) => (
-                  // <Link
-                  //   key={number?.id}
-                  //   href={`tel:${number?.contact_number}`}
-                  //   className="block text-[0.813rem] leading-[1.445rem] text-gray md:text-[0.938rem] md:leading-[1.688rem]"
-                  // >
-                  //   {number?.contact_number}
-                  // </Link>
-                  <p className="footer-office-info">
-                    <span className="footer-office-info-label">Phone: </span>
-                    <Link href="tel:+92 61 621 6008/9">
-                      {number?.contact_number}
-                    </Link>
-                  </p>
-                ))}
-
-                {/* <p className="footer-office-info">
-                  <span className="footer-office-info-label">Phone: </span>
-                  <Link href="tel:+92 61 621 6008/9">+92 61 621 6008/9</Link>
-                </p>
-
-                <p className="footer-office-info">
-                  <span className="footer-office-info-label">Phone: </span>
-                  <Link href="tel:+92-31-111-444-32">+92-31-111-444-32</Link>
-                </p> */}
+                {officeAddress?.contact_numbers
+                  ?.slice(-2)
+                  ?.map((number, index) => (
+                    <p key={index} className="footer-office-info">
+                      <span className="footer-office-info-label">Phone: </span>
+                      <Link href={`tel:${number?.contact_number}`}>
+                        {number?.contact_number}
+                      </Link>
+                    </p>
+                  ))}
               </div>
             )}
           </div>
