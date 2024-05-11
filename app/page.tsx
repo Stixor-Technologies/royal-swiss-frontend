@@ -73,17 +73,17 @@ export default function Home() {
     }
   };
 
-  const fetchGallery = async () => {
-    const resp = await getGallery();
-    if (resp) {
-      setGalleryImages(resp?.attributes?.gallery_images?.data);
-    }
-  };
-
   const fetchServices = async () => {
     const resp = await getServices();
     if (resp) {
       setServices(resp);
+    }
+  };
+
+  const fetchGallery = async () => {
+    const resp = await getGallery();
+    if (resp) {
+      setGalleryImages(resp?.attributes?.gallery_images?.data);
     }
   };
 
