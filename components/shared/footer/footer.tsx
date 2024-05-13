@@ -5,6 +5,7 @@ import { footerLinks } from "@/utils/utils";
 import { Menu } from "@/utils/types/types";
 import { socialLink } from "@/utils/utils";
 import Link from "next/link";
+import TransitionLink from "@/components/transition-link";
 
 const Footer = () => {
   return (
@@ -53,12 +54,11 @@ const Footer = () => {
               <ul className="flex flex-wrap gap-6 md:block md:space-y-[0.438rem]">
                 {footerLinks?.map((link: Menu) => (
                   <li key={link.id}>
-                    <Link
-                      href={link.path}
-                      className="after:transition-width relative text-[0.813rem] leading-[1.443rem] after:absolute after:-bottom-1 after:left-0 after:h-[0.081rem] after:w-0 after:bg-white after:duration-500 after:ease-in-out after:content-[''] hover:after:w-full sm:text-[0.938rem] sm:leading-[1.688rem]"
-                    >
-                      {link.title}
-                    </Link>
+                    <TransitionLink href={link?.path}>
+                      <span className="after:transition-width relative text-[0.813rem] leading-[1.443rem] after:absolute after:-bottom-1 after:left-0 after:h-[0.081rem] after:w-0 after:bg-white after:duration-500 after:ease-in-out after:content-[''] hover:after:w-full sm:text-[0.938rem] sm:leading-[1.688rem]">
+                        {link.title}
+                      </span>
+                    </TransitionLink>
                   </li>
                 ))}
               </ul>
