@@ -22,7 +22,6 @@ const HomePageServices: FC<ServicesProps> = ({ services }) => {
   gsap.registerPlugin(ScrollTrigger);
   useGSAP(
     () => {
-      console.log("resgister trigger");
       ScrollTrigger.create({
         trigger: root.current,
         start: "top top",
