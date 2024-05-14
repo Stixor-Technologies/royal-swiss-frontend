@@ -1,5 +1,5 @@
 "use client";
-import React, { FC, useEffect, useState, useRef } from "react";
+import React, { FC } from "react";
 import { GoogleMap, Marker, useJsApiLoader } from "@react-google-maps/api";
 import Spinner from "../spinner/spinner";
 import { MAP_KEY } from "@/utils/constants";
