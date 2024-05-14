@@ -107,8 +107,8 @@ const Sidebar = () => {
         <div className="absolute -z-10 h-full w-full bg-indigo-blue" />
 
         <div
-          className=" mx-auto h-full w-full flex-col  justify-center overflow-y-auto p-4 
-            pb-4 pt-[2.313rem] min-aspect:mx-0 min-aspect:w-full min-aspect:justify-center min-aspect:pt-[6vw]"
+          className=" mx-auto h-full w-full flex-col justify-center overflow-y-auto p-4 
+            pb-4 pt-[1.125rem] min-aspect:mx-0 min-aspect:w-full min-aspect:justify-center"
         >
           <div className="flex justify-between">
             <div>

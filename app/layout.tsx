@@ -31,7 +31,7 @@ export default function RootLayout({
         <PageLoader />
         <div id="smooth-wrapper">
           <div id="smooth-content">
-            <main className="min-h-screen overflow-x-hidden bg-milk-white pt-[7.313rem] sm:pt-[9.375rem] lg:pt-[11.562rem]">
+            <main className="min-h-screen overflow-x-hidden bg-milk-white pt-20 sm:pt-28 lg:pt-[11.562rem]">
               <div className="bg-[url('/images/bg-assets/bg-main-mobile.png')] bg-contain bg-[right_top_-26vw] bg-no-repeat sm:bg-[right_top_-18vw] md:bg-[url('/images/bg-assets/bg-main.png')] md:bg-[center_top_-8vw]">
                 {children}
               </div>
