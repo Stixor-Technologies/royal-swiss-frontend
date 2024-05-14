@@ -29,7 +29,7 @@ const animatePageIn = () => {
     tl.set(transitionElement, {
       yPercent: 0,
     }).to(transitionElement, {
-      yPercent: 100,
+      yPercent: 200,
       // ease: "expo.inOut",
       onComplete: () => {
         gsap.set(loaderLogo, { scale: 1 });
