@@ -171,7 +171,6 @@ const Footer = async () => {
 
             {officeAddress?.days && (
               <span className="midLg:order-0 text-[0.813rem] leading-[1.539rem] text-spanish-gray sm:text-base sm:leading-[1.8rem]">
-                {/* Open: Mon - Sat / 9:00 AM - 6:00 PM */}
                 Open:{" "}
                 {`${displayDays({ days: officeAddress.days })} / ${formatTime(officeAddress?.opening)} - ${formatTime(officeAddress?.closing)} `}
               </span>

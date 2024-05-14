@@ -5,7 +5,8 @@ import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/all";
 import Image from "next/image";
 import { BASE_URL } from "@/utils/constants";
-import Link from "next/link";
+import TransitionLink from "@/components/transition-link";
+import SideBar from "../../../public/images/side.svg";
 
 type ServicesProps = {
   services: ProfessionalServices[];
@@ -19,7 +20,6 @@ const HomePageServices: FC<ServicesProps> = ({ services }) => {
   const [windowSize, setWindowSize] = useState<number>(0);
 
   gsap.registerPlugin(ScrollTrigger);
-
   useGSAP(
     () => {
       ScrollTrigger.create({
@@ -27,7 +27,7 @@ const HomePageServices: FC<ServicesProps> = ({ services }) => {
         start: "top top",
         pin: true,
         scrub: true,
-        endTrigger: document.querySelector(".gallerySection"),
+        end: "max",
       });
 
       const servicesItem = gsap.utils.toArray(".service");
@@ -178,7 +178,7 @@ const HomePageServices: FC<ServicesProps> = ({ services }) => {
             </div>
           </div>
 
-          <div className="container relative flex min-h-screen flex-col gap-14 sm:gap-0">
+          <div className="container relative flex flex-col gap-14 sm:gap-0">
             <div className="flex flex-col justify-between gap-3 py-7 sm:py-[6.5rem] md:flex-row lg:gap-20">
               <h2 className="font-righteous text-lg leading-[1.35rem] text-yellow md:min-w-[17.813rem] md:text-xl md:leading-tight lg:text-5xl lg:leading-[3.6rem]">
                 Our Services
@@ -193,20 +193,12 @@ const HomePageServices: FC<ServicesProps> = ({ services }) => {
 
             <div className=" z-20 pb-[0.875rem]  md:pb-[5.5rem] lg:pt-6">
               <div className="flex gap-2 sm:gap-6">
-                <svg
-                  width="26"
-                  height="529"
-                  viewBox="0 0 26 529"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="mb-2 mt-2.5 sm:mb-3.5 sm:mt-2.5 md:mb-5 md:mt-4"
-                >
-                  <path
-                    d="M25.5 1H15C7.26801 1 1 7.26801 1 15V514C1 521.732 7.26801 528 15 528H25.5"
-                    stroke="#EADDA8"
-                    stroke-width="2"
-                  />
-                </svg>
+                <Image
+                  src={SideBar}
+                  height={700}
+                  alt=""
+                  className="mb-2 mt-2.5 h-auto object-cover sm:mb-3.5 sm:mt-2.5 md:mb-5 md:mt-4"
+                />
 
                 <div className="services-container relative flex flex-1 flex-col justify-between gap-[clamp(1rem,4vw,5.563rem)] ">
                   {services?.map((service, index) => {
@@ -285,10 +277,10 @@ const HomePageServices: FC<ServicesProps> = ({ services }) => {
                           </h1>
                         </div>
 
-                        <Link
+                        <TransitionLink
                           href={"/services"}
                           key={index}
-                          className="detail-link flex translate-y-5 items-center justify-between gap-2 rounded-full border-[1px] border-white px-[0.559rem] py-[0.149rem] opacity-0 sm:px-4 md:py-0.5 lg:gap-4 lg:px-[1.875rem] lg:py-2"
+                          className="detail-link flex !w-auto translate-y-5 items-center justify-between gap-2 rounded-full border-[1px] border-white px-[0.559rem] py-[0.149rem] opacity-0 sm:px-4 md:py-0.5 lg:gap-4 lg:px-[1.875rem] lg:py-2"
                         >
                           {windowSize >= 640 ? (
                             <>
@@ -326,7 +318,7 @@ const HomePageServices: FC<ServicesProps> = ({ services }) => {
                               </svg>
                             </>
                           )}
-                        </Link>
+                        </TransitionLink>
                       </div>
                     );
                   })}
