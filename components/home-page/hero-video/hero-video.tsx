@@ -80,7 +80,7 @@ const HeroVideo = () => {
 
   const scrollToSection = contextSafe((targetSection: string) => {
     gsap.to(window, {
-      duration: 4,
+      duration: 2,
       scrollTo: targetSection,
       ease: "power2",
     });
