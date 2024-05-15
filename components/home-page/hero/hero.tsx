@@ -224,7 +224,7 @@ const HeroSection: FC<HeroSectionProps> = ({ bannerImages, isLoading }) => {
         </>
       ) : bannerImages?.length > 0 ? (
         <section ref={heroSection} className="relative z-10">
-          <div className="container mt-8 ">
+          <div className="container">
             <div className="absolute inset-0 -z-[10] mx-auto hidden max-w-[120rem] flex-col justify-center lg:flex">
               <svg
                 className="w-full"
