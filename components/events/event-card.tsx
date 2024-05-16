@@ -53,7 +53,6 @@ const EventCard: FC<EventProps> = ({ event }) => {
         </div>
 
         <div className="mt-10 flex flex-wrap items-center justify-between gap-x-8 gap-y-2 sm:mt-[2.125rem]">
-          {/* <h2 className="line-clamp-1 max-w-full font-righteous text-2xl leading-[1.863rem] text-indigo-blue md:max-w-[60%] md:text-[2rem] md:leading-[2.5rem]"> */}
           <h2 className=" max-w-full font-righteous text-2xl leading-[1.863rem] text-indigo-blue md:text-[2rem] md:leading-[2.5rem]">
             {event?.attributes?.title}
           </h2>
@@ -86,7 +85,7 @@ const EventCard: FC<EventProps> = ({ event }) => {
               : truncatedDescription}
             {!showFullDescription && (
               <button
-                className="mt-2 flex gap-1 text-[0.813rem] font-medium leading-[1.006rem] text-indigo-blue md:text-base md:leading-[1.25rem]"
+                className="mt-2 flex gap-1 text-[0.813rem] font-semibold leading-[1.006rem] text-indigo-blue md:text-base md:leading-[1.25rem]"
                 onClick={toggleDescription}
               >
                 <span className="cursor-pointer">{`Read More >`}</span>
@@ -95,7 +94,7 @@ const EventCard: FC<EventProps> = ({ event }) => {
 
             {showFullDescription && (
               <button
-                className="mt-2 flex gap-1 text-[0.813rem] font-medium leading-[1.006rem] text-indigo-blue md:text-base md:leading-[1.25rem]"
+                className="mt-2 flex gap-1 text-[0.813rem] font-semibold leading-[1.006rem] text-indigo-blue md:text-base md:leading-[1.25rem]"
                 onClick={toggleDescription}
               >
                 View Less
