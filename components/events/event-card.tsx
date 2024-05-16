@@ -86,7 +86,7 @@ const EventCard: FC<EventProps> = ({ event }) => {
               : truncatedDescription}
             {!showFullDescription && (
               <button
-                className="mt-2 flex gap-1 text-[0.813rem] leading-[1.006rem] text-indigo-blue md:text-base md:leading-[1.25rem]"
+                className="mt-2 flex gap-1 text-[0.813rem] font-medium leading-[1.006rem] text-indigo-blue md:text-base md:leading-[1.25rem]"
                 onClick={toggleDescription}
               >
                 <span className="cursor-pointer">{`Read More >`}</span>
@@ -95,7 +95,7 @@ const EventCard: FC<EventProps> = ({ event }) => {
 
             {showFullDescription && (
               <button
-                className="flex gap-1 text-[0.813rem] leading-[1.006rem] text-indigo-blue md:text-base md:leading-[1.25rem]"
+                className="mt-2 flex gap-1 text-[0.813rem] font-medium leading-[1.006rem] text-indigo-blue md:text-base md:leading-[1.25rem]"
                 onClick={toggleDescription}
               >
                 View Less
