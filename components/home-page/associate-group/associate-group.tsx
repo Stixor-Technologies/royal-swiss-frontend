@@ -214,7 +214,7 @@ const AssociateGroup: FC<AssociateGroupProp> = ({ assocGroups }) => {
                   return (
                     <SwiperSlide
                       key={index}
-                      className={`relative mr-[1.539rem] !size-[2.409rem] items-center sm:mr-8 sm:!size-14 md:mr-16 md:!size-24 lg:!size-[6.438rem]`}
+                      className={`relative mr-[1.539rem] !size-[3.409rem] items-center sm:mr-8 sm:!size-14 md:mr-16 md:!size-24 lg:!size-[6.438rem]`}
                     >
                       <Image
                         key={index}
