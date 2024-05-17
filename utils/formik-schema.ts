@@ -2,7 +2,6 @@ import * as Yup from "yup";
 
 export const ContactFormSchema = Yup.object().shape({
   name: Yup.string()
-    // .matches(/^[A-Za-z\s]+$/, "Only characters are allowed")
     .required("Please enter your name")
     .matches(/^[^\s]+(?:\s[^\s]+)*$/, "Name cannot start/end with space")
     .min(3, "Name should be atleast 3 characters long.")
