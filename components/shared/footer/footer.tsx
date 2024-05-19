@@ -48,10 +48,11 @@ const Footer = async () => {
     }
 
     if (startIndex !== null) {
-      daysOpen += `${dayShortNames[startIndex]} - ${dayShortNames[5]}`;
+      daysOpen += `${dayShortNames[startIndex]} - ${dayShortNames[6]}`;
     }
-    daysOpen = daysOpen.slice(0, -2);
-
+    if (daysOpen.endsWith(", ")) {
+      daysOpen = daysOpen.slice(0, -2);
+    }
     return daysOpen;
   };
 
