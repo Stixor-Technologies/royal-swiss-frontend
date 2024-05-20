@@ -42,19 +42,6 @@ const Sidebar = () => {
     };
   }, []);
 
-  useEffect(() => {
-    if (isMenuOpen) {
-      document.body.classList.add("!overflow-hidden");
-    } else {
-      document.body.classList.remove("!overflow-hidden");
-    }
-
-    // Cleanup function to reset the overflow property when the component unmounts
-    return () => {
-      document.body.classList.remove("!overflow-hidden");
-    };
-  }, [isMenuOpen]);
-
   // Trigger animations for menu open state
   useEffect(() => {
     if (isMenuOpen) {
@@ -123,6 +110,7 @@ const Sidebar = () => {
             <button
               onClick={() => {
                 setIsMenuOpen(!isMenuOpen);
+                document.body.classList.remove("!overflow-hidden");
               }}
             >
               <Image

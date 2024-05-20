@@ -102,6 +102,7 @@ const Header = () => {
           type="button"
           onClick={() => {
             setIsMenuOpen(!isMenuOpen);
+            document.body.classList.add("!overflow-hidden");
           }}
           className="md:hide-custom-cursor md:no-custom-cursor md:hidden"
         >

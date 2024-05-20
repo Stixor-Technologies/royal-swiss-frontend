@@ -24,6 +24,8 @@ const animatePageIn = () => {
   });
 
   if (transitionElement) {
+    document.body.classList.remove("!overflow-hidden");
+
     const tl = gsap.timeline({ delay: 0.9 });
 
     tl.set(transitionElement, {
@@ -51,6 +53,7 @@ const animatePageOut = (href: string, router: AppRouterInstance) => {
   });
 
   if (animationWrapper) {
+    document.body.classList.add("!overflow-hidden");
     const tl = gsap.timeline();
 
     tl.set(animationWrapper, {
