@@ -4,11 +4,15 @@ export const ContactFormSchema = Yup.object().shape({
   name: Yup.string()
     .required("Please enter your name")
     .min(3, "Name should be atleast 3 characters long.")
-    .max(20, "Name should be at most 30 characters long.")
+    .max(30, "Name should be at most 30 characters long.")
     .matches(/^[A-Za-z\s]+$/, "Only characters are allowed")
     .matches(
       /^[^\s]+(?:$|.*[^\s]+$)/,
-      "First name cannot start/end with space",
+      "First name cannot start or end with space",
+    )
+    .matches(
+      /^[A-Za-z]+(?: [A-Za-z]+)*$/,
+      "Single spaces between words are allowed",
     ),
 
   email: Yup.string()
@@ -23,7 +27,7 @@ export const ContactFormSchema = Yup.object().shape({
     .required("Please enter subject")
     .min(3, "Subject should be atleast 3 characters long.")
     .max(50, "Subject should be at most 50 characters long.")
-    .matches(/^[^\s]+(?:\s[^\s]+)*$/, "Subject cannot start/end with space"),
+    .matches(/^[^\s].*[^\s]$/, "Subject cannot start or end with a space"),
 
   message: Yup.string()
     .required("Please enter your message")
