@@ -104,7 +104,7 @@ const Footer = async () => {
                 {footerLinks?.map((link: Menu) => (
                   <li key={link.id}>
                     <TransitionLink href={link?.path}>
-                      <span className="after:transition-width relative block text-left text-[0.813rem] leading-[1.443rem] after:absolute after:-bottom-1 after:left-0 after:h-[0.081rem] after:w-0 after:bg-white after:duration-500 after:ease-in-out after:content-[''] hover:after:w-full sm:text-[0.938rem] sm:leading-[1.688rem]">
+                      <span className="after:transition-width relative block w-max text-left text-[0.813rem] leading-[1.443rem] after:absolute after:-bottom-1 after:left-0 after:h-[0.081rem] after:w-0 after:bg-white after:duration-500 after:ease-in-out after:content-[''] hover:after:w-full sm:text-[0.938rem] sm:leading-[1.688rem]">
                         {link?.title}
                       </span>
                     </TransitionLink>
