@@ -80,6 +80,7 @@ const Footer = async () => {
                   <Link
                     key={link?.title}
                     href={link?.path}
+                    target="_blank"
                     className="flex size-[2.383rem] items-center justify-center rounded-full bg-white transition-all duration-700 ease-in-out hover:scale-110"
                   >
                     <Image
@@ -145,6 +146,7 @@ const Footer = async () => {
               <Link
                 key={link?.title}
                 href={link?.path}
+                target="_blank"
                 className="flex size-[2.036rem] items-center justify-center rounded-full bg-white transition-all duration-700 ease-in-out hover:scale-110"
               >
                 <Image
