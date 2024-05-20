@@ -44,14 +44,14 @@ const Sidebar = () => {
 
   useEffect(() => {
     if (isMenuOpen) {
-      document.body.style.overflowY = "hidden";
+      document.body.classList.add("!overflow-hidden");
     } else {
-      document.body.style.overflowY = "auto";
+      document.body.classList.remove("!overflow-hidden");
     }
 
     // Cleanup function to reset the overflow property when the component unmounts
     return () => {
-      document.body.style.overflowY = "auto";
+      document.body.classList.remove("!overflow-hidden");
     };
   }, [isMenuOpen]);
 
@@ -101,13 +101,13 @@ const Sidebar = () => {
     <>
       <div
         ref={sideBarMenu}
-        className="fixed right-0 top-0 z-40 -mr-[100vw] h-screen w-screen overflow-y-auto
+        className="fixed right-0 top-0 z-40 -mr-[100vw] h-screen w-screen
           bg-indigo-blue will-change-auto min-aspect:-mr-[40vw] min-aspect:w-[40vw]"
       >
         <div className="absolute -z-10 h-full w-full bg-indigo-blue" />
 
         <div
-          className=" mx-auto h-full w-full flex-col justify-center overflow-y-auto p-4 
+          className=" mx-auto h-full w-full flex-col justify-center p-4 
           pb-4 pt-[2.313rem] min-aspect:mx-0 min-aspect:w-full min-aspect:justify-center min-aspect:pt-[6vw]"
         >
           <div className="flex justify-between">
