@@ -52,7 +52,6 @@ const Contact = () => {
     const dayKeys = Object.keys(days).filter((key) => key !== "id");
 
     const dayShortNames = dayKeys?.map((key) => key.slice(0, 3));
-    console.log(dayShortNames);
     let daysOpen = "";
     let startIndex = null;
 
