@@ -95,12 +95,16 @@ export default function Home() {
   };
 
   useEffect(() => {
-    fetchBannerImages();
-    fetchAssociatesGroup();
-    fetchProjects();
-    fetchServices();
-    fetchGallery();
-    fetchTeam();
+    const fetchData = async () => {
+      await fetchBannerImages();
+      await fetchAssociatesGroup();
+      await fetchProjects();
+      await fetchServices();
+      await fetchGallery();
+      await fetchTeam();
+    };
+
+    fetchData();
   }, []);
 
   return (

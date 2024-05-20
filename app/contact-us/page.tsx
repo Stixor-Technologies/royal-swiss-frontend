@@ -51,7 +51,7 @@ const Contact = () => {
   const displayDays = ({ days }: { days: any }) => {
     const dayKeys = Object.keys(days).filter((key) => key !== "id");
 
-    const dayShortNames = dayKeys.map((key) => key.slice(0, 3));
+    const dayShortNames = dayKeys?.map((key) => key.slice(0, 3));
     let daysOpen = "";
     let startIndex = null;
 
@@ -73,9 +73,12 @@ const Contact = () => {
     }
 
     if (startIndex !== null) {
-      daysOpen += `${dayShortNames[startIndex]} - ${dayShortNames[5]}`;
+      daysOpen += `${dayShortNames[startIndex]} - ${dayShortNames[6]}`;
     }
-    daysOpen = daysOpen.slice(0, -2);
+
+    if (daysOpen.endsWith(", ")) {
+      daysOpen = daysOpen.slice(0, -2);
+    }
 
     return daysOpen;
   };

@@ -66,9 +66,11 @@ const ContactForm: FC<ContactFormProps> = ({ isComponent }) => {
     setLoading(true);
     try {
       const emailTemplate = `<div>
-          <p>You've got a new mail from ${values.name}, their email is: ${values.email}, their number is ${values?.phone} </p>
-       
-          ${values.message}</div>`;
+          <p>New inquiry from: ${values?.name} - ${values?.email} </p>
+          <p>Contact Number: ${values?.phone} </p>
+          <p>Message: ${values.message} </p>
+          </div>`;
+
       const res = await fetch("/api/contact", {
         headers: {
           "Content-Type": "application/json",
