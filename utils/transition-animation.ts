@@ -24,23 +24,25 @@ const animatePageIn = () => {
   });
 
   if (transitionElement) {
-    document.body.classList.remove("!overflow-hidden");
-
     const tl = gsap.timeline({ delay: 0.9 });
 
     tl.set(transitionElement, {
       yPercent: 0,
     }).to(transitionElement, {
       yPercent: 200,
-      // ease: "expo.inOut",
       onComplete: () => {
         gsap.set(loaderLogo, { scale: 1 });
+        document.body.classList.remove("!overflow-hidden");
       },
     });
   }
 };
 
-const animatePageOut = (href: string, router: AppRouterInstance) => {
+const animatePageOut = (
+  href: string,
+  router: AppRouterInstance,
+  isPush?: boolean,
+) => {
   const animationWrapper = document.getElementById("transition-element");
   const loaderLogo = document.getElementById("loader-logo");
 
@@ -62,7 +64,9 @@ const animatePageOut = (href: string, router: AppRouterInstance) => {
       yPercent: 0,
       ease: "expo.inOut",
       onComplete: () => {
-        router.push(href);
+        if (!isPush) {
+          router.push(href);
+        }
       },
     });
   }

@@ -1,9 +1,25 @@
 "use client";
-import React from "react";
+import React, { useEffect } from "react";
 import Image from "next/image";
 import Logo from "../public/logo.svg";
+import { useRouter } from "next/navigation";
+import { animatePageOut } from "@/utils/transition-animation";
 
 const PageLoader = () => {
+  const router = useRouter();
+
+  const handleLoaderAnimation = () => {
+    animatePageOut("", router);
+  };
+
+  useEffect(() => {
+    window.addEventListener("popstate", handleLoaderAnimation);
+
+    return () => {
+      window.removeEventListener("popstate", handleLoaderAnimation);
+    };
+  }, []);
+
   return (
     <div
       id="transition-element"
