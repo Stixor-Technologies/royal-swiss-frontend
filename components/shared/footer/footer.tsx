@@ -71,9 +71,11 @@ const Footer = async () => {
                 className="mb-4 w-[15.375rem] max-w-[25.125rem] md:w-auto"
               />
               <p className="text-[0.813rem] font-light leading-[0.975rem] sm:text-lg sm:leading-[1.35rem]">
-                Lorem ipsum dolor sit amet consectetur. Mi sed lorem tristique
-                dignissim fermentum volutpat sed aliquet et. Ipsum sit risus sed
-                tellus turpis.
+                At Royal Swiss Housing, we redefine the concept of upscale
+                living in Multan. Our offerings include luxurious,
+                environmentally-conscious residences nestled within a dynamic
+                community. Experience intelligent living and embrace a
+                sustainable future with us.
               </p>
 
               <div className="mt-[2.544rem] hidden gap-[1.125rem] midLg:flex">

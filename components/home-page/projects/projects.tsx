@@ -63,10 +63,9 @@ const HomePageProjects: FC<ProjectsProps> = ({ projects }) => {
               data-project-description
               className="text-[0.813rem] font-light leading-[1.056rem] text-gray opacity-0 md:text-[1.375rem] md:leading-[1.829rem]"
             >
-              Lorem ipsum dolor sit amet consectetur. Faucibus semper id porta
-              egestas mi praesent. In ultrices blandit risus elementum habitant
-              ipsum at augue. Amet cursus ornare neque quam. Accumsan neque
-              elementum ut nisl diam congue ornare. Pulvinar.
+              From luxury living (Parco Qasaba Gujrat) to vital infrastructure
+              (Layyah-Tunsa Bridge, Multan International Airport), HRL shapes
+              Pakistan&apos;s landscape with expertise in diverse projects.
             </p>
           </div>
 
