@@ -87,8 +87,8 @@ const Services = () => {
       <div className="container">
         <PageHeader
           heading="Professional Services"
-          tagline="Lorem ipsum dolor sit amet consectetur. Velit eu."
-          description="Lorem ipsum dolor sit amet consectetur. Mi sed lorem tristique dignissim fermentum volutpat sed aliquet et. Ipsum sit risus sed tellus turpis."
+          tagline="All your necessities conveniently located within the housing society."
+          description="At Royal Swiss Housing, we don't just build homes, we create a lifestyle. Our planned development offers a comprehensive suite of services designed to elevate your everyday living."
         />
 
         <ServicesList />

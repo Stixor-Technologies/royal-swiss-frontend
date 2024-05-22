@@ -113,7 +113,7 @@ export default function Home() {
       <AssociateGroup assocGroups={associatesGroup} />
       <HeroVideo />
       <HomePageProjects projects={projects} />
-      <HomePageServices services={services} />
+      {services?.length > 0 && <HomePageServices services={services} />}
       <Gallery galleryImages={galleryImages} />
       <Team team={team} />
       <div className="-mt-[4.625rem] lg:mt-0">

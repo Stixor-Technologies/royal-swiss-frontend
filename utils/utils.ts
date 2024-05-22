@@ -71,19 +71,19 @@ const footerLinks: Menu[] = [
 const socialLink: SocialLinks[] = [
   {
     title: "facebook",
-    path: "#",
+    path: "https://www.facebook.com/OfficialRoyalSwissHousing",
     iconPath: FacebookIcon,
   },
 
   {
     title: "twitter",
-    path: "#",
+    path: "https://x.com/R_SwissHousing",
     iconPath: XIcon,
   },
 
   {
     title: "instagram",
-    path: "#",
+    path: "https://www.instagram.com/royalswisshousing/",
     iconPath: InstagramIcon,
   },
 
@@ -101,7 +101,7 @@ const socialLink: SocialLinks[] = [
 
   {
     title: "youtube",
-    path: "#",
+    path: "https://www.youtube.com/@royalswisshousing",
     iconPath: YoutubeIcon,
   },
 ];

@@ -102,8 +102,8 @@ const Updates = () => {
       <div className="container">
         <PageHeader
           heading="News And Updates"
-          tagline="Lorem ipsum dolor sit amet consectetur. Velit eu."
-          description="Lorem ipsum dolor sit amet consectetur. Mi sed lorem tristique dignissim fermentum volutpat sed aliquet et. Ipsum sit risus sed tellus turpis."
+          tagline="Step into the center of updates at the Royal Swiss Housing community!"
+          description="Stay informed with Royal Swiss Housing's latest project milestones, upcoming events, resident initiatives, exciting developments  and industry insights."
         />
 
         {loading ? (

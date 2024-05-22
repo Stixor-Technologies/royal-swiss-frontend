@@ -102,9 +102,9 @@ const Team: FC<TeamProps> = ({ team }) => {
                   Our Motivated Team
                 </h2>
                 <p className=" text-[0.813rem] font-light leading-[1.056rem] text-gray lg:text-2xl lg:leading-[1.995rem]">
-                  Lorem ipsum dolor sit amet consectetur. Feugiat gravida enim
-                  feugiat magnis euismod nisi lobortis risus neque. Pellentesque
-                  fermentum ac odio massa.
+                  Royal Swiss Housing, a Habib Rafiq (Pvt.) Ltd. project, brings
+                  together a team of passionate experts to create exceptional
+                  living experiences in Multan.
                 </p>
               </div>
 

@@ -71,9 +71,11 @@ const Footer = async () => {
                 className="mb-4 w-[15.375rem] max-w-[25.125rem] md:w-auto"
               />
               <p className="text-[0.813rem] font-light leading-[0.975rem] sm:text-lg sm:leading-[1.35rem]">
-                Lorem ipsum dolor sit amet consectetur. Mi sed lorem tristique
-                dignissim fermentum volutpat sed aliquet et. Ipsum sit risus sed
-                tellus turpis.
+                At Royal Swiss Housing, we redefine the concept of upscale
+                living in Multan. Our offerings include luxurious,
+                environmentally-conscious residences nestled within a dynamic
+                community. Experience intelligent living and embrace a
+                sustainable future with us.
               </p>
 
               <div className="mt-[2.544rem] hidden gap-[1.125rem] midLg:flex">
@@ -81,6 +83,7 @@ const Footer = async () => {
                   <Link
                     key={link?.title}
                     href={link?.path}
+                    target="_blank"
                     className="flex size-[2.383rem] items-center justify-center rounded-full bg-white transition-all duration-700 ease-in-out hover:scale-110"
                   >
                     <Image
@@ -103,7 +106,7 @@ const Footer = async () => {
                 {footerLinks?.map((link: Menu) => (
                   <li key={link.id}>
                     <TransitionLink href={link?.path}>
-                      <span className="after:transition-width relative block text-left text-[0.813rem] leading-[1.443rem] after:absolute after:-bottom-1 after:left-0 after:h-[0.081rem] after:w-0 after:bg-white after:duration-500 after:ease-in-out after:content-[''] hover:after:w-full sm:text-[0.938rem] sm:leading-[1.688rem]">
+                      <span className="after:transition-width relative block w-max text-left text-[0.813rem] leading-[1.443rem] after:absolute after:-bottom-1 after:left-0 after:h-[0.081rem] after:w-0 after:bg-white after:duration-500 after:ease-in-out after:content-[''] hover:after:w-full sm:text-[0.938rem] sm:leading-[1.688rem]">
                         {link?.title}
                       </span>
                     </TransitionLink>
@@ -146,6 +149,7 @@ const Footer = async () => {
               <Link
                 key={link?.title}
                 href={link?.path}
+                target="_blank"
                 className="flex size-[2.036rem] items-center justify-center rounded-full bg-white transition-all duration-700 ease-in-out hover:scale-110"
               >
                 <Image

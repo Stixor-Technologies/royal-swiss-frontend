@@ -12,7 +12,7 @@ export const ContactFormSchema = Yup.object().shape({
     )
     .matches(
       /^[A-Za-z]+(?: [A-Za-z]+)*$/,
-      "Single spaces between words are allowed",
+      "Only single space between words are allowed",
     ),
 
   email: Yup.string()

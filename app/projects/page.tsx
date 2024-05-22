@@ -105,8 +105,8 @@ const Projects = () => {
       <div className="container">
         <PageHeader
           heading="Our Projects"
-          tagline="Lorem ipsum dolor sit amet consectetur. Velit eu."
-          description="Lorem ipsum dolor sit amet consectetur. Mi sed lorem tristique dignissim fermentum volutpat sed aliquet et. Ipsum sit risus sed tellus turpis."
+          tagline="Building excellence. Homes, bridges, airports - we craft Pakistan's future"
+          description="From luxury living (Parco Qasaba Gujrat) to vital infrastructure (Layyah-Tunsa Bridge, Multan International Airport), HRL shapes Pakistan's landscape with expertise in diverse projects."
         />
 
         {loading ? (

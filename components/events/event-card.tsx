@@ -97,7 +97,7 @@ const EventCard: FC<EventProps> = ({ event }) => {
                 className="mt-2 flex gap-1 text-[0.813rem] font-semibold leading-[1.006rem] text-indigo-blue md:text-base md:leading-[1.25rem]"
                 onClick={toggleDescription}
               >
-                View Less
+                {"View Less <"}
               </button>
             )}
           </p>

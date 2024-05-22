@@ -136,7 +136,7 @@ const AboutUs = () => {
       <div className="container">
         <PageHeader
           heading="About Us"
-          tagline="Lorem ipsum dolor sit amet consectetur. Velit eu."
+          tagline="Discover the essence of our community at the heart of Royal Swiss Housing."
           forAbout
         />
 

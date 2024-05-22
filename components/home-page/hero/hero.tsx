@@ -280,9 +280,9 @@ const HeroSection: FC<HeroSectionProps> = ({ bannerImages, isLoading }) => {
                   data-hero-p
                   className="mb-5 mt-6 overflow-hidden text-[0.813rem] font-light leading-[1.056rem] text-rich-black lg:mb-6 lg:text-base lg:leading-tight xl:mb-9 xl:text-2xl xl:leading-[1.8rem]"
                 >
-                  Lorem ipsum dolor sit amet consectetur. Mi sed lorem tristique
-                  dignissim fermentum volutpat sed aliquet et. Ipsum sit risus
-                  sed tellus turpis.
+                  Royal Swiss Housing, by Habib Rafiq (Pvt.) Ltd is a
+                  meticulously-planned gated community envisioned to raise the
+                  premium living standards in the city of Multan.
                 </p>
 
                 <div data-link-button className="">
