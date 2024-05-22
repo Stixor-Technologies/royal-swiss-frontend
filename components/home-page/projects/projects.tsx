@@ -85,7 +85,7 @@ const HomePageProjects: FC<ProjectsProps> = ({ projects }) => {
                   delay: 2500,
                   disableOnInteraction: false,
                 }}
-                speed={1200}
+                speed={700}
               >
                 {projects?.map((project, index) => (
                   <>
