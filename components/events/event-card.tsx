@@ -83,14 +83,15 @@ const EventCard: FC<EventProps> = ({ event }) => {
             {showFullDescription
               ? event?.attributes?.description
               : truncatedDescription}
-            {!showFullDescription && (
-              <button
-                className="mt-2 flex gap-1 text-[0.813rem] font-semibold leading-[1.006rem] text-indigo-blue md:text-base md:leading-[1.25rem]"
-                onClick={toggleDescription}
-              >
-                <span className="cursor-pointer">{`Read More >`}</span>
-              </button>
-            )}
+            {!showFullDescription &&
+              event?.attributes?.description.length > 100 && (
+                <button
+                  className="mt-2 flex gap-1 text-[0.813rem] font-semibold leading-[1.006rem] text-indigo-blue md:text-base md:leading-[1.25rem]"
+                  onClick={toggleDescription}
+                >
+                  <span className="cursor-pointer">{`Read More >`}</span>
+                </button>
+              )}
 
             {showFullDescription && (
               <button
