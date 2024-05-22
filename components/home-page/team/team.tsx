@@ -108,15 +108,15 @@ const Team: FC<TeamProps> = ({ team }) => {
                 </p>
               </div>
 
-              <div className="col-span-2 col-start-1 row-start-3 mt-[1.313rem] flex items-start justify-center gap-3 !px-4 text-black sm:col-span-1 sm:col-start-auto sm:row-start-auto sm:mt-0 sm:justify-end sm:!px-8 lg:!px-[2.625rem]">
+              <div className="col-span-2 col-start-1 row-start-3 mt-[1.313rem] flex items-start justify-center gap-3 !px-4 text-black sm:col-span-1 sm:col-start-auto sm:row-start-auto sm:mt-0 sm:justify-end sm:!px-8 lg:gap-6 lg:!px-[2.625rem]">
                 <button
-                  className="group relative size-[1.953rem] rotate-90 sm:size-10 lg:size-[5.375rem]"
+                  className="group relative size-[1.953rem] rotate-90 sm:size-10 lg:size-[5rem]"
                   aria-label="Previous page"
                   onClick={() => {
                     swiperRef.current?.slidePrev();
                   }}
                 >
-                  <div className="relative h-full w-full origin-center overflow-hidden rounded-full bg-indigo-blue duration-300 group-hover:scale-75">
+                  <div className="relative h-full w-full origin-center overflow-hidden rounded-full bg-indigo-blue duration-300 group-hover:scale-125">
                     <div className="pointer-events-none absolute inset-0">
                       <svg
                         viewBox="0 0 108 108"
@@ -164,13 +164,13 @@ const Team: FC<TeamProps> = ({ team }) => {
                   </div>
                 </button>
                 <button
-                  className="group relative size-[1.953rem] -rotate-90 sm:size-10 lg:size-[5.375rem]"
+                  className="group relative size-[1.953rem] -rotate-90 sm:size-10 lg:size-[5rem]"
                   aria-label="Next page"
                   onClick={() => {
                     swiperRef.current?.slideNext();
                   }}
                 >
-                  <div className="relative h-full w-full origin-center overflow-hidden rounded-full bg-indigo-blue duration-300 group-hover:scale-75">
+                  <div className="relative h-full w-full origin-center overflow-hidden rounded-full bg-indigo-blue duration-300 group-hover:scale-125">
                     <div className="pointer-events-none absolute inset-0">
                       <svg
                         viewBox="0 0 108 108"

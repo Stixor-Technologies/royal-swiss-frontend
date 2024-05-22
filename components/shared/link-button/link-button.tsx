@@ -24,9 +24,9 @@ const LinkButton: FC<ActionProps> = ({ variant, styles, text, ...props }) => {
   const getSizeClass = () => {
     switch (variant) {
       case "rounded":
-        return "h-[2.029rem] max-w-[15rem] w-[8.688rem] lg:w-full text-[0.938rem] leading-[1.125rem] lg:h-[3.5rem]  font-light md:text-base md:leading-tight lg:text-[1.5rem] lg:leading-[1.8rem] md:w-[10rem] md:h-[2.5rem] rounded-[0.5rem] hover:rounded-[2.125rem] before:hover:rounded-[2.125rem]";
+        return "h-[2.029rem] max-w-[15rem] w-[8.688rem] lg:w-full text-[0.938rem] leading-[1.125rem] lg:h-[3.5rem]  font-light md:text-base md:leading-tight lg:text-[1.5rem] lg:leading-[1.8rem] md:w-[10rem] md:h-[2.5rem] rounded-[0.3rem] lg:rounded-[0.5rem] hover:rounded-[2.125rem] before:hover:rounded-[2.125rem]";
       case "corner":
-        return "max-w-[14.875rem] h-[2.029rem] w-[8.688rem] text-[0.938rem] leading-[1.125rem] lg:w-full lg:h-[3.375rem] rounded-[0.188rem] lg:rounded-md hover:rounded-[2.125rem] before:hover:rounded-[2.125rem] lg:font-medium lg:text-xl lg:leading-[1.525rem] md:w-[10rem] md:h-[2.5rem] md:text-base md:leading-tight md:rounded-md md:rounded-bl-2xl";
+        return "max-w-[14.875rem] h-[2.029rem] w-[8.688rem] text-[0.938rem] leading-[1.125rem] lg:w-full lg:h-[3.375rem] rounded-[0.3rem] lg:rounded-[0.5rem] hover:rounded-[2.125rem] before:hover:rounded-[2.125rem] lg:font-medium lg:text-xl lg:leading-[1.525rem] md:w-[10rem] md:h-[2.5rem] md:text-base md:leading-tight";
 
       case "sm":
         return "max-w-[8.125rem] w-full h-[2.75rem] rounded-lg before:-inset-y-[0.625rem] before:-inset-x-[0.688rem] hover:rounded-[2.375rem] before:hover:rounded-[2.375rem] font-semibold text-sm leading-[1.375rem]";
