@@ -110,7 +110,7 @@ const Contact = () => {
                   Office Location
                 </h4>
 
-                <address className="text-[0.813rem] not-italic leading-[1.445rem] text-gray md:leading-[1.688rem] ">
+                <address className="text-[0.813rem] not-italic leading-[1.445rem] text-gray md:text-[0.938rem] md:leading-[1.688rem] ">
                   {officeAddress?.address}
                 </address>
               </div>
