@@ -96,6 +96,7 @@ const Gallery: FC<GalleryProps> = ({ galleryImages }) => {
               }}
               shortSwipes={true}
               longSwipesMs={10000}
+              speed={700}
               className="gallery-swiper aspect-[1347/632] h-auto w-full rounded-[0.625rem] lg:rounded-[2rem]"
               modules={[Thumbs, FreeMode]}
             >
