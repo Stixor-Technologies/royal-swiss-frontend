@@ -203,7 +203,6 @@ const AssociateGroup: FC<AssociateGroupProp> = ({ assocGroups }) => {
               <Swiper
                 slidesPerView={"auto"}
                 freeMode={true}
-                // loop={true}
                 modules={[FreeMode]}
                 onBeforeInit={(swiper) => {
                   swiperRef.current = swiper;
