@@ -44,7 +44,7 @@ const LinkButton: FC<ActionProps> = ({ variant, styles, text, ...props }) => {
 
   // text-lg
 
-  const allClassNames = `inline-block bg-indigo-blue border-indigo-blue before:cotent-[''] before:hover:border-indigo-blue relative  border-[0.25rem] transition-all duration-700 ease-in-out before:absolute before:-inset-[0.656rem] before:border-transparent  before:transition-all before:duration-700 hover:bg-[rgba(28,48,107,0.85)]  before:hover:border-[0.25rem] ${getSizeClass()} ${styles}`;
+  const allClassNames = `inline-block bg-indigo-blue border-indigo-blue before:cotent-[''] before:hover:border-indigo-blue relative  border-[0.25rem] transition-all duration-700 ease-in-out before:absolute before:-inset-[0.656rem] before:border-transparent  before:transition-all before:duration-700 hover:bg-[rgba(28,48,107,0.85)]  before:border-[0.25rem] ${getSizeClass()} ${styles}`;
 
   if (props.as === "link") {
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
