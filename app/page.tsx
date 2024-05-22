@@ -46,7 +46,7 @@ export default function Home() {
   useGSAP(() => {
     window.scrollTo(0, 0);
     if (window.innerWidth > 768) {
-      ScrollSmoother.create({ smooth: 2, smoothTouch: 0 });
+      ScrollSmoother.create({ smooth: 1, smoothTouch: 0 });
     }
   }, []);
 
