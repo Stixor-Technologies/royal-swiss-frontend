@@ -18,6 +18,7 @@ const HomePageServices: FC<ServicesProps> = ({ services }) => {
   const itemRef = useRef<HTMLDivElement[]>([]);
   const [service, setService] = useState<string | null>(null);
   const [windowSize, setWindowSize] = useState<number>(0);
+  const [previousImage, setPreviousImage] = useState<string | null>(null);
 
   gsap.registerPlugin(ScrollTrigger);
   useGSAP(
@@ -47,12 +48,18 @@ const HomePageServices: FC<ServicesProps> = ({ services }) => {
                   scrollTrigger: {
                     trigger: service,
                     start: "top 50%",
+                    markers: true,
+
                     end: `+=${
                       service.offsetHeight +
-                      window.innerWidth * (isMobile ? 0.1 : 0.1)
+                      window.innerWidth * (isMobile ? 0.22 : 0.06)
                     } 50%`,
                     onEnter: () => {
                       setService(
+                        services[index]?.attributes?.backgroundImage?.data
+                          ?.attributes?.url,
+                      );
+                      setPreviousImage(
                         services[index]?.attributes?.backgroundImage?.data
                           ?.attributes?.url,
                       );
@@ -191,12 +198,13 @@ const HomePageServices: FC<ServicesProps> = ({ services }) => {
             <div className="flex gap-2 sm:gap-6">
               <Image
                 src={SideBar}
+                width={60}
                 height={700}
                 alt=""
                 className="mb-2 mt-2.5 h-auto object-cover sm:mb-3.5 sm:mt-2.5 md:mb-5 md:mt-4"
               />
 
-              <div className="services-container relative flex flex-1 flex-col justify-between gap-[clamp(1rem,4vw,5.563rem)] ">
+              <div className="services-container relative flex flex-1 flex-col justify-between gap-[clamp(1rem,7vw,7.563rem)] ">
                 {services?.map((service, index) => {
                   return (
                     <div
@@ -206,69 +214,64 @@ const HomePageServices: FC<ServicesProps> = ({ services }) => {
                         }
                       }}
                       key={index}
-                      className="service flex w-full items-start justify-between opacity-40"
-                    >
-                      <div
-                        className="cursor-pointer"
-                        onMouseEnter={() => {
-                          setService(
-                            service?.attributes?.backgroundImage?.data
-                              ?.attributes?.url,
-                          );
+                      className="service flex w-full cursor-pointer items-start justify-between opacity-40"
+                      onMouseEnter={() => {
+                        setService(
+                          service?.attributes?.backgroundImage?.data?.attributes
+                            ?.url,
+                        );
 
+                        gsap.to(document.querySelector(".custom-bg-element"), {
+                          opacity: 1,
+                        });
+
+                        gsap.to(itemRef.current[index], {
+                          opacity: 1,
+                        });
+
+                        gsap.to(
+                          itemRef.current[index].querySelector(".detail-link"),
+                          {
+                            opacity: 1,
+                            y: 0,
+                          },
+                        );
+                      }}
+                      onMouseLeave={() => {
+                        // determine if mouse is over project container element
+                        const projectContainer = document.querySelector(
+                          ".services-container",
+                        );
+                        if (projectContainer instanceof HTMLElement) {
+                          // if (!projectContainer.matches(":hover")) {
                           gsap.to(
                             document.querySelector(".custom-bg-element"),
                             {
-                              opacity: 1,
+                              // opacity: 0,
                             },
                           );
-
-                          gsap.to(itemRef.current[index], {
-                            opacity: 1,
-                          });
 
                           gsap.to(
                             itemRef.current[index].querySelector(
                               ".detail-link",
                             ),
                             {
-                              opacity: 1,
-                              y: 0,
+                              opacity: 0,
+                              y: 20,
                             },
                           );
-                        }}
-                        onMouseLeave={() => {
-                          // determine if mouse is over project container element
-                          const projectContainer = document.querySelector(
-                            ".services-container",
-                          );
-                          if (projectContainer instanceof HTMLElement) {
-                            if (!projectContainer.matches(":hover")) {
-                              gsap.to(
-                                document.querySelector(".custom-bg-element"),
-                                {
-                                  opacity: 0,
-                                },
-                              );
+                          // }
 
-                              gsap.to(
-                                itemRef.current[index].querySelector(
-                                  ".detail-link",
-                                ),
-                                {
-                                  opacity: 0,
-                                  y: 20,
-                                },
-                              );
-                            }
+                          gsap.to(itemRef.current[index], {
+                            opacity: 0.4,
+                          });
 
-                            gsap.to(itemRef.current[index], {
-                              opacity: 0.4,
-                            });
-                          }
-                        }}
-                      >
-                        <h1 className="text-[clamp(1rem,2.8vw,3.8rem)] leading-[clamp(1.2rem,3.4vw,4.3rem)]">
+                          setService(previousImage);
+                        }
+                      }}
+                    >
+                      <div className="cursor-pointer">
+                        <h1 className="text-[clamp(2rem,2.8vw,3.8rem)] leading-[clamp(2.2rem,3.4vw,4.3rem)]">
                           {service?.attributes?.name}
                         </h1>
                       </div>
