@@ -48,8 +48,6 @@ const HomePageServices: FC<ServicesProps> = ({ services }) => {
                   scrollTrigger: {
                     trigger: service,
                     start: "top 50%",
-                    markers: true,
-
                     end: `+=${
                       service.offsetHeight +
                       window.innerWidth * (isMobile ? 0.22 : 0.06)
