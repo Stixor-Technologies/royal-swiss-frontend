@@ -69,10 +69,7 @@ const AssociateGroup: FC<AssociateGroupProp> = ({ assocGroups }) => {
           >
             It brings a unique mix of residential, commercial, religious,
             cultural, and entertainment marvels together in harmony with each
-            other. In addition, we boast a distinguishing array of features. It
-            brings a unique mix of residential, commercial, religious, cultural,
-            and entertainment marvels together in harmony with each other. In
-            addition, we boast a distinguishing array of features
+            other. In addition, we boast a distinguishing array of features.
           </p>
         </div>
 
@@ -87,7 +84,7 @@ const AssociateGroup: FC<AssociateGroupProp> = ({ assocGroups }) => {
                   The Associate and Group
                 </h3>
 
-                <div className="col-span-4 col-start-10 flex items-center gap-2">
+                <div className="col-span-4 col-start-10 flex items-center gap-4">
                   <button
                     onClick={() => {
                       swiperRef.current?.slidePrev();
@@ -95,7 +92,7 @@ const AssociateGroup: FC<AssociateGroupProp> = ({ assocGroups }) => {
                     className="group relative size-[1.828rem] rotate-90 md:size-[3.875rem]"
                     aria-label="Previous slide"
                   >
-                    <div className="relative h-full w-full origin-center overflow-hidden rounded-full bg-indigo-blue duration-300 group-hover:scale-75">
+                    <div className="relative h-full w-full origin-center overflow-hidden rounded-full bg-indigo-blue duration-300 group-hover:scale-125">
                       <div className="pointer-events-none absolute inset-0">
                         <svg
                           viewBox="0 0 108 108"
@@ -150,7 +147,7 @@ const AssociateGroup: FC<AssociateGroupProp> = ({ assocGroups }) => {
                     className="group relative size-[1.828rem] -rotate-90 md:size-[3.875rem]"
                     aria-label="Next slide"
                   >
-                    <div className="relative h-full w-full origin-center overflow-hidden rounded-full bg-indigo-blue duration-300 group-hover:scale-75">
+                    <div className="relative h-full w-full origin-center overflow-hidden rounded-full bg-indigo-blue duration-300 group-hover:scale-125">
                       <div className="pointer-events-none absolute inset-0">
                         <svg
                           viewBox="0 0 108 108"

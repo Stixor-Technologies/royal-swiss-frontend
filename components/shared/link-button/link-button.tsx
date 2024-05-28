@@ -24,9 +24,9 @@ const LinkButton: FC<ActionProps> = ({ variant, styles, text, ...props }) => {
   const getSizeClass = () => {
     switch (variant) {
       case "rounded":
-        return "h-[2.029rem] max-w-[15rem] w-[8.688rem] lg:w-full text-[0.938rem] leading-[1.125rem] lg:h-[3.5rem] rounded-full before:hover:rounded-full font-light md:text-base md:leading-tight lg:text-[1.5rem] lg:leading-[1.8rem] md:w-[10rem] md:h-[2.5rem]";
+        return "h-[2.029rem] max-w-[15rem] w-[8.688rem] lg:w-full text-[0.938rem] leading-[1.125rem] lg:h-[3.5rem]  font-light md:text-base md:leading-tight lg:text-[1.5rem] lg:leading-[1.8rem] md:w-[10rem] md:h-[2.5rem] rounded-[0.3rem] lg:rounded-[0.5rem] hover:rounded-[2.125rem] before:hover:rounded-[2.125rem]";
       case "corner":
-        return "max-w-[14.875rem] h-[2.029rem] w-[8.688rem] text-[0.938rem] leading-[1.125rem] lg:w-full lg:h-[3.375rem] rounded-[0.188rem] rounded-bl-xl lg:rounded-md lg:rounded-bl-[1.5rem] hover:rounded-[2.125rem] before:hover:rounded-[2.125rem] lg:font-medium lg:text-xl lg:leading-[1.525rem] md:w-[10rem] md:h-[2.5rem] md:text-base md:leading-tight md:rounded-md md:rounded-bl-2xl";
+        return "max-w-[14.875rem] h-[2.029rem] w-[8.688rem] text-[0.938rem] leading-[1.125rem] lg:w-full lg:h-[3.375rem] rounded-[0.3rem] lg:rounded-[0.5rem] hover:rounded-[2.125rem] before:hover:rounded-[2.125rem] lg:font-medium lg:text-xl lg:leading-[1.525rem] md:w-[10rem] md:h-[2.5rem] md:text-base md:leading-tight";
 
       case "sm":
         return "max-w-[8.125rem] w-full h-[2.75rem] rounded-lg before:-inset-y-[0.625rem] before:-inset-x-[0.688rem] hover:rounded-[2.375rem] before:hover:rounded-[2.375rem] font-semibold text-sm leading-[1.375rem]";
@@ -44,7 +44,7 @@ const LinkButton: FC<ActionProps> = ({ variant, styles, text, ...props }) => {
 
   // text-lg
 
-  const allClassNames = `inline-block bg-indigo-blue border-indigo-blue before:cotent-[''] before:hover:border-indigo-blue relative  border-[0.25rem] transition-all duration-700 ease-in-out before:absolute before:-inset-[0.656rem] before:border-transparent  before:transition-all before:duration-700 hover:bg-[rgba(28,48,107,0.85)]  before:hover:border-[0.25rem] ${getSizeClass()} ${styles}`;
+  const allClassNames = `inline-block bg-indigo-blue border-indigo-blue before:cotent-[''] before:hover:border-indigo-blue relative  border-[0.25rem] transition-all duration-700 ease-in-out before:absolute before:-inset-[0.656rem] before:border-transparent  before:transition-all before:duration-700 hover:bg-[rgba(28,48,107,0.85)]  before:border-[0.25rem] ${getSizeClass()} ${styles}`;
 
   if (props.as === "link") {
     // eslint-disable-next-line @typescript-eslint/no-unused-vars

@@ -31,7 +31,7 @@ const Contact = () => {
   useGSAP(() => {
     window.scrollTo(0, 0);
     if (window.innerWidth > 768) {
-      ScrollSmoother.create({ smooth: 2, smoothTouch: 0 });
+      ScrollSmoother.create({ smooth: 1, smoothTouch: 0 });
     }
   }, []);
 
@@ -110,7 +110,7 @@ const Contact = () => {
                   Office Location
                 </h4>
 
-                <address className="text-[0.813rem] not-italic leading-[1.445rem] text-gray md:leading-[1.688rem] ">
+                <address className="text-[0.813rem] not-italic leading-[1.445rem] text-gray md:text-[0.938rem] md:leading-[1.688rem] ">
                   {officeAddress?.address}
                 </address>
               </div>
