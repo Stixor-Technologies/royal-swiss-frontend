@@ -69,11 +69,7 @@ const AssociateGroup: FC<AssociateGroupProp> = ({ assocGroups }) => {
           >
             It brings a unique mix of residential, commercial, religious,
             cultural, and entertainment marvels together in harmony with each
-            other. In addition, we boast a distinguishing array of features. It
-            brings a unique mix of residential, commercial, religious, cultural,
-            and entertainment marvels together in harmony with each other. In
-            addition, we boast a distinguishing array of features
-          </p>
+            other. In addition, we boast a distinguishing array of features.
         </div>
 
         <div
